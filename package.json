@@ -1,0 +1,20 @@
+{
+  "name": "neural-networks-for-ages-5-and-up",
+  "version": "0.0.1",
+  "description": "Using Piagetian and Papertian methods to present the basics of neural networks in a simple manner",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BHouwens/Neural-Networks-For-Ages-5-And-Up.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BHouwens/Neural-Networks-For-Ages-5-And-Up/issues"
+  },
+  "homepage": "https://github.com/BHouwens/Neural-Networks-For-Ages-5-And-Up#readme",
+  "dependencies": {
+    "json-loader": "^0.5.4",
+    "npm-dev-boilerplate": "^1.0.6",
+    "picturefill": "^3.0.2"
+  }
+}
