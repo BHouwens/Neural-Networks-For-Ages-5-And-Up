@@ -1,2 +1,90 @@
-.App__blocks___379kB{padding:0;margin:0;display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row wrap;flex-flow:row wrap}.App__blocks___379kB li{display:inline-block;list-style:none;-ms-flex-preferred-size:100%;flex-basis:100%;width:0;margin-bottom:20px}.App__blocks___379kB li:not(:nth-child(3n+1)){margin-left:20px}p{font-size:calc(15px + 3 * ((100vw - 420px) / 860))}@media all and (min-width:400px){.App__blocks___379kB li{-ms-flex-preferred-size:50%;flex-basis:50%}}@media all and (min-width:700px){.App__blocks___379kB li{-ms-flex-preferred-size:calc(33.3% - 20px);flex-basis:calc(33.3% - 20px)}}@media screen and (min-width:1280px){p{font-size:18px}}@media screen and (max-width:420px){p{font-size:15px}}
+.Penguin__container___1Csui{
+    position: relative;
+}
+
+.Penguin__penguin___8FZiW{
+    width: 180px;
+    height: auto;
+}
+
+.Penguin__number___DzjID{
+    position: absolute;
+    bottom: 110px;
+    margin: 0 auto;
+    text-align: center;
+    left: 45px;
+    right: 0;
+    max-width: 110px;
+    display: block;
+    background: transparent;
+    border: none;
+    font-size: 70px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    outline: none;
+}
+
+.Penguin__number___DzjID:focus{
+    color: rgb(26,26,26);
+}.App__blocks___379kB{
+    padding: 0;
+    margin: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+}
+
+.App__blocks___379kB li {
+    display: inline-block;
+    list-style: none;
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    width: 0;
+    margin-bottom: 20px;
+}
+
+.App__blocks___379kB li:not(:nth-child(3n + 1)){
+    margin-left: 20px;
+}
+
+p{
+    font-size: calc(15px + 3 * ((100vw - 420px) / 860));
+}
+
+@media all and (min-width: 400px){
+
+    .App__blocks___379kB li{
+        -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    }
+}
+
+@media all and (min-width: 700px){
+
+    .App__blocks___379kB li{
+        -webkit-flex-basis: calc(33.3% - 20px);
+        -ms-flex-preferred-size: calc(33.3% - 20px);
+        flex-basis: calc(33.3% - 20px);
+    }
+}
+
+@media screen and (min-width: 1280px){
+
+    p{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 420px){
+
+    p{
+        font-size: 15px;
+    }
+}
 /*# sourceMappingURL=style.css.map*/
