@@ -1,32 +1,4 @@
-.Penguin__container___1Csui{
-    position: relative;
-}
-
-.Penguin__penguin___8FZiW{
-    width: 180px;
-    height: auto;
-}
-
-.Penguin__number___DzjID{
-    position: absolute;
-    bottom: 110px;
-    margin: 0 auto;
-    text-align: center;
-    left: 45px;
-    right: 0;
-    max-width: 110px;
-    display: block;
-    background: transparent;
-    border: none;
-    font-size: 70px;
-    box-sizing: border-box;
-    padding-left: 10px;
-    outline: none;
-}
-
-.Penguin__number___DzjID:focus{
-    color: rgb(26,26,26);
-}.App__blocks___379kB{
+.App__blocks___379kB{
     padding: 0;
     margin: 0;
     display: -webkit-flex;
@@ -86,5 +58,36 @@ p{
     p{
         font-size: 15px;
     }
+}.Penguin__container___1Csui{
+    position: relative;
+}
+
+.Penguin__penguin___8FZiW{
+    width: 180px;
+    height: auto;
+}
+
+.Penguin__number___DzjID{
+    position: absolute;
+    bottom: 110px;
+    margin: 0 auto;
+    text-align: center;
+    left: 45px;
+    right: 0;
+    max-width: 110px;
+    display: block;
+    background: transparent;
+    border: none;
+    font-size: 70px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    outline: none;
+}
+
+.Penguin__number___DzjID:focus{
+    color: rgb(26,26,26);
+}.Rhino__rhino___1Id4I{
+    width: 180px;
+    height: auto;
 }
 /*# sourceMappingURL=style.css.map*/

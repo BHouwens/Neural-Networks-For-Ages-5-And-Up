@@ -29412,6 +29412,42 @@
 	    }
 	  });
 	});
+	
+	var _Penguin = __webpack_require__(473);
+	
+	Object.keys(_Penguin).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _Penguin[key];
+	    }
+	  });
+	});
+	
+	var _Rhino = __webpack_require__(475);
+	
+	Object.keys(_Rhino).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _Rhino[key];
+	    }
+	  });
+	});
+	
+	var _Shaman = __webpack_require__(477);
+	
+	Object.keys(_Shaman).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _Shaman[key];
+	    }
+	  });
+	});
 
 /***/ },
 /* 471 */
@@ -29430,9 +29466,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Penguin = __webpack_require__(472);
+	var _components = __webpack_require__(470);
 	
-	var _App = __webpack_require__(474);
+	var _App = __webpack_require__(472);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -29453,7 +29489,9 @@
 	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 	
 	        _this.state = {
-	            penguinNumber: 5
+	            penguinNumber: 5,
+	            genieNumber: 6,
+	            rhinoNumber: 2
 	        };
 	        return _this;
 	    }
@@ -29461,7 +29499,10 @@
 	    _createClass(App, [{
 	        key: 'render',
 	        value: function render() {
-	            var penguinNumber = this.state.penguinNumber;
+	            var _state = this.state;
+	            var penguinNumber = _state.penguinNumber;
+	            var genieNumber = _state.genieNumber;
+	            var rhinoNumber = _state.rhinoNumber;
 	
 	
 	            return _react2.default.createElement(
@@ -29479,11 +29520,47 @@
 	                    penguinNumber,
 	                    '-penguin, but you can click on his number and change it to whatever you want.'
 	                ),
-	                _react2.default.createElement(_Penguin.Penguin, { number: penguinNumber }),
+	                _react2.default.createElement(_components.Penguin, { number: penguinNumber }),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'Our penguin, let\'s call him Feature (stupid, I know, but that\'s his name), thinks he\'s pretty bad-ass but he\'s a baby so what does he know. He needs protection on a journey he has to make, so we\'re going to pair him up with some friends:'
+	                    'Our penguin, let\'s call him Feature (stupid, I know, but that\'s his name), has to make an epic journey that consists of a bunch of paths connected by sign posts. He think he\'s pretty bad-ass and can make his way along these paths and past these sign posts on his own, but he\'s a baby so what does he know. What he really needs is friends along the way to help him, like these guys:'
+	                ),
+	                _react2.default.createElement(_components.Rhino, { number: rhinoNumber }),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'The rhino is called Weight (maybe because he\'s heavy?) and the fly is called Bias. When our three friends get to the first sign post, though, they meet a shaman who looks kind of like this:'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'The shaman casts a special spell on all three of our friends and merges them all into a ',
+	                    _react2.default.createElement(
+	                        'i',
+	                        null,
+	                        'new'
+	                    ),
+	                    ' penguin. Weird!'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'Our new penguin, with a new number, makes his way on the next path and, if it\'s not the last one in the journey, is joined by another Weight and another Bias. They come to another shaman at the next sign post and the process repeats.'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'The last path in the journey is a bit different; instead of a shaman at the end, there\'s a genie! The genie also has a number (in this case it\'s a ',
+	                    genieNumber,
+	                    '-genie). The genie performs another kind of spell to transform our penguin for the very last time. If our penguin has the same number as the genie after the spell, then he wins! If he doesn\'t we have to start all over again with new numbers for our Weights and Biases (we cannot give a new number to Feature, but more on that later).'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'Here\'s a journey that Feature has to make. The genie at the end is a ',
+	                    genieNumber,
+	                    '-genie, so see if you can change the numbers of the Weights to get Feature to have the right number.'
 	                )
 	            );
 	        }
@@ -29494,6 +29571,13 @@
 
 /***/ },
 /* 472 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"blocks":"App__blocks___379kB"};
+
+/***/ },
+/* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29509,7 +29593,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Penguin = __webpack_require__(473);
+	var _Penguin = __webpack_require__(474);
 	
 	var _Penguin2 = _interopRequireDefault(_Penguin);
 	
@@ -29568,18 +29652,147 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 473 */
+/* 474 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Penguin__container___1Csui","penguin":"Penguin__penguin___8FZiW","number":"Penguin__number___DzjID"};
 
 /***/ },
-/* 474 */
+/* 475 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Rhino = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(300);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Rhino = __webpack_require__(476);
+	
+	var _Rhino2 = _interopRequireDefault(_Rhino);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Rhino = exports.Rhino = function (_React$Component) {
+	    _inherits(Rhino, _React$Component);
+	
+	    function Rhino(props) {
+	        _classCallCheck(this, Rhino);
+	
+	        var _this = _possibleConstructorReturn(this, (Rhino.__proto__ || Object.getPrototypeOf(Rhino)).call(this, props));
+	
+	        _this.state = { number: props.number };
+	        _this.changeNumber = _this.changeNumber.bind(_this);
+	        return _this;
+	    }
+	
+	    _createClass(Rhino, [{
+	        key: 'changeNumber',
+	        value: function changeNumber(value) {
+	            this.setState({ number: value });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+	
+	            var number = this.state.number;
+	
+	
+	            return _react2.default.createElement(
+	                'div',
+	                { className: _Rhino2.default.container },
+	                _react2.default.createElement('input', {
+	                    type: 'number',
+	                    className: _Rhino2.default.number,
+	                    value: number,
+	                    max: '99',
+	                    min: '0',
+	                    onChange: function onChange(e) {
+	                        return _this2.changeNumber(e.target.value);
+	                    } }),
+	                _react2.default.createElement('img', { className: _Rhino2.default.rhino, src: 'src/images/rhino.svg' })
+	            );
+	        }
+	    }]);
+	
+	    return Rhino;
+	}(_react2.default.Component);
+
+/***/ },
+/* 476 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"blocks":"App__blocks___379kB"};
+	module.exports = {"rhino":"Rhino__rhino___1Id4I"};
+
+/***/ },
+/* 477 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Shaman = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(300);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Shaman = __webpack_require__(478);
+	
+	var _Shaman2 = _interopRequireDefault(_Shaman);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Shaman = exports.Shaman = function (_React$Component) {
+	    _inherits(Shaman, _React$Component);
+	
+	    function Shaman() {
+	        _classCallCheck(this, Shaman);
+	
+	        return _possibleConstructorReturn(this, (Shaman.__proto__ || Object.getPrototypeOf(Shaman)).apply(this, arguments));
+	    }
+	
+	    _createClass(Shaman, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement('div', { className: _Shaman2.default.shaman });
+	        }
+	    }]);
+	
+	    return Shaman;
+	}(_react2.default.Component);
+
+/***/ },
+/* 478 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
