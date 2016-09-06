@@ -1,21 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Penguin, Rhino } from '../../components';
+
 import styles from './App.pcss';
 
-export class App extends React.Component {
-
-    constructor(props){
-        super(props);
-
-        this.state = {
-            penguinNumber: 5,
-            genieNumber: 6,
-            rhinoNumber: 2
-        };
-    }
+class AppComponent extends React.Component {
 
     render() {
-        let { penguinNumber, genieNumber, rhinoNumber } = this.state;
+        let { penguinNumber, genieNumber, rhinoNumber } = this.props;
 
         return (
             <div className={styles.app}>
@@ -61,4 +53,15 @@ export class App extends React.Component {
             </div>
         );
     }
+    
 }
+
+function mapStateToProps(state) {
+    return state;
+}
+
+function mapDispatchToState(dispatch) {}
+
+export const App = connect(
+    mapStateToProps
+)(AppComponent);
