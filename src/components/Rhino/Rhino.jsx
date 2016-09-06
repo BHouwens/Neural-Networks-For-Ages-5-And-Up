@@ -1,34 +1,39 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styles from './Rhino.pcss';
 
-export class Rhino extends React.Component {
+class RhinoComponent extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.state = { number : props.number };
-        this.changeNumber = this.changeNumber.bind(this);
-    }
-
-    changeNumber(value) {
-        this.setState({ number: value });
     }
 
     render() {
-        let { number } = this.state;
+        let { number, disabled } = this.props;
 
         return (
             <div className={styles.container}>
-                <input 
-                    type="number" 
-                    className={styles.number} 
-                    value={number} 
-                    max="99"
-                    min="0"
-                    onChange={e => this.changeNumber(e.target.value) }/>
+                <div className={styles.inputContainer}>
+                    <input 
+                        type="number" 
+                        className={styles.number} 
+                        value={number} 
+                        max="99"
+                        min="0"
+                        disabled={disabled}
+                        onChange={e => this.changeNumber(e.target.value) }/>
+                </div>
 
-                <img className={styles.rhino} src="src/images/rhino.svg" />
+                <img className={styles.rhino} src="src/images/rhino.svg" alt="This is a picture of the rhino" />
             </div>
         );
     }
 }
+
+function mapStateToProps(state) {
+    return { number: state.rhinoNumber };
+}
+
+export const Rhino = connect(
+    mapStateToProps
+)(RhinoComponent);

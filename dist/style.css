@@ -1,65 +1,55 @@
-.App__blocks___379kB{
-    padding: 0;
-    margin: 0;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    -webkit-flex-flow: row wrap;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
+@import url(https://fonts.googleapis.com/css?family=Lato:700|Slabo+27px);body{
+    background: #f2f2f2;
+    color: #262525;
 }
 
-.App__blocks___379kB li {
-    display: inline-block;
-    list-style: none;
-    -webkit-flex-basis: 100%;
-        -ms-flex-preferred-size: 100%;
-            flex-basis: 100%;
-    width: 0;
-    margin-bottom: 20px;
+.App__app___1qnxQ{
+    max-width: 900px;
+    width: 90%;
+    margin: 30px auto;
 }
 
-.App__blocks___379kB li:not(:nth-child(3n + 1)){
-    margin-left: 20px;
+h1{
+    font-size: calc(30px + 20 * ((100vw - 420px) / 860));
+    font-family: 'Lato', sans-serif;
 }
 
-p{
-    font-size: calc(15px + 3 * ((100vw - 420px) / 860));
+p{  
+    line-height: 1.4;
+    margin: 30px 0;
+    font-family: 'Slabo 27px', serif;
+    font-size: calc(18px + 6 * ((100vw - 420px) / 860));
 }
 
-@media all and (min-width: 400px){
-
-    .App__blocks___379kB li{
-        -webkit-flex-basis: 50%;
-        -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
-    }
-}
-
-@media all and (min-width: 700px){
-
-    .App__blocks___379kB li{
-        -webkit-flex-basis: calc(33.3% - 20px);
-        -ms-flex-preferred-size: calc(33.3% - 20px);
-        flex-basis: calc(33.3% - 20px);
-    }
+.App__penguinHighlight___2uU47{
+    color: #00aae6;
 }
 
 @media screen and (min-width: 1280px){
 
+    h1{
+        font-size: 50px;
+    }
+
     p{
-        font-size: 18px;
+        font-size: 24px;
     }
 }
 
 @media screen and (max-width: 420px){
 
+    h1{
+        font-size: 30px;
+    }
+
     p{
-        font-size: 15px;
+        font-size: 18px;
     }
 }.Penguin__container___1Csui{
     position: relative;
+    display: block;
+    width: 180px;
+    margin: 40px auto;
 }
 
 .Penguin__penguin___8FZiW{
@@ -86,8 +76,35 @@ p{
 
 .Penguin__number___DzjID:focus{
     color: rgb(26,26,26);
-}.Rhino__rhino___1Id4I{
-    width: 180px;
+}.Rhino__container___2SChu{
+    position: relative;
+    display: inline-block;
+}
+
+.Rhino__rhino___1Id4I{
+    width: 260px;
     height: auto;
+}
+
+.Rhino__inputContainer___tFHWK{
+    position: absolute;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.Rhino__number___1Rg0B{
+    text-align: center;
+    max-width: 150px;
+    display: block;
+    background: transparent;
+    border: none;
+    font-size: 70px;
+    box-sizing: border-box;
+    outline: none;
+    margin-left: 140px;
+}
+
+.Rhino__number___1Rg0B:focus{
+    color: rgb(26,26,26);
 }
 /*# sourceMappingURL=style.css.map*/

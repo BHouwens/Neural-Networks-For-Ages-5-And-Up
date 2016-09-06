@@ -1,31 +1,28 @@
-.blocks{
-    padding: 0;
-    margin: 0;
-    display: flex;
-    position: relative;
-    flex-flow: row wrap;
-    
-    li {
-        display: inline-block;
-        list-style: none;
-        flex-basis: 100%;
-        width: 0;
-        margin-bottom: 20px;
+@import 'https://fonts.googleapis.com/css?family=Lato:700|Slabo+27px';
 
-        @media all and (min-width: 400px) {
-            flex-basis: 50%;
-        }
-
-        @media all and (min-width: 700px) {
-            flex-basis: calc(33.3% - 20px);
-        }
-    }
-
-    li:not(:nth-child(3n + 1)){
-        margin-left: 20px;
-    }
+:global body{
+    background: #f2f2f2;
+    color: #262525;
 }
 
-p{
-    font-size: responsive 15px 18px;
+.app{
+    max-width: 900px;
+    width: 90%;
+    margin: 30px auto;
+}
+
+h1{
+    font-size: responsive 30px 50px;
+    font-family: 'Lato', sans-serif;
+}
+
+p{  
+    line-height: 1.4;
+    margin: 30px 0;
+    font-family: 'Slabo 27px', serif;
+    font-size: responsive 18px 24px;
+}
+
+.penguinHighlight{
+    color: #00aae6;
 }

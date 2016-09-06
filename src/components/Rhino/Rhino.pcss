@@ -1,4 +1,31 @@
+.container{
+    position: relative;
+    display: inline-block;
+}
+
 .rhino{
-    width: 180px;
+    width: 260px;
     height: auto;
+}
+
+.inputContainer{
+    position: absolute;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.number{
+    text-align: center;
+    max-width: 150px;
+    display: block;
+    background: transparent;
+    border: none;
+    font-size: 70px;
+    box-sizing: border-box;
+    outline: none;
+    margin-left: 140px;
+
+    &:focus{
+        color: lighten(black, 10%);
+    }
 }

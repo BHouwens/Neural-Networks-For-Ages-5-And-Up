@@ -1,21 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styles from './Penguin.pcss';
 
-export class Penguin extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = { number : props.number };
-        this.changeNumber = this.changeNumber.bind(this);
-    }
-
-    changeNumber(value) {
-        this.setState({ number: value });
-    }
+class PenguinComponent extends React.Component {
 
     render() {
-        let { number } = this.state;
+        let { number, disabled, onPenguinChange } = this.props;
 
         return (
             <div className={styles.container}>
@@ -25,10 +15,20 @@ export class Penguin extends React.Component {
                     value={number} 
                     max="99"
                     min="0"
-                    onChange={e => this.changeNumber(e.target.value) }/>
+                    disabled={disabled}
+                    onChange={e => onPenguinChange(e.target.value) }/>
 
-                <img className={styles.penguin} src="src/images/penguin.svg" />
+                <img className={styles.penguin} src="src/images/penguin.svg" alt="This is a picture of the baby penguin" />
             </div>
         );
     }
+
 }
+
+function mapStateToProps(state) {
+    return { number: state.penguinNumber };
+}
+
+export const Penguin = connect(
+    mapStateToProps
+)(PenguinComponent);

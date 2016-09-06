@@ -8204,7 +8204,7 @@
 	
 	var _components = __webpack_require__(494);
 	
-	var _reducer = __webpack_require__(503);
+	var _reducer = __webpack_require__(504);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -31028,7 +31028,7 @@
 	  });
 	});
 	
-	var _Penguin = __webpack_require__(497);
+	var _Penguin = __webpack_require__(498);
 	
 	Object.keys(_Penguin).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31040,7 +31040,7 @@
 	  });
 	});
 	
-	var _Rhino = __webpack_require__(499);
+	var _Rhino = __webpack_require__(500);
 	
 	Object.keys(_Rhino).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31052,7 +31052,7 @@
 	  });
 	});
 	
-	var _Shaman = __webpack_require__(501);
+	var _Shaman = __webpack_require__(502);
 	
 	Object.keys(_Shaman).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31083,9 +31083,11 @@
 	
 	var _reactRedux = __webpack_require__(347);
 	
+	var _actions = __webpack_require__(496);
+	
 	var _components = __webpack_require__(494);
 	
-	var _App = __webpack_require__(496);
+	var _App = __webpack_require__(497);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -31113,6 +31115,7 @@
 	            var penguinNumber = _props.penguinNumber;
 	            var genieNumber = _props.genieNumber;
 	            var rhinoNumber = _props.rhinoNumber;
+	            var onPenguinChange = _props.onPenguinChange;
 	
 	
 	            return _react2.default.createElement(
@@ -31126,21 +31129,28 @@
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'This is a baby penguin. He looks like your average baby penguin, but you\'ll see he has a number attached to him. In this case he is a ',
-	                    penguinNumber,
-	                    '-penguin, but you can click on his number and change it to whatever you want.'
+	                    'This is a baby penguin. She looks like your average baby penguin, but you\'ll see she has a number attached to her. In this case she is a ',
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: _App2.default.penguinHighlight },
+	                        penguinNumber,
+	                        '-penguin'
+	                    ),
+	                    ', but you can click on her number and change it to whatever you want.'
 	                ),
-	                _react2.default.createElement(_components.Penguin, { number: penguinNumber }),
+	                _react2.default.createElement(_components.Penguin, { disabled: false, onPenguinChange: onPenguinChange }),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'Our penguin, let\'s call him Feature (stupid, I know, but that\'s his name), has to make an epic journey that consists of a bunch of paths connected by sign posts. He think he\'s pretty bad-ass and can make his way along these paths and past these sign posts on his own, but he\'s a baby so what does he know. What he really needs is friends along the way to help him, like these guys:'
+	                    'Our penguin, let\'s call her Feature (stupid, I know, but that\'s her name), has to make an epic journey that consists of a bunch of paths connected by sign posts. She think she\'s pretty bad-ass and can make her way along these paths and past these sign posts on her own, but she\'s a baby so what does she know. What she really needs is friends along the way to help her, like these guys:'
 	                ),
-	                _react2.default.createElement(_components.Rhino, { number: rhinoNumber }),
+	                _react2.default.createElement(_components.Rhino, { disabled: true }),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'The rhino is called Weight (maybe because he\'s heavy?) and the fly is called Bias. When our three friends get to the first sign post, though, they meet a shaman who looks kind of like this:'
+	                    'The rhino is called Weight (maybe because he\'s heavy?) and this one is a ',
+	                    rhinoNumber,
+	                    '-rhino. Why is he green? It\'s actually not really clear. The fly is called Bias. When our three friends get to the first sign post, though, they meet a shaman who looks kind of like this:'
 	                ),
 	                _react2.default.createElement(
 	                    'p',
@@ -31183,19 +31193,50 @@
 	    return state;
 	}
 	
-	function mapDispatchToState(dispatch) {}
+	function mapDispatchToState(dispatch) {
+	    return {
+	        onPenguinChange: function onPenguinChange(value) {
+	            dispatch((0, _actions.changePenguin)(value));
+	        }
+	    };
+	}
 	
-	var App = exports.App = (0, _reactRedux.connect)(mapStateToProps)(AppComponent);
+	var App = exports.App = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToState)(AppComponent);
 
 /***/ },
 /* 496 */
 /***/ function(module, exports) {
 
-	// removed by extract-text-webpack-plugin
-	module.exports = {"blocks":"App__blocks___379kB"};
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.changePenguin = changePenguin;
+	exports.changeRhino = changeRhino;
+	function changePenguin(value) {
+	    return {
+	        type: 'CHANGE_PENGUIN',
+	        value: value
+	    };
+	}
+	
+	function changeRhino(value) {
+	    return {
+	        type: 'CHANGE_RHINO',
+	        value: value
+	    };
+	}
 
 /***/ },
 /* 497 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47"};
+
+/***/ },
+/* 498 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31211,7 +31252,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Penguin = __webpack_require__(498);
+	var _reactRedux = __webpack_require__(347);
+	
+	var _Penguin = __webpack_require__(499);
 	
 	var _Penguin2 = _interopRequireDefault(_Penguin);
 	
@@ -31223,30 +31266,22 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var Penguin = exports.Penguin = function (_React$Component) {
-	    _inherits(Penguin, _React$Component);
+	var PenguinComponent = function (_React$Component) {
+	    _inherits(PenguinComponent, _React$Component);
 	
-	    function Penguin(props) {
-	        _classCallCheck(this, Penguin);
+	    function PenguinComponent() {
+	        _classCallCheck(this, PenguinComponent);
 	
-	        var _this = _possibleConstructorReturn(this, (Penguin.__proto__ || Object.getPrototypeOf(Penguin)).call(this, props));
-	
-	        _this.state = { number: props.number };
-	        _this.changeNumber = _this.changeNumber.bind(_this);
-	        return _this;
+	        return _possibleConstructorReturn(this, (PenguinComponent.__proto__ || Object.getPrototypeOf(PenguinComponent)).apply(this, arguments));
 	    }
 	
-	    _createClass(Penguin, [{
-	        key: 'changeNumber',
-	        value: function changeNumber(value) {
-	            this.setState({ number: value });
-	        }
-	    }, {
+	    _createClass(PenguinComponent, [{
 	        key: 'render',
 	        value: function render() {
-	            var _this2 = this;
-	
-	            var number = this.state.number;
+	            var _props = this.props;
+	            var number = _props.number;
+	            var disabled = _props.disabled;
+	            var onPenguinChange = _props.onPenguinChange;
 	
 	
 	            return _react2.default.createElement(
@@ -31258,26 +31293,33 @@
 	                    value: number,
 	                    max: '99',
 	                    min: '0',
+	                    disabled: disabled,
 	                    onChange: function onChange(e) {
-	                        return _this2.changeNumber(e.target.value);
+	                        return onPenguinChange(e.target.value);
 	                    } }),
-	                _react2.default.createElement('img', { className: _Penguin2.default.penguin, src: 'src/images/penguin.svg' })
+	                _react2.default.createElement('img', { className: _Penguin2.default.penguin, src: 'src/images/penguin.svg', alt: 'This is a picture of the baby penguin' })
 	            );
 	        }
 	    }]);
 	
-	    return Penguin;
+	    return PenguinComponent;
 	}(_react2.default.Component);
+	
+	function mapStateToProps(state) {
+	    return { number: state.penguinNumber };
+	}
+	
+	var Penguin = exports.Penguin = (0, _reactRedux.connect)(mapStateToProps)(PenguinComponent);
 
 /***/ },
-/* 498 */
+/* 499 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Penguin__container___1Csui","penguin":"Penguin__penguin___8FZiW","number":"Penguin__number___DzjID"};
 
 /***/ },
-/* 499 */
+/* 500 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31293,7 +31335,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Rhino = __webpack_require__(500);
+	var _reactRedux = __webpack_require__(347);
+	
+	var _Rhino = __webpack_require__(501);
 	
 	var _Rhino2 = _interopRequireDefault(_Rhino);
 	
@@ -31305,61 +31349,65 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var Rhino = exports.Rhino = function (_React$Component) {
-	    _inherits(Rhino, _React$Component);
+	var RhinoComponent = function (_React$Component) {
+	    _inherits(RhinoComponent, _React$Component);
 	
-	    function Rhino(props) {
-	        _classCallCheck(this, Rhino);
+	    function RhinoComponent(props) {
+	        _classCallCheck(this, RhinoComponent);
 	
-	        var _this = _possibleConstructorReturn(this, (Rhino.__proto__ || Object.getPrototypeOf(Rhino)).call(this, props));
-	
-	        _this.state = { number: props.number };
-	        _this.changeNumber = _this.changeNumber.bind(_this);
-	        return _this;
+	        return _possibleConstructorReturn(this, (RhinoComponent.__proto__ || Object.getPrototypeOf(RhinoComponent)).call(this, props));
 	    }
 	
-	    _createClass(Rhino, [{
-	        key: 'changeNumber',
-	        value: function changeNumber(value) {
-	            this.setState({ number: value });
-	        }
-	    }, {
+	    _createClass(RhinoComponent, [{
 	        key: 'render',
 	        value: function render() {
 	            var _this2 = this;
 	
-	            var number = this.state.number;
+	            var _props = this.props;
+	            var number = _props.number;
+	            var disabled = _props.disabled;
 	
 	
 	            return _react2.default.createElement(
 	                'div',
 	                { className: _Rhino2.default.container },
-	                _react2.default.createElement('input', {
-	                    type: 'number',
-	                    className: _Rhino2.default.number,
-	                    value: number,
-	                    max: '99',
-	                    min: '0',
-	                    onChange: function onChange(e) {
-	                        return _this2.changeNumber(e.target.value);
-	                    } }),
-	                _react2.default.createElement('img', { className: _Rhino2.default.rhino, src: 'src/images/rhino.svg' })
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: _Rhino2.default.inputContainer },
+	                    _react2.default.createElement('input', {
+	                        type: 'number',
+	                        className: _Rhino2.default.number,
+	                        value: number,
+	                        max: '99',
+	                        min: '0',
+	                        disabled: disabled,
+	                        onChange: function onChange(e) {
+	                            return _this2.changeNumber(e.target.value);
+	                        } })
+	                ),
+	                _react2.default.createElement('img', { className: _Rhino2.default.rhino, src: 'src/images/rhino.svg', alt: 'This is a picture of the rhino' })
 	            );
 	        }
 	    }]);
 	
-	    return Rhino;
+	    return RhinoComponent;
 	}(_react2.default.Component);
-
-/***/ },
-/* 500 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-	module.exports = {"rhino":"Rhino__rhino___1Id4I"};
+	
+	function mapStateToProps(state) {
+	    return { number: state.rhinoNumber };
+	}
+	
+	var Rhino = exports.Rhino = (0, _reactRedux.connect)(mapStateToProps)(RhinoComponent);
 
 /***/ },
 /* 501 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"Rhino__container___2SChu","rhino":"Rhino__rhino___1Id4I","inputContainer":"Rhino__inputContainer___tFHWK","number":"Rhino__number___1Rg0B"};
+
+/***/ },
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31375,7 +31423,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Shaman = __webpack_require__(502);
+	var _Shaman = __webpack_require__(503);
 	
 	var _Shaman2 = _interopRequireDefault(_Shaman);
 	
@@ -31407,13 +31455,13 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 502 */
+/* 503 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 503 */
+/* 504 */
 /***/ function(module, exports) {
 
 	'use strict';
