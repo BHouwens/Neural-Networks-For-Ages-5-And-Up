@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { changePenguin, changeRhino } from '../../actions';
-import { Penguin, Rhino, Shaman } from '../../components';
+import { Penguin, Rhino, Shaman, Fly, Genie } from '../../components';
 
 import styles from './App.pcss';
 
@@ -25,7 +25,10 @@ class AppComponent extends React.Component {
                     and past these sign posts on her own, but she's a baby so what does she know. What she really needs is friends along the way to help her, like these guys:
                 </p> 
 
-                <Rhino disabled={true} />
+                <section className={styles.friends}>
+                    <Rhino disabled={true} />
+                    <Fly />
+                </section>
 
                 <p>
                     The rhino is called Weight (maybe because he's heavy?) and this one is a {rhinoNumber}-rhino. Why is he green? It's actually not really clear. The fly is called Bias. When our three friends get to the first sign post, though, they meet a shaman who looks kind of like this:
@@ -33,24 +36,27 @@ class AppComponent extends React.Component {
 
                 <Shaman />
 
-                <p>The shaman casts a special spell on all three of our friends and merges them all into a <i>new</i> penguin. Weird!</p>
+                <p>The shaman casts a special spell on all three of our friends and merges them all into a <i>new</i> penguin. More POWER!</p>
 
                 {/*-- show transformation --*/}
 
                 <p>
-                    Our new penguin, with a new number, makes his way on the next path and, if it's not the last one in the journey, is joined by another Weight and another Bias. 
+                    Our new penguin, with a new number, makes her way on the next path and is joined by another Weight and another Bias. 
                     They come to another shaman at the next sign post and the process repeats.
                 </p>
 
                 <p>
-                    The last path in the journey is a bit different; instead of a shaman at the end, there's a genie! The genie also has a number (in this case it's a {genieNumber}-genie). The 
-                    genie performs another kind of spell to transform our penguin for the very last time. If our penguin has the same number as the genie after the spell, then he wins! If he doesn't 
-                    we have to start all over again with new numbers for our Weights and Biases (we cannot give a new number to Feature, but more on that later).
-                </p> 
-                
+                    The last path in the journey is a bit different; instead of a shaman at the end, there's a genie and a red frog! 
+                </p>
+
+                <Genie />
+
                 <p>
-                    Here's a journey that Feature has to make. The genie at the end is a {genieNumber}-genie, so see if you can change the numbers of the Weights to get Feature to have the right number.
-                </p>           
+                    The genie performs a special kind of spell that transforms our friends for the very last time, but this time they come out 
+                    looking like a frog as well (although it is a normal-looking frog)! The red frog is then compared to the new, normal frog. If 
+                    they're the same then we're all good, but if they're not then our poor penguin has to start again, although this time with new
+                    numbers for the Weights and Biases.
+                </p>       
             </div>
         );
     }

@@ -31075,6 +31075,18 @@
 	    }
 	  });
 	});
+	
+	var _Genie = __webpack_require__(507);
+	
+	Object.keys(_Genie).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _Genie[key];
+	    }
+	  });
+	});
 
 /***/ },
 /* 495 */
@@ -31156,7 +31168,12 @@
 	                    null,
 	                    'Our penguin, let\'s call her Feature (stupid, I know, but that\'s her name), has to make an epic journey that consists of a bunch of paths connected by sign posts. She think she\'s pretty bad-ass and can make her way along these paths and past these sign posts on her own, but she\'s a baby so what does she know. What she really needs is friends along the way to help her, like these guys:'
 	                ),
-	                _react2.default.createElement(_components.Rhino, { disabled: true }),
+	                _react2.default.createElement(
+	                    'section',
+	                    { className: _App2.default.friends },
+	                    _react2.default.createElement(_components.Rhino, { disabled: true }),
+	                    _react2.default.createElement(_components.Fly, null)
+	                ),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
@@ -31174,26 +31191,23 @@
 	                        null,
 	                        'new'
 	                    ),
-	                    ' penguin. Weird!'
+	                    ' penguin. More POWER!'
 	                ),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'Our new penguin, with a new number, makes his way on the next path and, if it\'s not the last one in the journey, is joined by another Weight and another Bias. They come to another shaman at the next sign post and the process repeats.'
+	                    'Our new penguin, with a new number, makes her way on the next path and is joined by another Weight and another Bias. They come to another shaman at the next sign post and the process repeats.'
 	                ),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'The last path in the journey is a bit different; instead of a shaman at the end, there\'s a genie! The genie also has a number (in this case it\'s a ',
-	                    genieNumber,
-	                    '-genie). The genie performs another kind of spell to transform our penguin for the very last time. If our penguin has the same number as the genie after the spell, then he wins! If he doesn\'t we have to start all over again with new numbers for our Weights and Biases (we cannot give a new number to Feature, but more on that later).'
+	                    'The last path in the journey is a bit different; instead of a shaman at the end, there\'s a genie and a red frog!'
 	                ),
+	                _react2.default.createElement(_components.Genie, null),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'Here\'s a journey that Feature has to make. The genie at the end is a ',
-	                    genieNumber,
-	                    '-genie, so see if you can change the numbers of the Weights to get Feature to have the right number.'
+	                    'The genie performs a special kind of spell that transforms our friends for the very last time, but this time they come out looking like a frog as well (although it is a normal-looking frog)! The red frog is then compared to the new, normal frog. If they\'re the same then we\'re all good, but if they\'re not then our poor penguin has to start again, although this time with new numbers for the Weights and Biases.'
 	                )
 	            );
 	        }
@@ -31246,7 +31260,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47"};
+	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","friends":"App__friends___2pHx2"};
 
 /***/ },
 /* 498 */
@@ -31589,6 +31603,62 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+	module.exports = {"fly":"Fly__fly___gwGvi"};
+
+/***/ },
+/* 507 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Genie = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(300);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Genie = __webpack_require__(508);
+	
+	var _Genie2 = _interopRequireDefault(_Genie);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Genie = exports.Genie = function (_React$Component) {
+	    _inherits(Genie, _React$Component);
+	
+	    function Genie() {
+	        _classCallCheck(this, Genie);
+	
+	        return _possibleConstructorReturn(this, (Genie.__proto__ || Object.getPrototypeOf(Genie)).apply(this, arguments));
+	    }
+	
+	    _createClass(Genie, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement('img', { className: _Genie2.default.genie, src: 'src/images/genie.svg' });
+	        }
+	    }]);
+	
+	    return Genie;
+	}(_react2.default.Component);
+
+/***/ },
+/* 508 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"genie":"Genie__genie___1562y"};
 
 /***/ }
 /******/ ]);

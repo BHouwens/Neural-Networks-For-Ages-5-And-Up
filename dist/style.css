@@ -25,6 +25,23 @@ p{
     color: #00aae6;
 }
 
+.App__friends___2pHx2:before,
+.App__friends___2pHx2:after{
+    content: ' ';
+    display: table;
+}
+
+.App__friends___2pHx2:after{
+    clear: both;
+}
+
+.App__friends___2pHx2{
+    max-width: 325px;
+    display: block;
+    margin: 40px auto;
+    zoom: 1;
+}
+
 @media screen and (min-width: 1280px){
 
     h1{
@@ -79,6 +96,7 @@ p{
 }.Rhino__container___2SChu{
     position: relative;
     display: inline-block;
+    margin-left: -80px;
 }
 
 .Rhino__rhino___1Id4I{
@@ -108,6 +126,16 @@ p{
     color: rgb(26,26,26);
 }.Shaman__shaman___105r8{
     width: 300px;
+    margin: 40px auto;
+    display: block;
+}.Fly__fly___gwGvi{
+    width: 60px;
+    margin-top: -150px;
+    margin-left: 220px;
+    margin-bottom: 100px;
+    display: block;
+}.Genie__genie___1562y{
+    width: 250px;
     margin: 40px auto;
     display: block;
 }
