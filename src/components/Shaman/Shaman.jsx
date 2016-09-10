@@ -3,10 +3,6 @@ import styles from './Shaman.pcss';
 
 export class Shaman extends React.Component {
     render() {
-        return (
-            <div className={styles.shaman}>
-                
-            </div>
-        );
+        return <img className={styles.shaman} src="src/images/shaman.svg" alt="This is a picture of the shaman" />;
     }
 }

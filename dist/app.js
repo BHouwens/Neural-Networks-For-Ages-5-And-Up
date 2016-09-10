@@ -31063,6 +31063,18 @@
 	    }
 	  });
 	});
+	
+	var _Fly = __webpack_require__(505);
+	
+	Object.keys(_Fly).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _Fly[key];
+	    }
+	  });
+	});
 
 /***/ },
 /* 495 */
@@ -31152,6 +31164,7 @@
 	                    rhinoNumber,
 	                    '-rhino. Why is he green? It\'s actually not really clear. The fly is called Bias. When our three friends get to the first sign post, though, they meet a shaman who looks kind of like this:'
 	                ),
+	                _react2.default.createElement(_components.Shaman, null),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
@@ -31447,7 +31460,7 @@
 	    _createClass(Shaman, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement('div', { className: _Shaman2.default.shaman });
+	            return _react2.default.createElement('img', { className: _Shaman2.default.shaman, src: 'src/images/shaman.svg', alt: 'This is a picture of the shaman' });
 	        }
 	    }]);
 	
@@ -31459,6 +31472,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+	module.exports = {"shaman":"Shaman__shaman___105r8"};
 
 /***/ },
 /* 504 */
@@ -31521,6 +31535,60 @@
 	            return state;
 	    }
 	}
+
+/***/ },
+/* 505 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Fly = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(300);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Fly = __webpack_require__(506);
+	
+	var _Fly2 = _interopRequireDefault(_Fly);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Fly = exports.Fly = function (_React$Component) {
+	    _inherits(Fly, _React$Component);
+	
+	    function Fly() {
+	        _classCallCheck(this, Fly);
+	
+	        return _possibleConstructorReturn(this, (Fly.__proto__ || Object.getPrototypeOf(Fly)).apply(this, arguments));
+	    }
+	
+	    _createClass(Fly, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement('img', { className: _Fly2.default.fly, src: 'src/images/fly.svg', alt: 'This is a picture of the Fly' });
+	        }
+	    }]);
+	
+	    return Fly;
+	}(_react2.default.Component);
+
+/***/ },
+/* 506 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

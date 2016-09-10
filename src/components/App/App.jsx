@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { changePenguin, changeRhino } from '../../actions';
-import { Penguin, Rhino } from '../../components';
+import { Penguin, Rhino, Shaman } from '../../components';
 
 import styles from './App.pcss';
 
@@ -31,7 +31,7 @@ class AppComponent extends React.Component {
                     The rhino is called Weight (maybe because he's heavy?) and this one is a {rhinoNumber}-rhino. Why is he green? It's actually not really clear. The fly is called Bias. When our three friends get to the first sign post, though, they meet a shaman who looks kind of like this:
                 </p>
 
-                {/*-- insert shaman --*/}
+                <Shaman />
 
                 <p>The shaman casts a special spell on all three of our friends and merges them all into a <i>new</i> penguin. Weird!</p>
 
