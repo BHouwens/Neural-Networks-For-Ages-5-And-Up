@@ -8204,7 +8204,7 @@
 	
 	var _components = __webpack_require__(494);
 	
-	var _reducer = __webpack_require__(504);
+	var _reducer = __webpack_require__(510);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -31064,7 +31064,7 @@
 	  });
 	});
 	
-	var _Fly = __webpack_require__(505);
+	var _Fly = __webpack_require__(504);
 	
 	Object.keys(_Fly).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31076,7 +31076,19 @@
 	  });
 	});
 	
-	var _Genie = __webpack_require__(507);
+	var _Road = __webpack_require__(506);
+	
+	Object.keys(_Road).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _Road[key];
+	    }
+	  });
+	});
+	
+	var _Genie = __webpack_require__(508);
 	
 	Object.keys(_Genie).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31115,6 +31127,10 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
+	var _roadPenguin = __webpack_require__(512);
+	
+	var _roadPenguin2 = _interopRequireDefault(_roadPenguin);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31140,6 +31156,7 @@
 	            var genieNumber = _props.genieNumber;
 	            var rhinoNumber = _props.rhinoNumber;
 	            var onPenguinChange = _props.onPenguinChange;
+	            var flyNumber = _props.flyNumber;
 	
 	
 	            return _react2.default.createElement(
@@ -31166,20 +31183,33 @@
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'Our penguin, let\'s call her Feature (stupid, I know, but that\'s her name), has to make an epic journey that consists of a bunch of paths connected by sign posts. She think she\'s pretty bad-ass and can make her way along these paths and past these sign posts on her own, but she\'s a baby so what does she know. What she really needs is friends along the way to help her, like these guys:'
+	                    'Our penguin, let\'s call her Feature (stupid, I know, but that\'s her name), has to make an epic journey that consists of a bunch of paths connected by sign posts. Check it out:'
+	                ),
+	                _react2.default.createElement(
+	                    'section',
+	                    { className: _App2.default.penguinOnPath },
+	                    _react2.default.createElement(_components.Penguin, { disabled: true, styles: _roadPenguin2.default, onPenguinChange: onPenguinChange }),
+	                    _react2.default.createElement(_components.Road, null)
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'She think she\'s pretty bad-ass and can make her way along these paths and past these sign posts on her own, but she\'s a baby so what does she know. What she really needs is friends along the way to help her, like these guys:'
 	                ),
 	                _react2.default.createElement(
 	                    'section',
 	                    { className: _App2.default.friends },
 	                    _react2.default.createElement(_components.Rhino, { disabled: true }),
-	                    _react2.default.createElement(_components.Fly, null)
+	                    _react2.default.createElement(_components.Fly, { disabled: true })
 	                ),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
 	                    'The rhino is called Weight (maybe because he\'s heavy?) and this one is a ',
 	                    rhinoNumber,
-	                    '-rhino. Why is he green? It\'s actually not really clear. The fly is called Bias. When our three friends get to the first sign post, though, they meet a shaman who looks kind of like this:'
+	                    '-rhino. Why is he green? It\'s actually not really clear. The fly is called Bias and he\'s a ',
+	                    flyNumber,
+	                    '-fly. When our three friends get to the first sign post, though, they meet a shaman who looks kind of like this:'
 	                ),
 	                _react2.default.createElement(_components.Shaman, null),
 	                _react2.default.createElement(
@@ -31260,7 +31290,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","friends":"App__friends___2pHx2"};
+	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb"};
 
 /***/ },
 /* 498 */
@@ -31280,6 +31310,8 @@
 	var _react2 = _interopRequireDefault(_react);
 	
 	var _reactRedux = __webpack_require__(347);
+	
+	var _utils = __webpack_require__(511);
 	
 	var _Penguin = __webpack_require__(499);
 	
@@ -31309,14 +31341,14 @@
 	            var number = _props.number;
 	            var disabled = _props.disabled;
 	            var onPenguinChange = _props.onPenguinChange;
-	
+	            var styles = this.props.styles ? (0, _utils.overrideCSS)(_Penguin2.default, this.props.styles) : _Penguin2.default;
 	
 	            return _react2.default.createElement(
 	                'div',
-	                { className: _Penguin2.default.container },
+	                { className: styles.container },
 	                _react2.default.createElement('input', {
 	                    type: 'number',
-	                    className: _Penguin2.default.number,
+	                    className: styles.number,
 	                    value: number,
 	                    max: '99',
 	                    min: '0',
@@ -31324,7 +31356,7 @@
 	                    onChange: function onChange(e) {
 	                        return onPenguinChange(e.target.value);
 	                    } }),
-	                _react2.default.createElement('img', { className: _Penguin2.default.penguin, src: 'src/images/penguin.svg', alt: 'This is a picture of the baby penguin' })
+	                _react2.default.createElement('img', { className: styles.penguin, src: 'src/images/penguin.svg', alt: 'This is a picture of the baby penguin' })
 	            );
 	        }
 	    }]);
@@ -31490,6 +31522,204 @@
 
 /***/ },
 /* 504 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Fly = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(300);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(347);
+	
+	var _Fly = __webpack_require__(505);
+	
+	var _Fly2 = _interopRequireDefault(_Fly);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var FlyComponent = function (_React$Component) {
+	    _inherits(FlyComponent, _React$Component);
+	
+	    function FlyComponent(props) {
+	        _classCallCheck(this, FlyComponent);
+	
+	        return _possibleConstructorReturn(this, (FlyComponent.__proto__ || Object.getPrototypeOf(FlyComponent)).call(this, props));
+	    }
+	
+	    _createClass(FlyComponent, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+	
+	            var _props = this.props;
+	            var number = _props.number;
+	            var disabled = _props.disabled;
+	
+	
+	            return _react2.default.createElement(
+	                'div',
+	                { className: _Fly2.default.container },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: _Fly2.default.inputContainer },
+	                    _react2.default.createElement('input', {
+	                        type: 'number',
+	                        className: _Fly2.default.number,
+	                        value: number,
+	                        max: '99',
+	                        min: '0',
+	                        disabled: disabled,
+	                        onChange: function onChange(e) {
+	                            return _this2.changeNumber(e.target.value);
+	                        } })
+	                ),
+	                _react2.default.createElement('img', { className: _Fly2.default.fly, src: 'src/images/fly.svg', alt: 'This is a picture of the fly' })
+	            );
+	        }
+	    }]);
+	
+	    return FlyComponent;
+	}(_react2.default.Component);
+	
+	function mapStateToProps(state) {
+	    return { number: state.flyNumber };
+	}
+	
+	var Fly = exports.Fly = (0, _reactRedux.connect)(mapStateToProps)(FlyComponent);
+
+/***/ },
+/* 505 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"Fly__container___4GIL3","fly":"Fly__fly___gwGvi","number":"Fly__number___3KXi4"};
+
+/***/ },
+/* 506 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Road = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(300);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Road = __webpack_require__(507);
+	
+	var _Road2 = _interopRequireDefault(_Road);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Road = exports.Road = function (_React$Component) {
+	    _inherits(Road, _React$Component);
+	
+	    function Road() {
+	        _classCallCheck(this, Road);
+	
+	        return _possibleConstructorReturn(this, (Road.__proto__ || Object.getPrototypeOf(Road)).apply(this, arguments));
+	    }
+	
+	    _createClass(Road, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement('img', { className: _Road2.default.road, src: 'src/images/network.svg' });
+	        }
+	    }]);
+	
+	    return Road;
+	}(_react2.default.Component);
+
+/***/ },
+/* 507 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"road":"Road__road___8966H"};
+
+/***/ },
+/* 508 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Genie = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(300);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Genie = __webpack_require__(509);
+	
+	var _Genie2 = _interopRequireDefault(_Genie);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Genie = exports.Genie = function (_React$Component) {
+	    _inherits(Genie, _React$Component);
+	
+	    function Genie() {
+	        _classCallCheck(this, Genie);
+	
+	        return _possibleConstructorReturn(this, (Genie.__proto__ || Object.getPrototypeOf(Genie)).apply(this, arguments));
+	    }
+	
+	    _createClass(Genie, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement('img', { className: _Genie2.default.genie, src: 'src/images/genie.svg' });
+	        }
+	    }]);
+	
+	    return Genie;
+	}(_react2.default.Component);
+
+/***/ },
+/* 509 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"genie":"Genie__genie___1562y"};
+
+/***/ },
+/* 510 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -31551,114 +31781,35 @@
 	}
 
 /***/ },
-/* 505 */
-/***/ function(module, exports, __webpack_require__) {
+/* 511 */
+/***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+		value: true
 	});
-	exports.Fly = undefined;
+	exports.overrideCSS = overrideCSS;
+	function overrideCSS(internalStyles, externalStyles) {
+		var newCSS = {};
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+		for (var entry in internalStyles) {
+			if (Object.keys(externalStyles).indexOf(entry) != -1) {
+				newCSS[entry] = internalStyles[entry] + " " + externalStyles[entry];
+			} else {
+				newCSS[entry] = internalStyles[entry];
+			}
+		}
 	
-	var _react = __webpack_require__(300);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _Fly = __webpack_require__(506);
-	
-	var _Fly2 = _interopRequireDefault(_Fly);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Fly = exports.Fly = function (_React$Component) {
-	    _inherits(Fly, _React$Component);
-	
-	    function Fly() {
-	        _classCallCheck(this, Fly);
-	
-	        return _possibleConstructorReturn(this, (Fly.__proto__ || Object.getPrototypeOf(Fly)).apply(this, arguments));
-	    }
-	
-	    _createClass(Fly, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement('img', { className: _Fly2.default.fly, src: 'src/images/fly.svg', alt: 'This is a picture of the Fly' });
-	        }
-	    }]);
-	
-	    return Fly;
-	}(_react2.default.Component);
+		return newCSS;
+	}
 
 /***/ },
-/* 506 */
+/* 512 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"fly":"Fly__fly___gwGvi"};
-
-/***/ },
-/* 507 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.Genie = undefined;
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(300);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _Genie = __webpack_require__(508);
-	
-	var _Genie2 = _interopRequireDefault(_Genie);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Genie = exports.Genie = function (_React$Component) {
-	    _inherits(Genie, _React$Component);
-	
-	    function Genie() {
-	        _classCallCheck(this, Genie);
-	
-	        return _possibleConstructorReturn(this, (Genie.__proto__ || Object.getPrototypeOf(Genie)).apply(this, arguments));
-	    }
-	
-	    _createClass(Genie, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement('img', { className: _Genie2.default.genie, src: 'src/images/genie.svg' });
-	        }
-	    }]);
-	
-	    return Genie;
-	}(_react2.default.Component);
-
-/***/ },
-/* 508 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-	module.exports = {"genie":"Genie__genie___1562y"};
+	module.exports = {"container":"roadPenguin__container___24oJj","number":"roadPenguin__number___3238w"};
 
 /***/ }
 /******/ ]);

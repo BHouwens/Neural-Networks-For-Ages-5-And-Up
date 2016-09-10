@@ -38,7 +38,21 @@ p{
 .App__friends___2pHx2{
     max-width: 325px;
     display: block;
-    margin: 40px auto;
+    margin: 70px auto 30px;
+    zoom: 1;
+}
+
+.App__penguinOnPath___2xCrb:before,
+.App__penguinOnPath___2xCrb:after{
+    content: ' ';
+    display: table;
+}
+
+.App__penguinOnPath___2xCrb:after{
+    clear: both;
+}
+
+.App__penguinOnPath___2xCrb{
     zoom: 1;
 }
 
@@ -62,6 +76,16 @@ p{
     p{
         font-size: 18px;
     }
+}.roadPenguin__container___24oJj{
+    float: left;
+    margin: 0 !important;
+    width: 100px !important;
+}
+
+.roadPenguin__number___3238w{
+    font-size: 50px !important;
+    bottom: 50px !important;
+    left: 7px !important;
 }.Penguin__container___1Csui{
     position: relative;
     display: block;
@@ -70,7 +94,7 @@ p{
 }
 
 .Penguin__penguin___8FZiW{
-    width: 180px;
+    width: 100%;
     height: auto;
 }
 
@@ -128,12 +152,38 @@ p{
     width: 300px;
     margin: 40px auto;
     display: block;
-}.Fly__fly___gwGvi{
+}.Fly__container___4GIL3{
+    position: relative;
+}
+
+.Fly__fly___gwGvi{
     width: 60px;
     margin-top: -150px;
     margin-left: 220px;
     margin-bottom: 100px;
     display: block;
+}
+
+.Fly__number___3KXi4{
+    top: 22px;
+    text-align: center;
+    display: block;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    right: 50px;
+    position: absolute;
+}
+
+.Fly__number___3KXi4:focus{
+    color: rgb(26,26,26);
+}.Road__road___8966H{
+    float: right;
+    width: 700px;
+    margin-right: 40px;
+    margin-top: 55px;
 }.Genie__genie___1562y{
     width: 250px;
     margin: 40px auto;

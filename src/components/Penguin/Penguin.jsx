@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import styles from './Penguin.pcss';
+import { overrideCSS } from '../../utils';
+import internalStyles from './Penguin.pcss';
 
 class PenguinComponent extends React.Component {
 
     render() {
-        let { number, disabled, onPenguinChange } = this.props;
+        let { number, disabled, onPenguinChange } = this.props,
+            styles = this.props.styles ? overrideCSS(internalStyles, this.props.styles) : internalStyles;
 
         return (
             <div className={styles.container}>

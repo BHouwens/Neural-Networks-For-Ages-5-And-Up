@@ -1,7 +1,28 @@
+.container{
+    position: relative;
+}
+
 .fly{
     width: 60px;
     margin-top: -150px;
     margin-left: 220px;
     margin-bottom: 100px;
     display: block;
+}
+
+.number{
+    top: 22px;
+    text-align: center;
+    display: block;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    right: 50px;
+    position: absolute;
+
+    &:focus{
+        color: lighten(black, 10%);
+    }
 }

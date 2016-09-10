@@ -1,14 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { changePenguin, changeRhino } from '../../actions';
-import { Penguin, Rhino, Shaman, Fly, Genie } from '../../components';
+import { 
+    Penguin, 
+    Rhino, 
+    Shaman, 
+    Fly, 
+    Genie,
+    Road
+} from '../../components';
 
 import styles from './App.pcss';
+import roadPenguinStyles from './overrides/roadPenguin.pcss';
 
 class AppComponent extends React.Component {
 
     render() {
-        let { penguinNumber, genieNumber, rhinoNumber, onPenguinChange } = this.props;
+        let { penguinNumber, genieNumber, rhinoNumber, onPenguinChange, flyNumber } = this.props;
 
         return (
             <div className={styles.app}>
@@ -21,17 +29,26 @@ class AppComponent extends React.Component {
                 <Penguin disabled={false} onPenguinChange={onPenguinChange} />
 
                 <p>
-                    Our penguin, let's call her Feature (stupid, I know, but that's her name), has to make an epic journey that consists of a bunch of paths connected by sign posts. She think she's pretty bad-ass and can make her way along these paths 
+                    Our penguin, let's call her Feature (stupid, I know, but that's her name), has to make an epic journey that consists of a bunch of paths connected by sign posts. Check it out:
+                </p>
+
+                <section className={styles.penguinOnPath}>
+                    <Penguin disabled={true} styles={roadPenguinStyles} onPenguinChange={onPenguinChange} />
+                    <Road />
+                </section>
+
+                <p>
+                    She think she's pretty bad-ass and can make her way along these paths 
                     and past these sign posts on her own, but she's a baby so what does she know. What she really needs is friends along the way to help her, like these guys:
                 </p> 
 
                 <section className={styles.friends}>
                     <Rhino disabled={true} />
-                    <Fly />
+                    <Fly disabled={true} />
                 </section>
 
                 <p>
-                    The rhino is called Weight (maybe because he's heavy?) and this one is a {rhinoNumber}-rhino. Why is he green? It's actually not really clear. The fly is called Bias. When our three friends get to the first sign post, though, they meet a shaman who looks kind of like this:
+                    The rhino is called Weight (maybe because he's heavy?) and this one is a {rhinoNumber}-rhino. Why is he green? It's actually not really clear. The fly is called Bias and he's a {flyNumber}-fly. When our three friends get to the first sign post, though, they meet a shaman who looks kind of like this:
                 </p>
 
                 <Shaman />
