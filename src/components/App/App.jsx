@@ -7,7 +7,9 @@ import {
     Shaman, 
     Fly, 
     Genie,
-    Road
+    Road,
+    Frog,
+    Formals
 } from '../../components';
 
 import styles from './App.pcss';
@@ -16,7 +18,13 @@ import roadPenguinStyles from './overrides/roadPenguin.pcss';
 class AppComponent extends React.Component {
 
     render() {
-        let { penguinNumber, genieNumber, rhinoNumber, onPenguinChange, flyNumber } = this.props;
+        let { 
+            penguinNumber, 
+            genieNumber, 
+            rhinoNumber, 
+            onPenguinChange, 
+            flyNumber
+        } = this.props;
 
         return (
             <div className={styles.app}>
@@ -53,27 +61,62 @@ class AppComponent extends React.Component {
 
                 <Shaman />
 
-                <p>The shaman casts a special spell on all three of our friends and merges them all into a <i>new</i> penguin. More POWER!</p>
+                <p>The shaman casts a special spell on all three of our friends and merges them all into a <i>new</i> penguin with a <i>new</i> number. More POWER!</p>
 
                 {/*-- show transformation --*/}
 
                 <p>
-                    Our new penguin, with a new number, makes her way on the next path and is joined by another Weight and another Bias. 
+                    Our new penguin, with a new number, makes her way on the next path and is joined by <b>another</b> Weight and <b>another</b> Bias. 
                     They come to another shaman at the next sign post and the process repeats.
                 </p>
 
                 <p>
-                    The last path in the journey is a bit different; instead of a shaman at the end, there's a genie and a red frog! 
+                    The last path in the journey is a bit different; the shaman is joined this time by a frog!
+                </p>
+
+                <section className={styles.lastNode}>
+                    <Shaman />
+                    <Frog />
+                </section>
+
+                <p>
+                    The shaman does his magic thing once more, and then we have to compare the frog's number with our final penguin's number. See if you can 
+                    help our bad-ass penguin's number match the frog's number by changing <b>only</b> the Weight (rhino) numbers. This seems like a weird way 
+                    to do it, but we don't get to make the rules.       
+                </p>
+
+                {/*-- do exercise --*/}
+
+                <p>
+                    Depending on how hot your arithmetic is, you may or may not have taken a while to match our friend up, but it shouldn&rsquo;t have been too 
+                    tough. What happens, though, if we have lots of penguins at the beginning? Say, hmm, 5 penguins:
+                </p>
+
+                {/*-- show "realistic" network --*/}
+
+                <p>And what if there are multiple paths that they have to travel, each with their own Weight rhino?</p>
+
+                {/*-- show multiple path --*/}
+
+                <p>
+                    Now things might start to get a good bit more difficult! Dont&rsquo;t lose hope though, patient reader, because we have one more character who 
+                    can help us: the genie.
                 </p>
 
                 <Genie />
 
                 <p>
-                    The genie performs a special kind of spell that transforms our friends for the very last time, but this time they come out 
-                    looking like a frog as well (although it is a normal-looking frog)! The red frog is then compared to the new, normal frog. If 
-                    they're the same then we're all good, but if they're not then our poor penguin has to start again, although this time with new
-                    numbers for the Weights and Biases.
-                </p>       
+                    She has two powers: she can check the difference between the last penguin and the frog herself and, more importantly, she is powerful enough 
+                    that she can change all the Weights&rsquo; numbers <i>across the whole network of paths</i>! Unfortunately she is not powerful to change them 
+                    to the correct numbers all at once, so our poor penguins have to make the same trips many times until the genie gets it right.
+                </p>
+
+                <p>
+                    Once she does get it near perfect though, the Weight rhinos and Bias flies are kept together so any time a new bunch of penguins pitch up they 
+                    only have to make their brave journey once. We say then that the network of paths, with their sign posts, Weight rhinos and Bias flies, are &ldquo;trained&rdquo;.
+                </p>
+
+                <Formals />
             </div>
         );
     }

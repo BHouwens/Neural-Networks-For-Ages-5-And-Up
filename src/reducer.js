@@ -7,6 +7,7 @@ const initialState = {
     finalPenguinNumber : getFinalPenguinNumber(initPenguin, initRhino),
     genieNumber : getFinalPenguinNumber(initPenguin, initRhino) - 5,
     frogNumber : getFrogNumber(initPenguin),
+    predFrogNumber : 5,
     flyNumber: 1
 };
 

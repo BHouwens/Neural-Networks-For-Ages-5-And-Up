@@ -8204,7 +8204,7 @@
 	
 	var _components = __webpack_require__(494);
 	
-	var _reducer = __webpack_require__(510);
+	var _reducer = __webpack_require__(514);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -31028,7 +31028,7 @@
 	  });
 	});
 	
-	var _Penguin = __webpack_require__(498);
+	var _Penguin = __webpack_require__(499);
 	
 	Object.keys(_Penguin).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31040,7 +31040,7 @@
 	  });
 	});
 	
-	var _Rhino = __webpack_require__(500);
+	var _Rhino = __webpack_require__(502);
 	
 	Object.keys(_Rhino).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31052,7 +31052,7 @@
 	  });
 	});
 	
-	var _Shaman = __webpack_require__(502);
+	var _Shaman = __webpack_require__(504);
 	
 	Object.keys(_Shaman).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31064,7 +31064,7 @@
 	  });
 	});
 	
-	var _Fly = __webpack_require__(504);
+	var _Fly = __webpack_require__(506);
 	
 	Object.keys(_Fly).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31076,7 +31076,19 @@
 	  });
 	});
 	
-	var _Road = __webpack_require__(506);
+	var _Frog = __webpack_require__(508);
+	
+	Object.keys(_Frog).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _Frog[key];
+	    }
+	  });
+	});
+	
+	var _Road = __webpack_require__(510);
 	
 	Object.keys(_Road).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31088,7 +31100,7 @@
 	  });
 	});
 	
-	var _Genie = __webpack_require__(508);
+	var _Genie = __webpack_require__(512);
 	
 	Object.keys(_Genie).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31127,7 +31139,7 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _roadPenguin = __webpack_require__(512);
+	var _roadPenguin = __webpack_require__(498);
 	
 	var _roadPenguin2 = _interopRequireDefault(_roadPenguin);
 	
@@ -31221,23 +31233,126 @@
 	                        null,
 	                        'new'
 	                    ),
-	                    ' penguin. More POWER!'
+	                    ' penguin with a ',
+	                    _react2.default.createElement(
+	                        'i',
+	                        null,
+	                        'new'
+	                    ),
+	                    ' number. More POWER!'
 	                ),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'Our new penguin, with a new number, makes her way on the next path and is joined by another Weight and another Bias. They come to another shaman at the next sign post and the process repeats.'
+	                    'Our new penguin, with a new number, makes her way on the next path and is joined by ',
+	                    _react2.default.createElement(
+	                        'b',
+	                        null,
+	                        'another'
+	                    ),
+	                    ' Weight and ',
+	                    _react2.default.createElement(
+	                        'b',
+	                        null,
+	                        'another'
+	                    ),
+	                    ' Bias. They come to another shaman at the next sign post and the process repeats.'
 	                ),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'The last path in the journey is a bit different; instead of a shaman at the end, there\'s a genie and a red frog!'
+	                    'The last path in the journey is a bit different; the shaman is joined this time by a frog!'
+	                ),
+	                _react2.default.createElement(
+	                    'section',
+	                    { className: _App2.default.lastNode },
+	                    _react2.default.createElement(_components.Shaman, null),
+	                    _react2.default.createElement(_components.Frog, null)
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'The shaman does his magic thing once more, and then we have to compare the frog\'s number with our final penguin\'s number. See if you can help our bad-ass penguin\'s number match the frog\'s number by changing ',
+	                    _react2.default.createElement(
+	                        'b',
+	                        null,
+	                        'only'
+	                    ),
+	                    ' the Weight (rhino) numbers. This seems like a weird way to do it, but we don\'t get to make the rules.'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'Depending on how hot your arithmetic is, you may or may not have taken a while to match our friend up, but it shouldn’t have been too tough. What happens, though, if we have lots of penguins at the beginning? Say, hmm, 5 penguins:'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'And what if there are multiple paths that they have to travel, each with their own Weight rhino?'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'Now things might start to get a good bit more difficult! Dont’t lose hope though, patient reader, because we have one more character who can help us: the genie.'
 	                ),
 	                _react2.default.createElement(_components.Genie, null),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'The genie performs a special kind of spell that transforms our friends for the very last time, but this time they come out looking like a frog as well (although it is a normal-looking frog)! The red frog is then compared to the new, normal frog. If they\'re the same then we\'re all good, but if they\'re not then our poor penguin has to start again, although this time with new numbers for the Weights and Biases.'
+	                    'She has two powers: she can check the difference between the last penguin and the frog herself and, more importantly, she is powerful enough that she can change all the Weights’ numbers ',
+	                    _react2.default.createElement(
+	                        'i',
+	                        null,
+	                        'across the whole network of paths'
+	                    ),
+	                    '! Unfortunately she is not powerful to change them to the correct numbers all at once, so our poor penguins have to make the same trips many times until the genie gets it right.'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'Once she does get it near perfect though, the Weight rhinos and Bias flies are kept together so any time a new bunch of penguins pitch up they only have to make their brave journey once. We say then that the network of paths, with their sign posts, Weight rhinos and Bias flies, are “trained”.'
+	                ),
+	                _react2.default.createElement(
+	                    'section',
+	                    { className: _App2.default.formal },
+	                    _react2.default.createElement(
+	                        'h2',
+	                        null,
+	                        'the formal stuff'
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        'The above is a description of a simple neural network in simple language, devoid of the more difficult mathematics. The following is a breakdown of this analogy into its more formal elements.'
+	                    ),
+	                    _react2.default.createElement(
+	                        'ul',
+	                        { className: _App2.default.formalList },
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            _react2.default.createElement(_components.Penguin, { disabled: true, styles: _roadPenguin2.default, onPenguinChange: onPenguinChange }),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: _App2.default.description },
+	                                _react2.default.createElement(
+	                                    'h3',
+	                                    { className: _App2.default.descTitle },
+	                                    'feature'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'h4',
+	                                    { className: _App2.default.subtitle },
+	                                    'penguin'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'p',
+	                                    null,
+	                                    'As mentioned in the story, the penguin represents a feature of the dataset to be learned. These are what the network uses in order to model itself to a generalisation of the data. If you were wanting to find out whether someone had a cold, for instance, features might include things like "runny nose", ""'
+	                                )
+	                            )
+	                        )
+	                    )
 	                )
 	            );
 	        }
@@ -31294,6 +31409,13 @@
 
 /***/ },
 /* 498 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"roadPenguin__container___24oJj","number":"roadPenguin__number___3238w"};
+
+/***/ },
+/* 499 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31311,9 +31433,9 @@
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _utils = __webpack_require__(511);
+	var _utils = __webpack_require__(500);
 	
-	var _Penguin = __webpack_require__(499);
+	var _Penguin = __webpack_require__(501);
 	
 	var _Penguin2 = _interopRequireDefault(_Penguin);
 	
@@ -31371,14 +31493,38 @@
 	var Penguin = exports.Penguin = (0, _reactRedux.connect)(mapStateToProps)(PenguinComponent);
 
 /***/ },
-/* 499 */
+/* 500 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.overrideCSS = overrideCSS;
+	function overrideCSS(internalStyles, externalStyles) {
+		var newCSS = {};
+	
+		for (var entry in internalStyles) {
+			if (Object.keys(externalStyles).indexOf(entry) != -1) {
+				newCSS[entry] = internalStyles[entry] + " " + externalStyles[entry];
+			} else {
+				newCSS[entry] = internalStyles[entry];
+			}
+		}
+	
+		return newCSS;
+	}
+
+/***/ },
+/* 501 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Penguin__container___1Csui","penguin":"Penguin__penguin___8FZiW","number":"Penguin__number___DzjID"};
 
 /***/ },
-/* 500 */
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31396,7 +31542,7 @@
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _Rhino = __webpack_require__(501);
+	var _Rhino = __webpack_require__(503);
 	
 	var _Rhino2 = _interopRequireDefault(_Rhino);
 	
@@ -31459,14 +31605,14 @@
 	var Rhino = exports.Rhino = (0, _reactRedux.connect)(mapStateToProps)(RhinoComponent);
 
 /***/ },
-/* 501 */
+/* 503 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Rhino__container___2SChu","rhino":"Rhino__rhino___1Id4I","inputContainer":"Rhino__inputContainer___tFHWK","number":"Rhino__number___1Rg0B"};
 
 /***/ },
-/* 502 */
+/* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31482,7 +31628,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Shaman = __webpack_require__(503);
+	var _Shaman = __webpack_require__(505);
 	
 	var _Shaman2 = _interopRequireDefault(_Shaman);
 	
@@ -31514,14 +31660,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 503 */
+/* 505 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"shaman":"Shaman__shaman___105r8"};
 
 /***/ },
-/* 504 */
+/* 506 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31539,7 +31685,7 @@
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _Fly = __webpack_require__(505);
+	var _Fly = __webpack_require__(507);
 	
 	var _Fly2 = _interopRequireDefault(_Fly);
 	
@@ -31602,14 +31748,90 @@
 	var Fly = exports.Fly = (0, _reactRedux.connect)(mapStateToProps)(FlyComponent);
 
 /***/ },
-/* 505 */
+/* 507 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Fly__container___4GIL3","fly":"Fly__fly___gwGvi","number":"Fly__number___3KXi4"};
 
 /***/ },
-/* 506 */
+/* 508 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Frog = exports.FrogComponent = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(300);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(347);
+	
+	var _Frog = __webpack_require__(509);
+	
+	var _Frog2 = _interopRequireDefault(_Frog);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var FrogComponent = exports.FrogComponent = function (_React$Component) {
+	    _inherits(FrogComponent, _React$Component);
+	
+	    function FrogComponent() {
+	        _classCallCheck(this, FrogComponent);
+	
+	        return _possibleConstructorReturn(this, (FrogComponent.__proto__ || Object.getPrototypeOf(FrogComponent)).apply(this, arguments));
+	    }
+	
+	    _createClass(FrogComponent, [{
+	        key: 'render',
+	        value: function render() {
+	            var number = this.props.number;
+	
+	
+	            return _react2.default.createElement(
+	                'div',
+	                { className: _Frog2.default.container },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: _Frog2.default.number },
+	                    number
+	                ),
+	                _react2.default.createElement('img', { className: _Frog2.default.frog, src: 'src/images/frog.svg' })
+	            );
+	        }
+	    }]);
+	
+	    return FrogComponent;
+	}(_react2.default.Component);
+	
+	function mapStateToProps(state) {
+	    return {
+	        number: state.frogNumber
+	    };
+	}
+	
+	var Frog = exports.Frog = (0, _reactRedux.connect)(mapStateToProps)(FrogComponent);
+
+/***/ },
+/* 509 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31625,7 +31847,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Road = __webpack_require__(507);
+	var _Road = __webpack_require__(511);
 	
 	var _Road2 = _interopRequireDefault(_Road);
 	
@@ -31657,14 +31879,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 507 */
+/* 511 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"road":"Road__road___8966H"};
 
 /***/ },
-/* 508 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31680,7 +31902,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Genie = __webpack_require__(509);
+	var _Genie = __webpack_require__(513);
 	
 	var _Genie2 = _interopRequireDefault(_Genie);
 	
@@ -31712,14 +31934,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 509 */
+/* 513 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"genie":"Genie__genie___1562y"};
 
 /***/ },
-/* 510 */
+/* 514 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -31737,6 +31959,7 @@
 	    finalPenguinNumber: getFinalPenguinNumber(initPenguin, initRhino),
 	    genieNumber: getFinalPenguinNumber(initPenguin, initRhino) - 5,
 	    frogNumber: getFrogNumber(initPenguin),
+	    predFrogNumber: 5,
 	    flyNumber: 1
 	};
 	
@@ -31779,37 +32002,6 @@
 	            return state;
 	    }
 	}
-
-/***/ },
-/* 511 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.overrideCSS = overrideCSS;
-	function overrideCSS(internalStyles, externalStyles) {
-		var newCSS = {};
-	
-		for (var entry in internalStyles) {
-			if (Object.keys(externalStyles).indexOf(entry) != -1) {
-				newCSS[entry] = internalStyles[entry] + " " + externalStyles[entry];
-			} else {
-				newCSS[entry] = internalStyles[entry];
-			}
-		}
-	
-		return newCSS;
-	}
-
-/***/ },
-/* 512 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-	module.exports = {"container":"roadPenguin__container___24oJj","number":"roadPenguin__number___3238w"};
 
 /***/ }
 /******/ ]);
