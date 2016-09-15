@@ -25,6 +25,10 @@ p{
     color: #00aae6;
 }
 
+.App__rhinoHighlight___18QeD{
+    color: #3a9946;
+}
+
 .App__friends___2pHx2:before,
 .App__friends___2pHx2:after{
     content: ' ';
@@ -43,16 +47,19 @@ p{
 }
 
 .App__penguinOnPath___2xCrb:before,
-.App__penguinOnPath___2xCrb:after{
+.App__penguinOnPath___2xCrb:after,
+.App__transformation___3FdUH:before,
+.App__transformation___3FdUH:after{
     content: ' ';
     display: table;
 }
 
-.App__penguinOnPath___2xCrb:after{
+.App__penguinOnPath___2xCrb:after,
+.App__transformation___3FdUH:after{
     clear: both;
 }
 
-.App__penguinOnPath___2xCrb{
+.App__penguinOnPath___2xCrb, .App__transformation___3FdUH{
     zoom: 1;
 }
 
@@ -86,6 +93,34 @@ p{
     font-size: 50px !important;
     bottom: 50px !important;
     left: 7px !important;
+}.transformationRhino__container___3Cjkg{
+    float: left;
+    width: 180px !important;
+    margin-left: 50px !important;
+    margin-top: 50px;
+}
+
+.transformationRhino__inputContainer___1WSs0{
+    margin-top: 35px !important;
+}
+
+.transformationRhino__number___1MfUF{
+    margin-left: 96px !important;
+    font-size: 45px !important;
+}.transformationFly__container___2LYlP{
+    margin-top: 80px !important;
+    float: left;
+    margin-left: 100px !important;
+}.transformationPenguin__container___-iNTk{
+    width: 80px !important;
+    float: left;
+    margin: 40px 0 0 120px !important;
+}
+
+.transformationPenguin__number___2aLKP{
+    font-size: 40px !important;
+    left: 5px !important;
+    bottom: 40px !important;
 }.Penguin__container___1Csui{
     position: relative;
     display: block;
@@ -113,18 +148,20 @@ p{
     box-sizing: border-box;
     padding-left: 10px;
     outline: none;
+    font-family: 'Lato', sans-serif;
 }
 
 .Penguin__number___DzjID:focus{
     color: rgb(26,26,26);
 }.Rhino__container___2SChu{
+    width: 260px;
     position: relative;
     display: inline-block;
     margin-left: -80px;
 }
 
 .Rhino__rhino___1Id4I{
-    width: 260px;
+    width: 100%;
     height: auto;
 }
 
@@ -144,23 +181,33 @@ p{
     box-sizing: border-box;
     outline: none;
     margin-left: 140px;
+    font-family: 'Lato', sans-serif;
 }
 
 .Rhino__number___1Rg0B:focus{
     color: rgb(26,26,26);
-}.Shaman__shaman___105r8{
+}.Shaman__shaman___105r8, .Shaman__shamanSwitched___lCM5L{
     width: 300px;
     margin: 40px auto;
     display: block;
-}.Fly__container___4GIL3{
-    position: relative;
 }
 
-.Fly__fly___gwGvi{
+.Shaman__shamanSwitched___lCM5L{
+    -webkit-transform: scaleX(-1);
+        -ms-transform: scaleX(-1);
+            transform: scaleX(-1);
+    width: 170px;
+    float: left;
+}.Fly__container___4GIL3{
     width: 60px;
     margin-top: -150px;
     margin-left: 220px;
     margin-bottom: 100px;
+    position: relative;
+}
+
+.Fly__fly___gwGvi{
+    width: 100%;
     display: block;
 }
 
@@ -173,12 +220,28 @@ p{
     font-size: 16px;
     box-sizing: border-box;
     outline: none;
-    right: 50px;
+    right: 4px;
     position: absolute;
+    font-family: 'Lato', sans-serif;
 }
 
 .Fly__number___3KXi4:focus{
     color: rgb(26,26,26);
+}.Frog__container___uVpui{
+    width: 200px;
+    position: relative;
+}
+
+.Frog__frog___1YZg5{
+    width: 100%;
+}
+
+.Frog__number___wZgeb{
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    font-size: 40px;
+    bottom: 35px;
+    left: 92px;
 }.Road__road___8966H{
     float: right;
     width: 700px;

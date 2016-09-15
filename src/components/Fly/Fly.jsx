@@ -1,6 +1,7 @@
 import React from 'react';
+import { overrideCSS } from '../../utils';
 import { connect } from 'react-redux';
-import styles from './Fly.pcss';
+import internalStyles from './Fly.pcss';
 
 class FlyComponent extends React.Component {
 
@@ -9,7 +10,8 @@ class FlyComponent extends React.Component {
     }
 
     render() {
-        let { number, disabled } = this.props;
+        let { number, disabled } = this.props,
+            styles = this.props.styles ? overrideCSS(internalStyles, this.props.styles) : internalStyles;
 
         return (
             <div className={styles.container}>

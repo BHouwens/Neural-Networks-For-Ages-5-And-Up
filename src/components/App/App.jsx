@@ -8,12 +8,14 @@ import {
     Fly, 
     Genie,
     Road,
-    Frog,
-    Formals
+    Frog
 } from '../../components';
 
 import styles from './App.pcss';
 import roadPenguinStyles from './overrides/roadPenguin.pcss';
+import transformationRhino from './overrides/transformationRhino.pcss';
+import transformationFly from './overrides/transformationFly.pcss';
+import transformationPenguin from './overrides/transformationPenguin.pcss';
 
 class AppComponent extends React.Component {
 
@@ -46,8 +48,8 @@ class AppComponent extends React.Component {
                 </section>
 
                 <p>
-                    She think she's pretty bad-ass and can make her way along these paths 
-                    and past these sign posts on her own, but she's a baby so what does she know. What she really needs is friends along the way to help her, like these guys:
+                    She think she&rsquo;s pretty bad-ass and can make her way along these paths 
+                    and past these sign posts on her own, but she&rsquo;s a baby so what does she know. What she really needs is friends along the way to help her, like these guys:
                 </p> 
 
                 <section className={styles.friends}>
@@ -56,14 +58,24 @@ class AppComponent extends React.Component {
                 </section>
 
                 <p>
-                    The rhino is called Weight (maybe because he's heavy?) and this one is a {rhinoNumber}-rhino. Why is he green? It's actually not really clear. The fly is called Bias and he's a {flyNumber}-fly. When our three friends get to the first sign post, though, they meet a shaman who looks kind of like this:
+                    The rhino is called Weight (maybe because he's heavy?) and this one is a <span className={styles.rhinoHighlight}>{rhinoNumber}-rhino</span>. Why is he green? It&rsquo;s actually not really clear. 
+                    The fly is called Bias and he&rsquo;s a {flyNumber}-fly. When our three friends get to the first sign post, though, they meet 
+                    a shaman who looks kind of like this:
                 </p>
 
                 <Shaman />
 
                 <p>The shaman casts a special spell on all three of our friends and merges them all into a <i>new</i> penguin with a <i>new</i> number. More POWER!</p>
 
-                {/*-- show transformation --*/}
+                <div className={styles.transformation}>
+                    <Shaman reverse={true} />
+                    <Rhino disabled={true} styles={transformationRhino} />
+                    <Fly disabled={true} styles={transformationFly} />
+                    <Penguin 
+                        disabled={true} 
+                        onPenguinChange={onPenguinChange} 
+                        styles={transformationPenguin} />
+                </div>
 
                 <p>
                     Our new penguin, with a new number, makes her way on the next path and is joined by <b>another</b> Weight and <b>another</b> Bias. 
@@ -115,8 +127,6 @@ class AppComponent extends React.Component {
                     Once she does get it near perfect though, the Weight rhinos and Bias flies are kept together so any time a new bunch of penguins pitch up they 
                     only have to make their brave journey once. We say then that the network of paths, with their sign posts, Weight rhinos and Bias flies, are &ldquo;trained&rdquo;.
                 </p>
-
-                <Formals />
             </div>
         );
     }

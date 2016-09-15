@@ -8204,7 +8204,7 @@
 	
 	var _components = __webpack_require__(494);
 	
-	var _reducer = __webpack_require__(514);
+	var _reducer = __webpack_require__(516);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -31100,7 +31100,19 @@
 	  });
 	});
 	
-	var _Genie = __webpack_require__(512);
+	var _Formals = __webpack_require__(512);
+	
+	Object.keys(_Formals).forEach(function (key) {
+	  if (key === "default" || key === "__esModule") return;
+	  Object.defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _Formals[key];
+	    }
+	  });
+	});
+	
+	var _Genie = __webpack_require__(514);
 	
 	Object.keys(_Genie).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31142,6 +31154,18 @@
 	var _roadPenguin = __webpack_require__(498);
 	
 	var _roadPenguin2 = _interopRequireDefault(_roadPenguin);
+	
+	var _transformationRhino = __webpack_require__(517);
+	
+	var _transformationRhino2 = _interopRequireDefault(_transformationRhino);
+	
+	var _transformationFly = __webpack_require__(518);
+	
+	var _transformationFly2 = _interopRequireDefault(_transformationFly);
+	
+	var _transformationPenguin = __webpack_require__(519);
+	
+	var _transformationPenguin2 = _interopRequireDefault(_transformationPenguin);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -31206,7 +31230,7 @@
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'She think she\'s pretty bad-ass and can make her way along these paths and past these sign posts on her own, but she\'s a baby so what does she know. What she really needs is friends along the way to help her, like these guys:'
+	                    'She think she’s pretty bad-ass and can make her way along these paths and past these sign posts on her own, but she’s a baby so what does she know. What she really needs is friends along the way to help her, like these guys:'
 	                ),
 	                _react2.default.createElement(
 	                    'section',
@@ -31218,8 +31242,13 @@
 	                    'p',
 	                    null,
 	                    'The rhino is called Weight (maybe because he\'s heavy?) and this one is a ',
-	                    rhinoNumber,
-	                    '-rhino. Why is he green? It\'s actually not really clear. The fly is called Bias and he\'s a ',
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: _App2.default.rhinoHighlight },
+	                        rhinoNumber,
+	                        '-rhino'
+	                    ),
+	                    '. Why is he green? It’s actually not really clear. The fly is called Bias and he’s a ',
 	                    flyNumber,
 	                    '-fly. When our three friends get to the first sign post, though, they meet a shaman who looks kind of like this:'
 	                ),
@@ -31240,6 +31269,17 @@
 	                        'new'
 	                    ),
 	                    ' number. More POWER!'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: _App2.default.transformation },
+	                    _react2.default.createElement(_components.Shaman, { reverse: true }),
+	                    _react2.default.createElement(_components.Rhino, { disabled: true, styles: _transformationRhino2.default }),
+	                    _react2.default.createElement(_components.Fly, { disabled: true, styles: _transformationFly2.default }),
+	                    _react2.default.createElement(_components.Penguin, {
+	                        disabled: true,
+	                        onPenguinChange: onPenguinChange,
+	                        styles: _transformationPenguin2.default })
 	                ),
 	                _react2.default.createElement(
 	                    'p',
@@ -31311,48 +31351,6 @@
 	                    'p',
 	                    null,
 	                    'Once she does get it near perfect though, the Weight rhinos and Bias flies are kept together so any time a new bunch of penguins pitch up they only have to make their brave journey once. We say then that the network of paths, with their sign posts, Weight rhinos and Bias flies, are “trained”.'
-	                ),
-	                _react2.default.createElement(
-	                    'section',
-	                    { className: _App2.default.formal },
-	                    _react2.default.createElement(
-	                        'h2',
-	                        null,
-	                        'the formal stuff'
-	                    ),
-	                    _react2.default.createElement(
-	                        'p',
-	                        null,
-	                        'The above is a description of a simple neural network in simple language, devoid of the more difficult mathematics. The following is a breakdown of this analogy into its more formal elements.'
-	                    ),
-	                    _react2.default.createElement(
-	                        'ul',
-	                        { className: _App2.default.formalList },
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            _react2.default.createElement(_components.Penguin, { disabled: true, styles: _roadPenguin2.default, onPenguinChange: onPenguinChange }),
-	                            _react2.default.createElement(
-	                                'div',
-	                                { className: _App2.default.description },
-	                                _react2.default.createElement(
-	                                    'h3',
-	                                    { className: _App2.default.descTitle },
-	                                    'feature'
-	                                ),
-	                                _react2.default.createElement(
-	                                    'h4',
-	                                    { className: _App2.default.subtitle },
-	                                    'penguin'
-	                                ),
-	                                _react2.default.createElement(
-	                                    'p',
-	                                    null,
-	                                    'As mentioned in the story, the penguin represents a feature of the dataset to be learned. These are what the network uses in order to model itself to a generalisation of the data. If you were wanting to find out whether someone had a cold, for instance, features might include things like "runny nose", ""'
-	                                )
-	                            )
-	                        )
-	                    )
 	                )
 	            );
 	        }
@@ -31405,7 +31403,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb"};
+	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","rhinoHighlight":"App__rhinoHighlight___18QeD","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb","transformation":"App__transformation___3FdUH"};
 
 /***/ },
 /* 498 */
@@ -31540,6 +31538,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _utils = __webpack_require__(500);
+	
 	var _reactRedux = __webpack_require__(347);
 	
 	var _Rhino = __webpack_require__(503);
@@ -31571,17 +31571,17 @@
 	            var _props = this.props;
 	            var number = _props.number;
 	            var disabled = _props.disabled;
-	
+	            var styles = this.props.styles ? (0, _utils.overrideCSS)(_Rhino2.default, this.props.styles) : _Rhino2.default;
 	
 	            return _react2.default.createElement(
 	                'div',
-	                { className: _Rhino2.default.container },
+	                { className: styles.container },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: _Rhino2.default.inputContainer },
+	                    { className: styles.inputContainer },
 	                    _react2.default.createElement('input', {
 	                        type: 'number',
-	                        className: _Rhino2.default.number,
+	                        className: styles.number,
 	                        value: number,
 	                        max: '99',
 	                        min: '0',
@@ -31590,7 +31590,7 @@
 	                            return _this2.changeNumber(e.target.value);
 	                        } })
 	                ),
-	                _react2.default.createElement('img', { className: _Rhino2.default.rhino, src: 'src/images/rhino.svg', alt: 'This is a picture of the rhino' })
+	                _react2.default.createElement('img', { className: styles.rhino, src: 'src/images/rhino.svg', alt: 'This is a picture of the rhino' })
 	            );
 	        }
 	    }]);
@@ -31652,7 +31652,11 @@
 	    _createClass(Shaman, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement('img', { className: _Shaman2.default.shaman, src: 'src/images/shaman.svg', alt: 'This is a picture of the shaman' });
+	            if (this.props.reverse) {
+	                return _react2.default.createElement('img', { className: _Shaman2.default.shamanSwitched, src: 'src/images/shaman.svg', alt: 'This is a picture of the shaman' });
+	            } else {
+	                return _react2.default.createElement('img', { className: _Shaman2.default.shaman, src: 'src/images/shaman.svg', alt: 'This is a picture of the shaman' });
+	            }
 	        }
 	    }]);
 	
@@ -31664,7 +31668,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"shaman":"Shaman__shaman___105r8"};
+	module.exports = {"shaman":"Shaman__shaman___105r8","shamanSwitched":"Shaman__shamanSwitched___lCM5L"};
 
 /***/ },
 /* 506 */
@@ -31682,6 +31686,8 @@
 	var _react = __webpack_require__(300);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _utils = __webpack_require__(500);
 	
 	var _reactRedux = __webpack_require__(347);
 	
@@ -31714,17 +31720,17 @@
 	            var _props = this.props;
 	            var number = _props.number;
 	            var disabled = _props.disabled;
-	
+	            var styles = this.props.styles ? (0, _utils.overrideCSS)(_Fly2.default, this.props.styles) : _Fly2.default;
 	
 	            return _react2.default.createElement(
 	                'div',
-	                { className: _Fly2.default.container },
+	                { className: styles.container },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: _Fly2.default.inputContainer },
+	                    { className: styles.inputContainer },
 	                    _react2.default.createElement('input', {
 	                        type: 'number',
-	                        className: _Fly2.default.number,
+	                        className: styles.number,
 	                        value: number,
 	                        max: '99',
 	                        min: '0',
@@ -31733,7 +31739,7 @@
 	                            return _this2.changeNumber(e.target.value);
 	                        } })
 	                ),
-	                _react2.default.createElement('img', { className: _Fly2.default.fly, src: 'src/images/fly.svg', alt: 'This is a picture of the fly' })
+	                _react2.default.createElement('img', { className: styles.fly, src: 'src/images/fly.svg', alt: 'This is a picture of the fly' })
 	            );
 	        }
 	    }]);
@@ -31829,6 +31835,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"Frog__container___uVpui","frog":"Frog__frog___1YZg5","number":"Frog__number___wZgeb"};
 
 /***/ },
 /* 510 */
@@ -31891,6 +31898,240 @@
 
 	'use strict';
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(300);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _components = __webpack_require__(494);
+	
+	var _Formals = __webpack_require__(513);
+	
+	var _Formals2 = _interopRequireDefault(_Formals);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Formals = function (_React$Component) {
+	    _inherits(Formals, _React$Component);
+	
+	    function Formals() {
+	        _classCallCheck(this, Formals);
+	
+	        return _possibleConstructorReturn(this, (Formals.__proto__ || Object.getPrototypeOf(Formals)).apply(this, arguments));
+	    }
+	
+	    _createClass(Formals, [{
+	        key: 'render',
+	        value: function render() {
+	            _react2.default.createElement(
+	                'section',
+	                { className: _Formals2.default.formal },
+	                _react2.default.createElement(
+	                    'h2',
+	                    null,
+	                    'the formal stuff'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'The above is a description of a simple neural network in simple language, devoid of the more difficult mathematics.The following is a breakdown of this analogy into its more formal elements.'
+	                ),
+	                _react2.default.createElement(
+	                    'ul',
+	                    { className: _Formals2.default.formalList },
+	                    _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement(_components.Penguin, { disabled: true, styles: roadPenguinStyles, onPenguinChange: onPenguinChange }),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: _Formals2.default.description },
+	                            _react2.default.createElement(
+	                                'h3',
+	                                { className: _Formals2.default.descTitle },
+	                                'feature'
+	                            ),
+	                            _react2.default.createElement(
+	                                'h4',
+	                                { className: _Formals2.default.subtitle },
+	                                'penguin'
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'As mentioned in the story, the penguin represents a feature of the dataset to be learned.These are what the network uses in order to model itself to a generalisation of the data.If you were wanting to find out whether someone had a cold, for instance, a feature might be whether they have a runny nose or not.'
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement(_components.Rhino, { disabled: true }),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: _Formals2.default.description },
+	                            _react2.default.createElement(
+	                                'h3',
+	                                { className: _Formals2.default.descTitle },
+	                                'weight'
+	                            ),
+	                            _react2.default.createElement(
+	                                'h4',
+	                                { className: _Formals2.default.subtitle },
+	                                'rhino'
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'As mentioned in the story, the rhino is the equivalent of a weight, usually represented by the symbol W, of a node in the system. The number of weights per node is equivalent to the number of inputs to that node (thus if there are 5 "penguin" inputs to a node, there will be 5 "rhino" weights).'
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'It is these weights (along with the biases) that the network needs to lock down in order to generalise over the data.'
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement(Fly, null),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: _Formals2.default.description },
+	                            _react2.default.createElement(
+	                                'h3',
+	                                { className: _Formals2.default.descTitle },
+	                                'bias'
+	                            ),
+	                            _react2.default.createElement(
+	                                'h4',
+	                                { className: _Formals2.default.subtitle },
+	                                'fly'
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'As mentioned in the story, the fly is the equivalent of a bias, usually represented by the symbol b, of a node in the system. Unlike the weight, there is generally only one bias per node irrespective of the number of inputs. The point of the bias is out of scope for this little story, but geometrically the bias allows us to “shift” the position of the model along its axes, whereas the weights affect the model’s curvature.'
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'You can read more on this here: [link].'
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement(SignPost, null),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: _Formals2.default.description },
+	                            _react2.default.createElement(
+	                                'h3',
+	                                { className: _Formals2.default.descTitle },
+	                                'node'
+	                            ),
+	                            _react2.default.createElement(
+	                                'h4',
+	                                { className: _Formals2.default.subtitle },
+	                                'sign post'
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'The sign post is the same as a node in a real network. This acts as a "step" in the network where inputs are combined with weights and a bias through a function in order to pass them off on to the next node. The more nodes in a network, the better the model is able to generalise, but the more computing power is needed.'
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement(_components.Shaman, null),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: _Formals2.default.description },
+	                            _react2.default.createElement(
+	                                'h3',
+	                                { className: _Formals2.default.descTitle },
+	                                'activation function'
+	                            ),
+	                            _react2.default.createElement(
+	                                'h4',
+	                                { className: _Formals2.default.subtitle },
+	                                'shaman'
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'The shaman and his spell are a representation of the activation function used to convert inputs, weights and the bias into a probability for the next node. The "spell", or specific function, can differ depending on the implementation; common choices are functions like ',
+	                                _react2.default.createElement(
+	                                    'i',
+	                                    null,
+	                                    'tanh'
+	                                ),
+	                                'or the ',
+	                                _react2.default.createElement(
+	                                    'i',
+	                                    null,
+	                                    'sigmoid function'
+	                                ),
+	                                ' because finding their derivatives for backpropogation is trivial (if that went over your head it’s not because you’re dumb; these are things that were glanced over or not mentioned in the story).'
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement(_components.Frog, null),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: _Formals2.default.description },
+	                            _react2.default.createElement(
+	                                'h3',
+	                                { className: _Formals2.default.descTitle },
+	                                'testing output'
+	                            ),
+	                            _react2.default.createElement(
+	                                'h4',
+	                                { className: _Formals2.default.subtitle },
+	                                'frog'
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'The frog represents the true testing output with which to compare the network’s predicted output. It’s basically the “right” answer that the network is trying to get to.'
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Formals;
+	}(_react2.default.Component);
+
+/***/ },
+/* 513 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 514 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
@@ -31902,7 +32143,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Genie = __webpack_require__(513);
+	var _Genie = __webpack_require__(515);
 	
 	var _Genie2 = _interopRequireDefault(_Genie);
 	
@@ -31934,14 +32175,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 513 */
+/* 515 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"genie":"Genie__genie___1562y"};
 
 /***/ },
-/* 514 */
+/* 516 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -32002,6 +32243,27 @@
 	            return state;
 	    }
 	}
+
+/***/ },
+/* 517 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"transformationRhino__container___3Cjkg","inputContainer":"transformationRhino__inputContainer___1WSs0","number":"transformationRhino__number___1MfUF"};
+
+/***/ },
+/* 518 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"transformationFly__container___2LYlP"};
+
+/***/ },
+/* 519 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"transformationPenguin__container___-iNTk","number":"transformationPenguin__number___2aLKP"};
 
 /***/ }
 /******/ ]);

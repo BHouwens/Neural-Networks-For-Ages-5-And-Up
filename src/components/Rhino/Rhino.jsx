@@ -1,6 +1,7 @@
 import React from 'react';
+import { overrideCSS } from '../../utils';
 import { connect } from 'react-redux';
-import styles from './Rhino.pcss';
+import internalStyles from './Rhino.pcss';
 
 class RhinoComponent extends React.Component {
 
@@ -9,7 +10,8 @@ class RhinoComponent extends React.Component {
     }
 
     render() {
-        let { number, disabled } = this.props;
+        let { number, disabled } = this.props,
+            styles = this.props.styles ? overrideCSS(internalStyles, this.props.styles) : internalStyles;
 
         return (
             <div className={styles.container}>

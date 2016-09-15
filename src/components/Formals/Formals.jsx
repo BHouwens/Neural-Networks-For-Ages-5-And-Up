@@ -1,5 +1,10 @@
 import React from 'react';
-import { Penguin, Rhino } from '../../components';
+import { 
+    Penguin, 
+    Rhino,
+    Shaman,
+    Frog
+} from '../../components';
 import styles from './Formals.pcss';
 
 class Formals extends React.Component {
