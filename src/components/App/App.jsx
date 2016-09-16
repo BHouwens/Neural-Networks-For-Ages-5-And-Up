@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changePenguin, changeRhino } from '../../actions';
+import { changePenguin, changeFirstRhino, changeSecondRhino } from '../../actions';
 import { 
     Penguin, 
     Rhino, 
@@ -16,17 +16,14 @@ import roadPenguinStyles from './overrides/roadPenguin.pcss';
 import transformationRhino from './overrides/transformationRhino.pcss';
 import transformationFly from './overrides/transformationFly.pcss';
 import transformationPenguin from './overrides/transformationPenguin.pcss';
+import bigFinalPenguin from './overrides/bigFinalPenguin.pcss';
+import lastShaman from './overrides/lastShaman.pcss';
+import nextPathPenguin from './overrides/nextPathPenguin.pcss';
 
 class AppComponent extends React.Component {
 
     render() {
-        let { 
-            penguinNumber, 
-            genieNumber, 
-            rhinoNumber, 
-            onPenguinChange, 
-            flyNumber
-        } = this.props;
+        let { penguinNumber, genieNumber, rhinoNumber, onPenguinChange, flyNumber } = this.props;
 
         return (
             <div className={styles.app}>
@@ -65,16 +62,30 @@ class AppComponent extends React.Component {
 
                 <Shaman />
 
-                <p>The shaman casts a special spell on all three of our friends and merges them all into a <i>new</i> penguin with a <i>new</i> number. More POWER!</p>
+                <p>The shaman casts a special spell on all three of our friends added together, and they turn into a brand spanking new penguin with a new number!</p>
 
                 <div className={styles.transformation}>
                     <Shaman reverse={true} />
+                    <div className={styles.plus}>(</div>
                     <Rhino disabled={true} styles={transformationRhino} />
+                    <div className={styles.plus}>+</div>
                     <Fly disabled={true} styles={transformationFly} />
+                    <div className={styles.plus}>+</div>
                     <Penguin 
-                        disabled={true} 
+                        disabled={true}
                         onPenguinChange={onPenguinChange} 
                         styles={transformationPenguin} />
+                    <div className={styles.endBracket}>)</div>
+                </div>
+
+                <div className={styles.finalPenguinContainer}>
+                    <div className={styles.stars}></div>
+                    <Penguin
+                        disabled={true}
+                        final={true}
+                        onPenguinChange={onPenguinChange}
+                        styles={bigFinalPenguin} />
+                    <div className={styles.starsReversed}></div>
                 </div>
 
                 <p>
@@ -82,19 +93,35 @@ class AppComponent extends React.Component {
                     They come to another shaman at the next sign post and the process repeats.
                 </p>
 
+                <div className={styles.nextPath}>
+                    <Penguin
+                        disabled={true}
+                        final={true}
+                        onPenguinChange={onPenguinChange}
+                        styles={nextPathPenguin} />
+
+                    <div className={styles.nextFriends}>
+                        <Rhino disabled={true} />
+                        <Fly disabled={true} />
+                    </div>
+
+                    <div className={styles.path}></div>
+                    <div className={styles.nextShaman}></div>
+                </div>
+
                 <p>
-                    The last path in the journey is a bit different; the shaman is joined this time by a frog!
+                    The last path in the journey is a bit different: the shaman is joined this time by a frog!
                 </p>
 
                 <section className={styles.lastNode}>
-                    <Shaman />
+                    <Shaman styles={lastShaman} />
                     <Frog />
                 </section>
 
                 <p>
-                    The shaman does his magic thing once more, and then we have to compare the frog's number with our final penguin's number. See if you can 
+                    The shaman does his magic thing once more, and then we have to compare the frog&rsquo;s number with our final penguin's number. See if you can 
                     help our bad-ass penguin's number match the frog's number by changing <b>only</b> the Weight (rhino) numbers. This seems like a weird way 
-                    to do it, but we don't get to make the rules.       
+                    to do it but, just as in life, we don&rsquo;t get to make the rules.       
                 </p>
 
                 {/*-- do exercise --*/}
@@ -111,7 +138,7 @@ class AppComponent extends React.Component {
                 {/*-- show multiple path --*/}
 
                 <p>
-                    Now things might start to get a good bit more difficult! Dont&rsquo;t lose hope though, patient reader, because we have one more character who 
+                    Now things might start to get a good bit more difficult! Don&rsquo;t lose hope though, patient reader, because we have one more character who 
                     can help us: the genie.
                 </p>
 

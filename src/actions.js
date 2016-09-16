@@ -5,9 +5,16 @@ export function changePenguin(value) {
     }
 }
 
-export function changeRhino(value) {
+export function changeFirstRhino(value) {
     return {
-        type: 'CHANGE_RHINO',
+        type: 'CHANGE_FIRST_RHINO',
+        value
+    }
+}
+
+export function changeSecondRhino(value) {
+    return {
+        type: 'CHANGE_SECOND_RHINO',
         value
     }
 }

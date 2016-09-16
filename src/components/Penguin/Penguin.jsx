@@ -9,12 +9,14 @@ class PenguinComponent extends React.Component {
         let { number, disabled, onPenguinChange } = this.props,
             styles = this.props.styles ? overrideCSS(internalStyles, this.props.styles) : internalStyles;
 
+        let usedNumber = this.props.final ? this.props.finalNumber : this.props.initNumber;
+
         return (
             <div className={styles.container}>
                 <input 
                     type="number" 
                     className={styles.number} 
-                    value={number} 
+                    value={usedNumber} 
                     max="99"
                     min="0"
                     disabled={disabled}
@@ -28,7 +30,10 @@ class PenguinComponent extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return { number: state.penguinNumber };
+    return { 
+        initNumber: state.penguinNumber,
+        finalNumber: state.finalPenguinNumber 
+    };
 }
 
 export const Penguin = connect(

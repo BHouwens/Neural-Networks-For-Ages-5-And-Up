@@ -63,6 +63,70 @@ p{
     zoom: 1;
 }
 
+.App__plus___1uJcV, .App__endBracket___qMsDf{
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 50px;
+    float: left;
+    color: #49C4D8;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.App__endBracket___qMsDf{
+    margin-left: 30px;
+}
+
+.App__finalPenguinContainer___118eT:before,
+.App__finalPenguinContainer___118eT:after{
+    content: ' ';
+    display: table;
+}
+
+.App__finalPenguinContainer___118eT:after{
+    clear: both;
+}
+
+.App__finalPenguinContainer___118eT{
+    width: 65%;
+    display: block;
+    margin: 0 auto;
+    zoom: 1;
+}
+
+.App__stars___1lyPf, .App__starsReversed___luCee{
+    width: 150px;
+    height: 280px;
+    float: left;
+    margin-top: 60px;
+    background-size: contain;
+    background-image: url(7178d7fe848591b7a535b0b6daf96c2b.svg);
+}
+
+.App__starsReversed___luCee{
+    -webkit-transform: scaleX(-1);
+        -ms-transform: scaleX(-1);
+            transform: scaleX(-1);
+    margin-left: 40px;
+}
+
+.App__lastNode___1xr9J:before,
+.App__lastNode___1xr9J:after{
+    content: ' ';
+    display: table;
+}
+
+.App__lastNode___1xr9J:after{
+    clear: both;
+}
+
+.App__lastNode___1xr9J{
+    max-width: 500px;
+    display: block;
+    margin: 40px auto;
+    zoom: 1;
+}
+
 @media screen and (min-width: 1280px){
 
     h1{
@@ -96,7 +160,7 @@ p{
 }.transformationRhino__container___3Cjkg{
     float: left;
     width: 180px !important;
-    margin-left: 50px !important;
+    margin-left: 20px !important;
     margin-top: 50px;
 }
 
@@ -110,17 +174,36 @@ p{
 }.transformationFly__container___2LYlP{
     margin-top: 80px !important;
     float: left;
-    margin-left: 100px !important;
+    margin-left: 40px !important;
 }.transformationPenguin__container___-iNTk{
     width: 80px !important;
     float: left;
-    margin: 40px 0 0 120px !important;
+    margin: 40px 0 0 40px !important;
 }
 
 .transformationPenguin__number___2aLKP{
     font-size: 40px !important;
     left: 5px !important;
     bottom: 40px !important;
+}.bigFinalPenguin__container___BKWDi{
+    float: left;
+    margin-left: 40px !important;
+}.lastShaman__shaman___fieQw{
+    width: 200px !important;
+    float: left;
+    margin: 0 !important;
+}.nextPathPenguin__container___2gPOA{
+    -webkit-transform: scaleX(-1);
+        -ms-transform: scaleX(-1);
+            transform: scaleX(-1);
+    width: 110px !important;
+    margin: 0 !important;
+}
+
+.nextPathPenguin__number___2HmaW{
+    bottom: 60px !important;
+    left: 13px !important;
+    font-size: 50px !important;
 }.Penguin__container___1Csui{
     position: relative;
     display: block;
@@ -229,6 +312,9 @@ p{
     color: rgb(26,26,26);
 }.Frog__container___uVpui{
     width: 200px;
+    float: left;
+    margin-top: 40px;
+    margin-left: 40px;
     position: relative;
 }
 
@@ -241,7 +327,10 @@ p{
     position: absolute;
     font-size: 40px;
     bottom: 35px;
-    left: 92px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding-left: 5px;
 }.Road__road___8966H{
     float: right;
     width: 700px;

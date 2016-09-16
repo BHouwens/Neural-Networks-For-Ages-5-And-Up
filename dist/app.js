@@ -8204,7 +8204,7 @@
 	
 	var _components = __webpack_require__(494);
 	
-	var _reducer = __webpack_require__(516);
+	var _reducer = __webpack_require__(520);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -31028,7 +31028,7 @@
 	  });
 	});
 	
-	var _Penguin = __webpack_require__(499);
+	var _Penguin = __webpack_require__(503);
 	
 	Object.keys(_Penguin).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31040,7 +31040,7 @@
 	  });
 	});
 	
-	var _Rhino = __webpack_require__(502);
+	var _Rhino = __webpack_require__(506);
 	
 	Object.keys(_Rhino).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31052,7 +31052,7 @@
 	  });
 	});
 	
-	var _Shaman = __webpack_require__(504);
+	var _Shaman = __webpack_require__(508);
 	
 	Object.keys(_Shaman).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31064,7 +31064,7 @@
 	  });
 	});
 	
-	var _Fly = __webpack_require__(506);
+	var _Fly = __webpack_require__(510);
 	
 	Object.keys(_Fly).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31076,7 +31076,7 @@
 	  });
 	});
 	
-	var _Frog = __webpack_require__(508);
+	var _Frog = __webpack_require__(512);
 	
 	Object.keys(_Frog).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31088,7 +31088,7 @@
 	  });
 	});
 	
-	var _Road = __webpack_require__(510);
+	var _Road = __webpack_require__(514);
 	
 	Object.keys(_Road).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31100,7 +31100,7 @@
 	  });
 	});
 	
-	var _Formals = __webpack_require__(512);
+	var _Formals = __webpack_require__(516);
 	
 	Object.keys(_Formals).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31112,7 +31112,7 @@
 	  });
 	});
 	
-	var _Genie = __webpack_require__(514);
+	var _Genie = __webpack_require__(518);
 	
 	Object.keys(_Genie).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31155,17 +31155,29 @@
 	
 	var _roadPenguin2 = _interopRequireDefault(_roadPenguin);
 	
-	var _transformationRhino = __webpack_require__(517);
+	var _transformationRhino = __webpack_require__(499);
 	
 	var _transformationRhino2 = _interopRequireDefault(_transformationRhino);
 	
-	var _transformationFly = __webpack_require__(518);
+	var _transformationFly = __webpack_require__(500);
 	
 	var _transformationFly2 = _interopRequireDefault(_transformationFly);
 	
-	var _transformationPenguin = __webpack_require__(519);
+	var _transformationPenguin = __webpack_require__(501);
 	
 	var _transformationPenguin2 = _interopRequireDefault(_transformationPenguin);
+	
+	var _bigFinalPenguin = __webpack_require__(502);
+	
+	var _bigFinalPenguin2 = _interopRequireDefault(_bigFinalPenguin);
+	
+	var _lastShaman = __webpack_require__(521);
+	
+	var _lastShaman2 = _interopRequireDefault(_lastShaman);
+	
+	var _nextPathPenguin = __webpack_require__(522);
+	
+	var _nextPathPenguin2 = _interopRequireDefault(_nextPathPenguin);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -31256,30 +31268,49 @@
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'The shaman casts a special spell on all three of our friends and merges them all into a ',
-	                    _react2.default.createElement(
-	                        'i',
-	                        null,
-	                        'new'
-	                    ),
-	                    ' penguin with a ',
-	                    _react2.default.createElement(
-	                        'i',
-	                        null,
-	                        'new'
-	                    ),
-	                    ' number. More POWER!'
+	                    'The shaman casts a special spell on all three of our friends added together, and they turn into a brand spanking new penguin with a new number!'
 	                ),
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: _App2.default.transformation },
 	                    _react2.default.createElement(_components.Shaman, { reverse: true }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: _App2.default.plus },
+	                        '('
+	                    ),
 	                    _react2.default.createElement(_components.Rhino, { disabled: true, styles: _transformationRhino2.default }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: _App2.default.plus },
+	                        '+'
+	                    ),
 	                    _react2.default.createElement(_components.Fly, { disabled: true, styles: _transformationFly2.default }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: _App2.default.plus },
+	                        '+'
+	                    ),
 	                    _react2.default.createElement(_components.Penguin, {
 	                        disabled: true,
 	                        onPenguinChange: onPenguinChange,
-	                        styles: _transformationPenguin2.default })
+	                        styles: _transformationPenguin2.default }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: _App2.default.endBracket },
+	                        ')'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: _App2.default.finalPenguinContainer },
+	                    _react2.default.createElement('div', { className: _App2.default.stars }),
+	                    _react2.default.createElement(_components.Penguin, {
+	                        disabled: true,
+	                        final: true,
+	                        onPenguinChange: onPenguinChange,
+	                        styles: _bigFinalPenguin2.default }),
+	                    _react2.default.createElement('div', { className: _App2.default.starsReversed })
 	                ),
 	                _react2.default.createElement(
 	                    'p',
@@ -31299,26 +31330,43 @@
 	                    ' Bias. They come to another shaman at the next sign post and the process repeats.'
 	                ),
 	                _react2.default.createElement(
+	                    'div',
+	                    { className: _App2.default.nextPath },
+	                    _react2.default.createElement(_components.Penguin, {
+	                        disabled: true,
+	                        final: true,
+	                        onPenguinChange: onPenguinChange,
+	                        styles: _nextPathPenguin2.default }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: _App2.default.nextFriends },
+	                        _react2.default.createElement(_components.Rhino, { disabled: true }),
+	                        _react2.default.createElement(_components.Fly, { disabled: true })
+	                    ),
+	                    _react2.default.createElement('div', { className: _App2.default.path }),
+	                    _react2.default.createElement('div', { className: _App2.default.nextShaman })
+	                ),
+	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'The last path in the journey is a bit different; the shaman is joined this time by a frog!'
+	                    'The last path in the journey is a bit different: the shaman is joined this time by a frog!'
 	                ),
 	                _react2.default.createElement(
 	                    'section',
 	                    { className: _App2.default.lastNode },
-	                    _react2.default.createElement(_components.Shaman, null),
+	                    _react2.default.createElement(_components.Shaman, { styles: _lastShaman2.default }),
 	                    _react2.default.createElement(_components.Frog, null)
 	                ),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'The shaman does his magic thing once more, and then we have to compare the frog\'s number with our final penguin\'s number. See if you can help our bad-ass penguin\'s number match the frog\'s number by changing ',
+	                    'The shaman does his magic thing once more, and then we have to compare the frog’s number with our final penguin\'s number. See if you can help our bad-ass penguin\'s number match the frog\'s number by changing ',
 	                    _react2.default.createElement(
 	                        'b',
 	                        null,
 	                        'only'
 	                    ),
-	                    ' the Weight (rhino) numbers. This seems like a weird way to do it, but we don\'t get to make the rules.'
+	                    ' the Weight (rhino) numbers. This seems like a weird way to do it but, just as in life, we don’t get to make the rules.'
 	                ),
 	                _react2.default.createElement(
 	                    'p',
@@ -31333,7 +31381,7 @@
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'Now things might start to get a good bit more difficult! Dont’t lose hope though, patient reader, because we have one more character who can help us: the genie.'
+	                    'Now things might start to get a good bit more difficult! Don’t lose hope though, patient reader, because we have one more character who can help us: the genie.'
 	                ),
 	                _react2.default.createElement(_components.Genie, null),
 	                _react2.default.createElement(
@@ -31383,7 +31431,8 @@
 	    value: true
 	});
 	exports.changePenguin = changePenguin;
-	exports.changeRhino = changeRhino;
+	exports.changeFirstRhino = changeFirstRhino;
+	exports.changeSecondRhino = changeSecondRhino;
 	function changePenguin(value) {
 	    return {
 	        type: 'CHANGE_PENGUIN',
@@ -31391,9 +31440,16 @@
 	    };
 	}
 	
-	function changeRhino(value) {
+	function changeFirstRhino(value) {
 	    return {
-	        type: 'CHANGE_RHINO',
+	        type: 'CHANGE_FIRST_RHINO',
+	        value: value
+	    };
+	}
+	
+	function changeSecondRhino(value) {
+	    return {
+	        type: 'CHANGE_SECOND_RHINO',
 	        value: value
 	    };
 	}
@@ -31403,7 +31459,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","rhinoHighlight":"App__rhinoHighlight___18QeD","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb","transformation":"App__transformation___3FdUH"};
+	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","rhinoHighlight":"App__rhinoHighlight___18QeD","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb","transformation":"App__transformation___3FdUH","plus":"App__plus___1uJcV","endBracket":"App__endBracket___qMsDf","finalPenguinContainer":"App__finalPenguinContainer___118eT","stars":"App__stars___1lyPf","starsReversed":"App__starsReversed___luCee","lastNode":"App__lastNode___1xr9J"};
 
 /***/ },
 /* 498 */
@@ -31414,6 +31470,34 @@
 
 /***/ },
 /* 499 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"transformationRhino__container___3Cjkg","inputContainer":"transformationRhino__inputContainer___1WSs0","number":"transformationRhino__number___1MfUF"};
+
+/***/ },
+/* 500 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"transformationFly__container___2LYlP"};
+
+/***/ },
+/* 501 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"transformationPenguin__container___-iNTk","number":"transformationPenguin__number___2aLKP"};
+
+/***/ },
+/* 502 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"bigFinalPenguin__container___BKWDi"};
+
+/***/ },
+/* 503 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31431,9 +31515,9 @@
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _utils = __webpack_require__(500);
+	var _utils = __webpack_require__(504);
 	
-	var _Penguin = __webpack_require__(501);
+	var _Penguin = __webpack_require__(505);
 	
 	var _Penguin2 = _interopRequireDefault(_Penguin);
 	
@@ -31463,13 +31547,15 @@
 	            var onPenguinChange = _props.onPenguinChange;
 	            var styles = this.props.styles ? (0, _utils.overrideCSS)(_Penguin2.default, this.props.styles) : _Penguin2.default;
 	
+	            var usedNumber = this.props.final ? this.props.finalNumber : this.props.initNumber;
+	
 	            return _react2.default.createElement(
 	                'div',
 	                { className: styles.container },
 	                _react2.default.createElement('input', {
 	                    type: 'number',
 	                    className: styles.number,
-	                    value: number,
+	                    value: usedNumber,
 	                    max: '99',
 	                    min: '0',
 	                    disabled: disabled,
@@ -31485,13 +31571,16 @@
 	}(_react2.default.Component);
 	
 	function mapStateToProps(state) {
-	    return { number: state.penguinNumber };
+	    return {
+	        initNumber: state.penguinNumber,
+	        finalNumber: state.finalPenguinNumber
+	    };
 	}
 	
 	var Penguin = exports.Penguin = (0, _reactRedux.connect)(mapStateToProps)(PenguinComponent);
 
 /***/ },
-/* 500 */
+/* 504 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -31515,14 +31604,14 @@
 	}
 
 /***/ },
-/* 501 */
+/* 505 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Penguin__container___1Csui","penguin":"Penguin__penguin___8FZiW","number":"Penguin__number___DzjID"};
 
 /***/ },
-/* 502 */
+/* 506 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31538,11 +31627,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _utils = __webpack_require__(500);
+	var _utils = __webpack_require__(504);
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _Rhino = __webpack_require__(503);
+	var _Rhino = __webpack_require__(507);
 	
 	var _Rhino2 = _interopRequireDefault(_Rhino);
 	
@@ -31605,14 +31694,14 @@
 	var Rhino = exports.Rhino = (0, _reactRedux.connect)(mapStateToProps)(RhinoComponent);
 
 /***/ },
-/* 503 */
+/* 507 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Rhino__container___2SChu","rhino":"Rhino__rhino___1Id4I","inputContainer":"Rhino__inputContainer___tFHWK","number":"Rhino__number___1Rg0B"};
 
 /***/ },
-/* 504 */
+/* 508 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31628,7 +31717,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Shaman = __webpack_require__(505);
+	var _utils = __webpack_require__(504);
+	
+	var _Shaman = __webpack_require__(509);
 	
 	var _Shaman2 = _interopRequireDefault(_Shaman);
 	
@@ -31652,10 +31743,12 @@
 	    _createClass(Shaman, [{
 	        key: 'render',
 	        value: function render() {
+	            var styles = this.props.styles ? (0, _utils.overrideCSS)(_Shaman2.default, this.props.styles) : _Shaman2.default;
+	
 	            if (this.props.reverse) {
-	                return _react2.default.createElement('img', { className: _Shaman2.default.shamanSwitched, src: 'src/images/shaman.svg', alt: 'This is a picture of the shaman' });
+	                return _react2.default.createElement('img', { className: styles.shamanSwitched, src: 'src/images/shaman.svg', alt: 'This is a picture of the shaman' });
 	            } else {
-	                return _react2.default.createElement('img', { className: _Shaman2.default.shaman, src: 'src/images/shaman.svg', alt: 'This is a picture of the shaman' });
+	                return _react2.default.createElement('img', { className: styles.shaman, src: 'src/images/shaman.svg', alt: 'This is a picture of the shaman' });
 	            }
 	        }
 	    }]);
@@ -31664,14 +31757,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 505 */
+/* 509 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"shaman":"Shaman__shaman___105r8","shamanSwitched":"Shaman__shamanSwitched___lCM5L"};
 
 /***/ },
-/* 506 */
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31687,11 +31780,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _utils = __webpack_require__(500);
+	var _utils = __webpack_require__(504);
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _Fly = __webpack_require__(507);
+	var _Fly = __webpack_require__(511);
 	
 	var _Fly2 = _interopRequireDefault(_Fly);
 	
@@ -31754,14 +31847,14 @@
 	var Fly = exports.Fly = (0, _reactRedux.connect)(mapStateToProps)(FlyComponent);
 
 /***/ },
-/* 507 */
+/* 511 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Fly__container___4GIL3","fly":"Fly__fly___gwGvi","number":"Fly__number___3KXi4"};
 
 /***/ },
-/* 508 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31779,7 +31872,7 @@
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _Frog = __webpack_require__(509);
+	var _Frog = __webpack_require__(513);
 	
 	var _Frog2 = _interopRequireDefault(_Frog);
 	
@@ -31831,14 +31924,14 @@
 	var Frog = exports.Frog = (0, _reactRedux.connect)(mapStateToProps)(FrogComponent);
 
 /***/ },
-/* 509 */
+/* 513 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Frog__container___uVpui","frog":"Frog__frog___1YZg5","number":"Frog__number___wZgeb"};
 
 /***/ },
-/* 510 */
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31854,7 +31947,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Road = __webpack_require__(511);
+	var _Road = __webpack_require__(515);
 	
 	var _Road2 = _interopRequireDefault(_Road);
 	
@@ -31886,14 +31979,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 511 */
+/* 515 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"road":"Road__road___8966H"};
 
 /***/ },
-/* 512 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31906,7 +31999,7 @@
 	
 	var _components = __webpack_require__(494);
 	
-	var _Formals = __webpack_require__(513);
+	var _Formals = __webpack_require__(517);
 	
 	var _Formals2 = _interopRequireDefault(_Formals);
 	
@@ -32121,13 +32214,13 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 513 */
+/* 517 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 514 */
+/* 518 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32143,7 +32236,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Genie = __webpack_require__(515);
+	var _Genie = __webpack_require__(519);
 	
 	var _Genie2 = _interopRequireDefault(_Genie);
 	
@@ -32175,14 +32268,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 515 */
+/* 519 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"genie":"Genie__genie___1562y"};
 
 /***/ },
-/* 516 */
+/* 520 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -32198,8 +32291,8 @@
 	    penguinNumber: initPenguin,
 	    rhinoNumber: initRhino,
 	    finalPenguinNumber: getFinalPenguinNumber(initPenguin, initRhino),
-	    genieNumber: getFinalPenguinNumber(initPenguin, initRhino) - 5,
 	    frogNumber: getFrogNumber(initPenguin),
+	    finalRhinoNumber: getFinalRhinoNumber(initPenguin, initRhino),
 	    predFrogNumber: 5,
 	    flyNumber: 1
 	};
@@ -32209,11 +32302,15 @@
 	}
 	
 	function getFinalPenguinNumber(penguinNumber, rhinoNumber) {
-	    return penguinNumber * rhinoNumber / 2;
+	    return Math.round((penguinNumber + rhinoNumber + 1) / 2);
 	}
 	
 	function getFrogNumber(penguinNumber) {
 	    return penguinNumber * 2 - 4;
+	}
+	
+	function getFinalRhinoNumber(penguinNumber, rhinoNumber) {
+	    return Math.round(Math.random * penguinNumber) + rhinoNumber + 2;
 	}
 	
 	/*-- Reducer --*/
@@ -32228,15 +32325,15 @@
 	                penguinNumber: action.value,
 	                rhinoNumber: getRhinoNumber(action.value),
 	                finalPenguinNumber: getFinalPenguinNumber(action.value, getRhinoNumber(action.value)),
-	                genieNumber: getFinalPenguinNumber(state.penguinNumber, action.value) - 5,
+	                finalRhinoNumber: getFinalRhinoNumber(action.value, getRhinoNumber(action.value)),
 	                frogNumber: getFrogNumber(action.value)
 	            });
 	
-	        case 'CHANGE_RHINO':
+	        case 'CHANGE_FIRST_RHINO':
 	            return Object.assign({}, state, {
 	                rhinoNumber: action.value,
 	                finalPenguinNumber: getFinalPenguinNumber(state.penguinNumber, action.value),
-	                genieNumber: getFinalPenguinNumber(state.penguinNumber, action.value) - 5
+	                finalRhinoNumber: getFinalRhinoNumber(state.penguinNumber, action.value)
 	            });
 	
 	        default:
@@ -32245,25 +32342,18 @@
 	}
 
 /***/ },
-/* 517 */
+/* 521 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"container":"transformationRhino__container___3Cjkg","inputContainer":"transformationRhino__inputContainer___1WSs0","number":"transformationRhino__number___1MfUF"};
+	module.exports = {"shaman":"lastShaman__shaman___fieQw"};
 
 /***/ },
-/* 518 */
+/* 522 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"container":"transformationFly__container___2LYlP"};
-
-/***/ },
-/* 519 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-	module.exports = {"container":"transformationPenguin__container___-iNTk","number":"transformationPenguin__number___2aLKP"};
+	module.exports = {"container":"nextPathPenguin__container___2gPOA","number":"nextPathPenguin__number___2HmaW"};
 
 /***/ }
 /******/ ]);

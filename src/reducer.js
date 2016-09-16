@@ -5,8 +5,8 @@ const initialState = {
     penguinNumber : initPenguin,
     rhinoNumber : initRhino,
     finalPenguinNumber : getFinalPenguinNumber(initPenguin, initRhino),
-    genieNumber : getFinalPenguinNumber(initPenguin, initRhino) - 5,
     frogNumber : getFrogNumber(initPenguin),
+    finalRhinoNumber : getFinalRhinoNumber(initPenguin, initRhino),
     predFrogNumber : 5,
     flyNumber: 1
 };
@@ -16,11 +16,15 @@ function getRhinoNumber(penguinNumber) {
 }
 
 function getFinalPenguinNumber(penguinNumber, rhinoNumber) {
-    return penguinNumber * rhinoNumber / 2;
+    return Math.round((penguinNumber + rhinoNumber + 1) / 2);
 }
 
 function getFrogNumber(penguinNumber) {
     return penguinNumber * 2 - 4;
+}
+
+function getFinalRhinoNumber(penguinNumber, rhinoNumber) {
+    return Math.round(Math.random * penguinNumber) + rhinoNumber + 2;
 }
 
 
@@ -33,15 +37,15 @@ export function reducer(state = initialState, action) {
                 penguinNumber : action.value,
                 rhinoNumber : getRhinoNumber(action.value),
                 finalPenguinNumber : getFinalPenguinNumber(action.value, getRhinoNumber(action.value)),
-                genieNumber : getFinalPenguinNumber(state.penguinNumber, action.value) - 5,
+                finalRhinoNumber : getFinalRhinoNumber(action.value, getRhinoNumber(action.value)),
                 frogNumber : getFrogNumber(action.value)
             });
 
-        case 'CHANGE_RHINO':
+        case 'CHANGE_FIRST_RHINO':
             return Object.assign({}, state, { 
                 rhinoNumber : action.value,
                 finalPenguinNumber : getFinalPenguinNumber(state.penguinNumber, action.value),
-                genieNumber : getFinalPenguinNumber(state.penguinNumber, action.value) - 5
+                finalRhinoNumber : getFinalRhinoNumber(state.penguinNumber, action.value)
             });
 
         default:
