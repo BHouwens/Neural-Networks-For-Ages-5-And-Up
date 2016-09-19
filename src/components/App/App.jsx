@@ -119,16 +119,94 @@ class AppComponent extends React.Component {
                 </section>
 
                 <p>
-                    The shaman does his magic thing once more, and then we have to compare the frog&rsquo;s number with our final penguin's number. See if you can 
-                    help our bad-ass penguin's number match the frog's number by changing <b>only</b> the Weight (rhino) numbers. This seems like a weird way 
-                    to do it but, just as in life, we don&rsquo;t get to make the rules.       
+                    The shaman does his magic thing once more, and then we have to compare the frog&rsquo;s number with our final 
+                    penguin&rsquo;s number. See if you can help our bad-ass penguin&rsquo;s number match the frog&rsquo;s number by changing 
+                    <span className={styles.important}>only the Weight (rhino) numbers</span>. This seems like a weird way 
+                    to do it but, just as in life, we don&rsquo;t get to make the rules. We have made it a bit easier though by only 
+                    having to worry about one journey for our penguin:      
                 </p>
 
-                {/*-- do exercise --*/}
+                <section className={styles.firstExercise}>
+                    <Penguin 
+                        disabled={true}
+                        onPenguinChange={onPenguinChange} 
+                        styles={transformationPenguin} />
+
+                    <div className={styles.nextFriends}>
+                        <Rhino disabled={false} />
+                        <Fly disabled={true} />
+                    </div>
+
+                    <div className={styles.path}></div>
+
+                    <div className={styles.finalTest}>
+                        <div className={styles.nextShaman}></div>
+
+                        <Penguin
+                            disabled={true}
+                            final={true}
+                            onPenguinChange={onPenguinChange}
+                            styles={nextPathPenguin} />
+
+                        <Frog />
+                        <div className={styles.answer}>
+                            <div className={styles.tick}></div>
+                            <div className={styles.cross}></div>
+                        </div>
+                    </div>
+                </section>
 
                 <p>
-                    Depending on how hot your arithmetic is, you may or may not have taken a while to match our friend up, but it shouldn&rsquo;t have been too 
-                    tough. What happens, though, if we have lots of penguins at the beginning? Say, hmm, 5 penguins:
+                    That shouldn&rsquo;t have been too difficult. Let&rsquo;s see if we can ramp up the difficulty by adding another 
+                    penguin to the journey, with his own Weight (notice there&rsquo;s still only one Bias though): 
+                </p>
+
+                <section className={styles.secondExercise}>
+                    <div className={styles.penguins}>
+                        <Penguin 
+                            disabled={true}
+                            onPenguinChange={onPenguinChange} 
+                            styles={transformationPenguin} />
+
+                        <Penguin 
+                            disabled={true}
+                            onPenguinChange={onPenguinChange} 
+                            styles={transformationPenguin} />
+                    </div>
+
+                    <div className={style.middleBit}>
+                        <div className={styles.firstPath}>
+                            <Rhino disabled={false} />
+                            <div className={styles.firstPathImage}></div>
+                        </div>
+
+                        <Fly disabled={false} />
+
+                        <div className={styles.secondPath}>
+                            <Rhino disabled={false} />
+                            <div className={styles.secondPathImage}></div>
+                        </div>
+                    </div>
+
+                    <div className={styles.finalTest}>
+                        <div className={styles.nextShaman}></div>
+
+                        <Penguin
+                            disabled={true}
+                            final={true}
+                            onPenguinChange={onPenguinChange}
+                            styles={nextPathPenguin} />
+
+                        <Frog />
+                        <div className={styles.answer}>
+                            <div className={styles.tick}></div>
+                            <div className={styles.cross}></div>
+                        </div>
+                    </div>
+                </section>
+
+                <p> 
+                    A little more difficult, but shouldn&rsquo;t have been too difficult right? But what if we had, say, 6 penguins?
                 </p>
 
                 {/*-- show "realistic" network --*/}
@@ -147,12 +225,13 @@ class AppComponent extends React.Component {
                 <p>
                     She has two powers: she can check the difference between the last penguin and the frog herself and, more importantly, she is powerful enough 
                     that she can change all the Weights&rsquo; numbers <i>across the whole network of paths</i>! Unfortunately she is not powerful to change them 
-                    to the correct numbers all at once, so our poor penguins have to make the same trips many times until the genie gets it right.
+                    to the correct numbers all at once, so our poor penguins have to make the same trips many times until the genie gets it right by increments.
                 </p>
 
                 <p>
-                    Once she does get it near perfect though, the Weight rhinos and Bias flies are kept together so any time a new bunch of penguins pitch up they 
-                    only have to make their brave journey once. We say then that the network of paths, with their sign posts, Weight rhinos and Bias flies, are &ldquo;trained&rdquo;.
+                    The exercise of finding the right numbers for the Weights (and Biases) is exactly what happens in a real neural network. 
+                    These weights are then &ldquo;stored&rdquo; for future use on new, unseen Features for which we do not have &ldquo;frogs&rdquo; 
+                    to test against and we say that the network is <span className={styles.important}>trained</span>. 
                 </p>
             </div>
         );
