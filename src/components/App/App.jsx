@@ -19,6 +19,8 @@ import transformationPenguin from './overrides/transformationPenguin.pcss';
 import bigFinalPenguin from './overrides/bigFinalPenguin.pcss';
 import lastShaman from './overrides/lastShaman.pcss';
 import nextPathPenguin from './overrides/nextPathPenguin.pcss';
+import nextPathRhino from './overrides/nextPathRhino.pcss';
+import nextPathFly from './overrides/nextPathFly.pcss';
 
 class AppComponent extends React.Component {
 
@@ -101,15 +103,15 @@ class AppComponent extends React.Component {
                         styles={nextPathPenguin} />
 
                     <div className={styles.nextFriends}>
-                        <Rhino disabled={true} />
-                        <Fly disabled={true} />
+                        <Rhino disabled={true} styles={nextPathRhino} />
+                        <Fly disabled={true} styles={nextPathFly} />
+                        <div className={styles.path}></div>
                     </div>
 
-                    <div className={styles.path}></div>
                     <div className={styles.nextShaman}></div>
                 </div>
 
-                <p>
+                <p className={styles.clear}>
                     The last path in the journey is a bit different: the shaman is joined this time by a frog!
                 </p>
 
@@ -174,7 +176,7 @@ class AppComponent extends React.Component {
                             styles={transformationPenguin} />
                     </div>
 
-                    <div className={style.middleBit}>
+                    <div className={styles.middleBit}>
                         <div className={styles.firstPath}>
                             <Rhino disabled={false} />
                             <div className={styles.firstPathImage}></div>
