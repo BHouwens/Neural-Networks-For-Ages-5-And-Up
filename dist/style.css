@@ -168,8 +168,49 @@ p{
     height: 196px;
 }
 
+.App__firstExercise___2BX7Z, .App__finalTest___2bYQ9{
+    clear: both;
+}
+
+.App__finalTest___2bYQ9:before,
+.App__finalTest___2bYQ9:after{
+    content: ' ';
+    display: table;
+}
+
+.App__finalTest___2bYQ9:after{
+    clear: both;
+}
+
+.App__finalTest___2bYQ9{    
+    width: 600px;
+    margin: 50px auto;
+    zoom: 1;
+}
+
 .App__clear___1uDVh{
     clear: both;
+}
+
+.App__tick___2WExb, .App__cross___2UQyP{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    background-size: contain;
+}
+
+.App__tick___2WExb{
+    background-image: url(509989869f3d0ca3264b66414ca28dbf.svg);
+}
+
+.App__cross___2UQyP{
+    background-image: url(d4da7e34377c5bacaae82019a866473a.svg);
+}
+
+.App__answer___wlp6b{
+    float: left;
+    margin-left: 70px;
+    margin-top: 70px;
 }
 
 @media screen and (min-width: 1280px){
@@ -192,7 +233,8 @@ p{
     p{
         font-size: 18px;
     }
-}.roadPenguin__container___24oJj{
+}
+.roadPenguin__container___24oJj{
     float: left;
     margin: 0 !important;
     width: 100px !important;
@@ -270,6 +312,24 @@ p{
 }.nextPathFly__container___3e3wb{
     margin-top: -100px !important;
     margin-left: 170px !important;
+}.firstExerciseRhino__container___1Uj4I{
+    width: 170px !important;
+}
+
+.firstExerciseRhino__number___O83sq{
+    font-size: 40px !important;
+    margin-left: 93px !important;
+    margin-top: -13px !important;
+}.firstExercisePenguin__container___30aHh{
+    float: left;
+    margin: 0 !important;
+    width: 130px !important;
+}
+
+.firstExercisePenguin__number___2qRib{
+    bottom: 75px !important;
+    left: 22px !important;
+    font-size: 55px !important;
 }.Penguin__container___1Csui{
     position: relative;
     display: block;

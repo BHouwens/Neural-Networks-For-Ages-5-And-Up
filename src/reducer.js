@@ -12,19 +12,19 @@ const initialState = {
 };
 
 function getRhinoNumber(penguinNumber) {
-    return penguinNumber * 2 - 1;
+    return parseFloat(penguinNumber) * 2 - 1;
 }
 
 function getFinalPenguinNumber(penguinNumber, rhinoNumber) {
-    return Math.round((penguinNumber + rhinoNumber + 1) / 2);
+    return Math.round( (parseFloat(penguinNumber) + parseFloat(rhinoNumber) + 1) / 2 );
 }
 
 function getFrogNumber(penguinNumber) {
-    return penguinNumber * 2 - 4;
+    return parseFloat(penguinNumber) * 2 - 4;
 }
 
 function getFinalRhinoNumber(penguinNumber, rhinoNumber) {
-    return Math.round(Math.random * penguinNumber) + rhinoNumber + 2;
+    return Math.round(Math.random * parseFloat(penguinNumber)) + parseFloat(rhinoNumber) + 2;
 }
 
 

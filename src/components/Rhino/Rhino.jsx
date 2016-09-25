@@ -7,10 +7,19 @@ class RhinoComponent extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.state = { number: props.number };
+        this.changeNumber = this.changeNumber.bind(this);
+    }
+
+    changeNumber(value) {
+        this.setState({ number: value });
+        if (this.props.changeNumber) this.props.changeNumber(value);
     }
 
     render() {
-        let { number, disabled } = this.props,
+        let { disabled } = this.props,
+            { number } = this.state,
             styles = this.props.styles ? overrideCSS(internalStyles, this.props.styles) : internalStyles;
 
         return (

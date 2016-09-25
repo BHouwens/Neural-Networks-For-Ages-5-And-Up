@@ -8204,7 +8204,7 @@
 	
 	var _components = __webpack_require__(494);
 	
-	var _reducer = __webpack_require__(522);
+	var _reducer = __webpack_require__(524);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -31028,7 +31028,7 @@
 	  });
 	});
 	
-	var _Penguin = __webpack_require__(505);
+	var _Penguin = __webpack_require__(507);
 	
 	Object.keys(_Penguin).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31040,7 +31040,7 @@
 	  });
 	});
 	
-	var _Rhino = __webpack_require__(508);
+	var _Rhino = __webpack_require__(510);
 	
 	Object.keys(_Rhino).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31052,7 +31052,7 @@
 	  });
 	});
 	
-	var _Shaman = __webpack_require__(510);
+	var _Shaman = __webpack_require__(512);
 	
 	Object.keys(_Shaman).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31064,7 +31064,7 @@
 	  });
 	});
 	
-	var _Fly = __webpack_require__(512);
+	var _Fly = __webpack_require__(514);
 	
 	Object.keys(_Fly).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31076,7 +31076,7 @@
 	  });
 	});
 	
-	var _Frog = __webpack_require__(514);
+	var _Frog = __webpack_require__(516);
 	
 	Object.keys(_Frog).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31088,7 +31088,7 @@
 	  });
 	});
 	
-	var _Road = __webpack_require__(516);
+	var _Road = __webpack_require__(518);
 	
 	Object.keys(_Road).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31100,7 +31100,7 @@
 	  });
 	});
 	
-	var _Formals = __webpack_require__(518);
+	var _Formals = __webpack_require__(520);
 	
 	Object.keys(_Formals).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31112,7 +31112,7 @@
 	  });
 	});
 	
-	var _Genie = __webpack_require__(520);
+	var _Genie = __webpack_require__(522);
 	
 	Object.keys(_Genie).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31179,13 +31179,21 @@
 	
 	var _nextPathPenguin2 = _interopRequireDefault(_nextPathPenguin);
 	
-	var _nextPathRhino = __webpack_require__(523);
+	var _nextPathRhino = __webpack_require__(505);
 	
 	var _nextPathRhino2 = _interopRequireDefault(_nextPathRhino);
 	
-	var _nextPathFly = __webpack_require__(524);
+	var _nextPathFly = __webpack_require__(506);
 	
 	var _nextPathFly2 = _interopRequireDefault(_nextPathFly);
+	
+	var _firstExerciseRhino = __webpack_require__(525);
+	
+	var _firstExerciseRhino2 = _interopRequireDefault(_firstExerciseRhino);
+	
+	var _firstExercisePenguin = __webpack_require__(526);
+	
+	var _firstExercisePenguin2 = _interopRequireDefault(_firstExercisePenguin);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -31212,6 +31220,7 @@
 	            var genieNumber = _props.genieNumber;
 	            var rhinoNumber = _props.rhinoNumber;
 	            var onPenguinChange = _props.onPenguinChange;
+	            var onFirstRhinoChange = _props.onFirstRhinoChange;
 	            var flyNumber = _props.flyNumber;
 	
 	
@@ -31377,40 +31386,45 @@
 	                    '. This seems like a weird way to do it but, just as in life, we don’t get to make the rules. We have made it a bit easier though by only having to worry about one journey for our penguin:'
 	                ),
 	                _react2.default.createElement(
-	                    'section',
-	                    { className: _App2.default.firstExercise },
+	                    'div',
+	                    { className: _App2.default.nextPath },
 	                    _react2.default.createElement(_components.Penguin, {
 	                        disabled: true,
 	                        onPenguinChange: onPenguinChange,
-	                        styles: _transformationPenguin2.default }),
+	                        styles: _nextPathPenguin2.default }),
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: _App2.default.nextFriends },
-	                        _react2.default.createElement(_components.Rhino, { disabled: false }),
-	                        _react2.default.createElement(_components.Fly, { disabled: true })
+	                        _react2.default.createElement(_components.Rhino, { disabled: false, styles: _nextPathRhino2.default, changeNumber: onFirstRhinoChange }),
+	                        _react2.default.createElement(_components.Fly, { disabled: true, styles: _nextPathFly2.default }),
+	                        _react2.default.createElement('div', { className: _App2.default.path })
 	                    ),
-	                    _react2.default.createElement('div', { className: _App2.default.path }),
+	                    _react2.default.createElement('div', { className: _App2.default.nextShaman })
+	                ),
+	                _react2.default.createElement(
+	                    'section',
+	                    { className: _App2.default.finalTest },
+	                    _react2.default.createElement(_components.Penguin, {
+	                        disabled: true,
+	                        final: true,
+	                        onPenguinChange: onPenguinChange,
+	                        styles: _firstExercisePenguin2.default }),
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: _App2.default.finalTest },
-	                        _react2.default.createElement('div', { className: _App2.default.nextShaman }),
-	                        _react2.default.createElement(_components.Penguin, {
-	                            disabled: true,
-	                            final: true,
-	                            onPenguinChange: onPenguinChange,
-	                            styles: _nextPathPenguin2.default }),
-	                        _react2.default.createElement(_components.Frog, null),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: _App2.default.answer },
-	                            _react2.default.createElement('div', { className: _App2.default.tick }),
-	                            _react2.default.createElement('div', { className: _App2.default.cross })
-	                        )
+	                        { className: _App2.default.plus },
+	                        '='
+	                    ),
+	                    _react2.default.createElement(_components.Frog, null),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: _App2.default.answer },
+	                        _react2.default.createElement('div', { className: _App2.default.tick }),
+	                        _react2.default.createElement('div', { className: _App2.default.cross })
 	                    )
 	                ),
 	                _react2.default.createElement(
 	                    'p',
-	                    null,
+	                    { className: _App2.default.clear },
 	                    'That shouldn’t have been too difficult. Let’s see if we can ramp up the difficulty by adding another penguin to the journey, with his own Weight (notice there’s still only one Bias though):'
 	                ),
 	                _react2.default.createElement(
@@ -31516,6 +31530,9 @@
 	    return {
 	        onPenguinChange: function onPenguinChange(value) {
 	            dispatch((0, _actions.changePenguin)(value));
+	        },
+	        onFirstRhinoChange: function onFirstRhinoChange(value) {
+	            dispatch((0, _actions.changeFirstRhino)(value));
 	        }
 	    };
 	}
@@ -31560,7 +31577,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","rhinoHighlight":"App__rhinoHighlight___18QeD","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb","transformation":"App__transformation___3FdUH","plus":"App__plus___1uJcV","endBracket":"App__endBracket___qMsDf","finalPenguinContainer":"App__finalPenguinContainer___118eT","stars":"App__stars___1lyPf","starsReversed":"App__starsReversed___luCee","lastNode":"App__lastNode___1xr9J","nextPath":"App__nextPath___3h5Dz","nextFriends":"App__nextFriends___v10hf","nextShaman":"App__nextShaman___1u5cm","clear":"App__clear___1uDVh"};
+	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","rhinoHighlight":"App__rhinoHighlight___18QeD","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb","transformation":"App__transformation___3FdUH","plus":"App__plus___1uJcV","endBracket":"App__endBracket___qMsDf","finalPenguinContainer":"App__finalPenguinContainer___118eT","stars":"App__stars___1lyPf","starsReversed":"App__starsReversed___luCee","lastNode":"App__lastNode___1xr9J","nextPath":"App__nextPath___3h5Dz","nextFriends":"App__nextFriends___v10hf","nextShaman":"App__nextShaman___1u5cm","firstExercise":"App__firstExercise___2BX7Z","finalTest":"App__finalTest___2bYQ9","clear":"App__clear___1uDVh","tick":"App__tick___2WExb","cross":"App__cross___2UQyP","answer":"App__answer___wlp6b"};
 
 /***/ },
 /* 498 */
@@ -31613,6 +31630,20 @@
 
 /***/ },
 /* 505 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"nextPathRhino__container___115Ci","number":"nextPathRhino__number___28LBh","inputContainer":"nextPathRhino__inputContainer___3BToz"};
+
+/***/ },
+/* 506 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"nextPathFly__container___3e3wb"};
+
+/***/ },
+/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31630,9 +31661,9 @@
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _utils = __webpack_require__(506);
+	var _utils = __webpack_require__(508);
 	
-	var _Penguin = __webpack_require__(507);
+	var _Penguin = __webpack_require__(509);
 	
 	var _Penguin2 = _interopRequireDefault(_Penguin);
 	
@@ -31695,7 +31726,7 @@
 	var Penguin = exports.Penguin = (0, _reactRedux.connect)(mapStateToProps)(PenguinComponent);
 
 /***/ },
-/* 506 */
+/* 508 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -31719,14 +31750,14 @@
 	}
 
 /***/ },
-/* 507 */
+/* 509 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Penguin__container___1Csui","penguin":"Penguin__penguin___8FZiW","number":"Penguin__number___DzjID"};
 
 /***/ },
-/* 508 */
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31742,11 +31773,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _utils = __webpack_require__(506);
+	var _utils = __webpack_require__(508);
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _Rhino = __webpack_require__(509);
+	var _Rhino = __webpack_require__(511);
 	
 	var _Rhino2 = _interopRequireDefault(_Rhino);
 	
@@ -31764,17 +31795,26 @@
 	    function RhinoComponent(props) {
 	        _classCallCheck(this, RhinoComponent);
 	
-	        return _possibleConstructorReturn(this, (RhinoComponent.__proto__ || Object.getPrototypeOf(RhinoComponent)).call(this, props));
+	        var _this = _possibleConstructorReturn(this, (RhinoComponent.__proto__ || Object.getPrototypeOf(RhinoComponent)).call(this, props));
+	
+	        _this.state = { number: props.number };
+	        _this.changeNumber = _this.changeNumber.bind(_this);
+	        return _this;
 	    }
 	
 	    _createClass(RhinoComponent, [{
+	        key: 'changeNumber',
+	        value: function changeNumber(value) {
+	            this.setState({ number: value });
+	            if (this.props.changeNumber) this.props.changeNumber(value);
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            var _this2 = this;
 	
-	            var _props = this.props;
-	            var number = _props.number;
-	            var disabled = _props.disabled;
+	            var disabled = this.props.disabled;
+	            var number = this.state.number;
 	            var styles = this.props.styles ? (0, _utils.overrideCSS)(_Rhino2.default, this.props.styles) : _Rhino2.default;
 	
 	            return _react2.default.createElement(
@@ -31809,14 +31849,14 @@
 	var Rhino = exports.Rhino = (0, _reactRedux.connect)(mapStateToProps)(RhinoComponent);
 
 /***/ },
-/* 509 */
+/* 511 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Rhino__container___2SChu","rhino":"Rhino__rhino___1Id4I","inputContainer":"Rhino__inputContainer___tFHWK","number":"Rhino__number___1Rg0B"};
 
 /***/ },
-/* 510 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31832,9 +31872,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _utils = __webpack_require__(506);
+	var _utils = __webpack_require__(508);
 	
-	var _Shaman = __webpack_require__(511);
+	var _Shaman = __webpack_require__(513);
 	
 	var _Shaman2 = _interopRequireDefault(_Shaman);
 	
@@ -31872,14 +31912,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 511 */
+/* 513 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"shaman":"Shaman__shaman___105r8","shamanSwitched":"Shaman__shamanSwitched___lCM5L"};
 
 /***/ },
-/* 512 */
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31895,11 +31935,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _utils = __webpack_require__(506);
+	var _utils = __webpack_require__(508);
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _Fly = __webpack_require__(513);
+	var _Fly = __webpack_require__(515);
 	
 	var _Fly2 = _interopRequireDefault(_Fly);
 	
@@ -31962,14 +32002,14 @@
 	var Fly = exports.Fly = (0, _reactRedux.connect)(mapStateToProps)(FlyComponent);
 
 /***/ },
-/* 513 */
+/* 515 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Fly__container___4GIL3","fly":"Fly__fly___gwGvi","number":"Fly__number___3KXi4"};
 
 /***/ },
-/* 514 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31987,7 +32027,7 @@
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _Frog = __webpack_require__(515);
+	var _Frog = __webpack_require__(517);
 	
 	var _Frog2 = _interopRequireDefault(_Frog);
 	
@@ -32039,14 +32079,14 @@
 	var Frog = exports.Frog = (0, _reactRedux.connect)(mapStateToProps)(FrogComponent);
 
 /***/ },
-/* 515 */
+/* 517 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Frog__container___uVpui","frog":"Frog__frog___1YZg5","number":"Frog__number___wZgeb"};
 
 /***/ },
-/* 516 */
+/* 518 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32062,7 +32102,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Road = __webpack_require__(517);
+	var _Road = __webpack_require__(519);
 	
 	var _Road2 = _interopRequireDefault(_Road);
 	
@@ -32094,14 +32134,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 517 */
+/* 519 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"road":"Road__road___8966H"};
 
 /***/ },
-/* 518 */
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32114,7 +32154,7 @@
 	
 	var _components = __webpack_require__(494);
 	
-	var _Formals = __webpack_require__(519);
+	var _Formals = __webpack_require__(521);
 	
 	var _Formals2 = _interopRequireDefault(_Formals);
 	
@@ -32329,13 +32369,13 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 519 */
+/* 521 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 520 */
+/* 522 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32351,7 +32391,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Genie = __webpack_require__(521);
+	var _Genie = __webpack_require__(523);
 	
 	var _Genie2 = _interopRequireDefault(_Genie);
 	
@@ -32383,14 +32423,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 521 */
+/* 523 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"genie":"Genie__genie___1562y"};
 
 /***/ },
-/* 522 */
+/* 524 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -32413,19 +32453,19 @@
 	};
 	
 	function getRhinoNumber(penguinNumber) {
-	    return penguinNumber * 2 - 1;
+	    return parseFloat(penguinNumber) * 2 - 1;
 	}
 	
 	function getFinalPenguinNumber(penguinNumber, rhinoNumber) {
-	    return Math.round((penguinNumber + rhinoNumber + 1) / 2);
+	    return Math.round((parseFloat(penguinNumber) + parseFloat(rhinoNumber) + 1) / 2);
 	}
 	
 	function getFrogNumber(penguinNumber) {
-	    return penguinNumber * 2 - 4;
+	    return parseFloat(penguinNumber) * 2 - 4;
 	}
 	
 	function getFinalRhinoNumber(penguinNumber, rhinoNumber) {
-	    return Math.round(Math.random * penguinNumber) + rhinoNumber + 2;
+	    return Math.round(Math.random * parseFloat(penguinNumber)) + parseFloat(rhinoNumber) + 2;
 	}
 	
 	/*-- Reducer --*/
@@ -32457,18 +32497,18 @@
 	}
 
 /***/ },
-/* 523 */
+/* 525 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"container":"nextPathRhino__container___115Ci","number":"nextPathRhino__number___28LBh","inputContainer":"nextPathRhino__inputContainer___3BToz"};
+	module.exports = {"container":"firstExerciseRhino__container___1Uj4I","number":"firstExerciseRhino__number___O83sq"};
 
 /***/ },
-/* 524 */
+/* 526 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"container":"nextPathFly__container___3e3wb"};
+	module.exports = {"container":"firstExercisePenguin__container___30aHh","number":"firstExercisePenguin__number___2qRib"};
 
 /***/ }
 /******/ ]);
