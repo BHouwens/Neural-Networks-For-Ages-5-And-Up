@@ -127,7 +127,13 @@ p{
 }
 
 .tick{
+    z-index: 2;
+    opacity: 0;
     background-image: url('../../images/tick.svg');
+
+    &.active{
+        opacity: 1;
+    }
 }
 
 .cross{

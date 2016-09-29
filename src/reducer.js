@@ -1,5 +1,7 @@
-const initPenguin = 5,
-      initRhino = getRhinoNumber(initPenguin);
+const initPenguin = 5;
+const initRhino = getRhinoNumber(initPenguin);
+const firstMultiPathRhino = 20;
+const secondMultiPathRhino = 3;
 
 const initialState = {
     penguinNumber : initPenguin,
@@ -8,7 +10,14 @@ const initialState = {
     frogNumber : getFrogNumber(initPenguin),
     finalRhinoNumber : getFinalRhinoNumber(initPenguin, initRhino),
     predFrogNumber : 5,
-    flyNumber: 1
+    flyNumber: 1,
+
+    firstMultiPathPenguin: 7,
+    firstMultiPathRhino,
+    secondMultiPathPenguin: 12,
+    secondMultiPathRhino,
+    multiPathFrog: 14,
+    finalMultiPathPenguin: getMultiPathPenguin(firstMultiPathRhino, secondMultiPathRhino)
 };
 
 function getRhinoNumber(penguinNumber) {
@@ -25,6 +34,10 @@ function getFrogNumber(penguinNumber) {
 
 function getFinalRhinoNumber(penguinNumber, rhinoNumber) {
     return Math.round(Math.random * parseFloat(penguinNumber)) + parseFloat(rhinoNumber) + 2;
+}
+
+function getMultiPathPenguin(first, second) {
+    return Math.round(first / second) + 10;
 }
 
 
@@ -46,6 +59,16 @@ export function reducer(state = initialState, action) {
                 rhinoNumber : action.value,
                 finalPenguinNumber : getFinalPenguinNumber(state.penguinNumber, action.value),
                 finalRhinoNumber : getFinalRhinoNumber(state.penguinNumber, action.value)
+            });
+
+        case 'CHANGE_FIRST_MULTI_RHINO':
+            return Object.assign({}, state, {
+                finalMultiPathPenguin : getMultiPathPenguin(action.value, state.secondMultiPathRhino)
+            });
+
+        case 'CHANGE_SECOND_MULTI_RHINO':
+            return Object.assign({}, state, {
+                finalMultiPathPenguin : getMultiPathPenguin(state.firstMultiPathRhino, action.value)
             });
 
         default:

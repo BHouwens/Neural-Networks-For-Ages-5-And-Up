@@ -27,7 +27,8 @@ import firstExercisePenguin from './overrides/firstExercisePenguin.pcss';
 class AppComponent extends React.Component {
 
     render() {
-        let { penguinNumber, genieNumber, rhinoNumber, onPenguinChange, onFirstRhinoChange, flyNumber } = this.props;
+        let { penguinNumber, genieNumber, rhinoNumber, onPenguinChange, onFirstRhinoChange, flyNumber, finalPenguinNumber, frogNumber } = this.props,
+            firstTickClass = finalPenguinNumber == frogNumber ? styles.active : '';
 
         return (
             <div className={styles.app}>
@@ -157,7 +158,7 @@ class AppComponent extends React.Component {
 
                     <Frog />
                     <div className={styles.answer}>
-                        <div className={styles.tick}></div>
+                        <div className={`${styles.tick} ${firstTickClass}`}></div>
                         <div className={styles.cross}></div>
                     </div>
                 </section>

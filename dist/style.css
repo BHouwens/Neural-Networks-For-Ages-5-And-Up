@@ -200,7 +200,13 @@ p{
 }
 
 .App__tick___2WExb{
+    z-index: 2;
+    opacity: 0;
     background-image: url(509989869f3d0ca3264b66414ca28dbf.svg);
+}
+
+.App__tick___2WExb.App__active___3ywUE{
+    opacity: 1;
 }
 
 .App__cross___2UQyP{
