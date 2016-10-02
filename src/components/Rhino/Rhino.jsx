@@ -8,7 +8,11 @@ class RhinoComponent extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { number: props.number };
+        let renderNumber = props.firstMulti ? props.firstMultiNumber : 
+                           props.secondMulti ? props.secondMultiNumber :
+                           props.number;
+
+        this.state = { number: renderNumber };
         this.changeNumber = this.changeNumber.bind(this);
     }
 
@@ -42,7 +46,11 @@ class RhinoComponent extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return { number: state.rhinoNumber };
+    return { 
+        number: state.rhinoNumber,
+        firstMultiNumber: state.firstMultiPathRhino,
+        secondMultiNumber: state.secondMultiPathRhino
+    };
 }
 
 export const Rhino = connect(

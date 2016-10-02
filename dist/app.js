@@ -31195,6 +31195,10 @@
 	
 	var _firstExercisePenguin2 = _interopRequireDefault(_firstExercisePenguin);
 	
+	var _multiRhino = __webpack_require__(529);
+	
+	var _multiRhino2 = _interopRequireDefault(_multiRhino);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31224,6 +31228,10 @@
 	            var flyNumber = _props.flyNumber;
 	            var finalPenguinNumber = _props.finalPenguinNumber;
 	            var frogNumber = _props.frogNumber;
+	            var firstMultiPathRhino = _props.firstMultiPathRhino;
+	            var secondMultiPathRhino = _props.secondMultiPathRhino;
+	
+	
 	            var firstTickClass = finalPenguinNumber == frogNumber ? _App2.default.active : '';
 	
 	            return _react2.default.createElement(
@@ -31326,7 +31334,7 @@
 	                    _react2.default.createElement('div', { className: _App2.default.stars }),
 	                    _react2.default.createElement(_components.Penguin, {
 	                        disabled: true,
-	                        final: true,
+	                        type: 'final',
 	                        onPenguinChange: onPenguinChange,
 	                        styles: _bigFinalPenguin2.default }),
 	                    _react2.default.createElement('div', { className: _App2.default.starsReversed })
@@ -31353,7 +31361,7 @@
 	                    { className: _App2.default.nextPath },
 	                    _react2.default.createElement(_components.Penguin, {
 	                        disabled: true,
-	                        final: true,
+	                        type: 'final',
 	                        onPenguinChange: onPenguinChange,
 	                        styles: _nextPathPenguin2.default }),
 	                    _react2.default.createElement(
@@ -31408,7 +31416,7 @@
 	                    { className: _App2.default.finalTest },
 	                    _react2.default.createElement(_components.Penguin, {
 	                        disabled: true,
-	                        final: true,
+	                        type: 'final',
 	                        onPenguinChange: onPenguinChange,
 	                        styles: _firstExercisePenguin2.default }),
 	                    _react2.default.createElement(
@@ -31434,43 +31442,41 @@
 	                    { className: _App2.default.secondExercise },
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: _App2.default.penguins },
+	                        { className: _App2.default.multiContainer },
 	                        _react2.default.createElement(_components.Penguin, {
 	                            disabled: true,
+	                            type: 'firstMulti',
 	                            onPenguinChange: onPenguinChange,
 	                            styles: _transformationPenguin2.default }),
+	                        _react2.default.createElement(_components.Rhino, { disabled: false, firstMulti: true, styles: _multiRhino2.default }),
+	                        _react2.default.createElement('div', { className: _App2.default.firstPathImage })
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: _App2.default.multiContainer },
 	                        _react2.default.createElement(_components.Penguin, {
 	                            disabled: true,
+	                            type: 'secondMulti',
 	                            onPenguinChange: onPenguinChange,
-	                            styles: _transformationPenguin2.default })
+	                            styles: _transformationPenguin2.default }),
+	                        _react2.default.createElement(_components.Rhino, { disabled: false, secondMulti: true, styles: _multiRhino2.default }),
+	                        _react2.default.createElement('div', { className: _App2.default.secondPathImage })
 	                    ),
+	                    _react2.default.createElement('div', { className: _App2.default.nextShaman + ' ' + _App2.default.finalShaman }),
 	                    _react2.default.createElement(
-	                        'div',
-	                        { className: _App2.default.middleBit },
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: _App2.default.firstPath },
-	                            _react2.default.createElement(_components.Rhino, { disabled: false }),
-	                            _react2.default.createElement('div', { className: _App2.default.firstPathImage })
-	                        ),
-	                        _react2.default.createElement(_components.Fly, { disabled: false }),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: _App2.default.secondPath },
-	                            _react2.default.createElement(_components.Rhino, { disabled: false }),
-	                            _react2.default.createElement('div', { className: _App2.default.secondPathImage })
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
+	                        'section',
 	                        { className: _App2.default.finalTest },
-	                        _react2.default.createElement('div', { className: _App2.default.nextShaman }),
 	                        _react2.default.createElement(_components.Penguin, {
 	                            disabled: true,
-	                            final: true,
+	                            type: 'finalMulti',
 	                            onPenguinChange: onPenguinChange,
-	                            styles: _nextPathPenguin2.default }),
-	                        _react2.default.createElement(_components.Frog, null),
+	                            styles: _firstExercisePenguin2.default }),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: _App2.default.plus },
+	                            '='
+	                        ),
+	                        _react2.default.createElement(_components.Frog, { isMulti: true }),
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: _App2.default.answer },
@@ -31579,7 +31585,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","rhinoHighlight":"App__rhinoHighlight___18QeD","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb","transformation":"App__transformation___3FdUH","plus":"App__plus___1uJcV","endBracket":"App__endBracket___qMsDf","finalPenguinContainer":"App__finalPenguinContainer___118eT","stars":"App__stars___1lyPf","starsReversed":"App__starsReversed___luCee","lastNode":"App__lastNode___1xr9J","nextPath":"App__nextPath___3h5Dz","nextFriends":"App__nextFriends___v10hf","nextShaman":"App__nextShaman___1u5cm","firstExercise":"App__firstExercise___2BX7Z","finalTest":"App__finalTest___2bYQ9","clear":"App__clear___1uDVh","tick":"App__tick___2WExb","cross":"App__cross___2UQyP","active":"App__active___3ywUE","answer":"App__answer___wlp6b"};
+	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","rhinoHighlight":"App__rhinoHighlight___18QeD","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb","transformation":"App__transformation___3FdUH","plus":"App__plus___1uJcV","endBracket":"App__endBracket___qMsDf","finalPenguinContainer":"App__finalPenguinContainer___118eT","stars":"App__stars___1lyPf","starsReversed":"App__starsReversed___luCee","lastNode":"App__lastNode___1xr9J","nextPath":"App__nextPath___3h5Dz","nextFriends":"App__nextFriends___v10hf","nextShaman":"App__nextShaman___1u5cm","firstExercise":"App__firstExercise___2BX7Z","finalTest":"App__finalTest___2bYQ9","clear":"App__clear___1uDVh","tick":"App__tick___2WExb","cross":"App__cross___2UQyP","active":"App__active___3ywUE","answer":"App__answer___wlp6b","multiContainer":"App__multiContainer___2co2q","finalShaman":"App__finalShaman___3wz0h"};
 
 /***/ },
 /* 498 */
@@ -31704,12 +31710,34 @@
 	        key: 'render',
 	        value: function render() {
 	            var _props = this.props;
-	            var number = _props.number;
+	            var initNumber = _props.initNumber;
 	            var disabled = _props.disabled;
 	            var onPenguinChange = _props.onPenguinChange;
 	            var styles = this.props.styles ? (0, _utils.overrideCSS)(_Penguin2.default, this.props.styles) : _Penguin2.default;
+	            var usedNumber = initNumber;
 	
-	            var usedNumber = this.props.final ? this.props.finalNumber : this.props.initNumber;
+	            if (this.props.type) {
+	                switch (this.props.type) {
+	                    case 'final':
+	                        usedNumber = this.props.finalNumber;
+	                        break;
+	
+	                    case 'firstMulti':
+	                        usedNumber = this.props.firstMultiPath;
+	                        break;
+	
+	                    case 'secondMulti':
+	                        usedNumber = this.props.secondMultiPath;
+	                        break;
+	
+	                    case 'finalMulti':
+	                        usedNumber = this.props.finalMultiPath;
+	                        break;
+	
+	                    default:
+	                        usedNumber = initNumber;
+	                }
+	            }
 	
 	            return _react2.default.createElement(
 	                'div',
@@ -31735,7 +31763,10 @@
 	function mapStateToProps(state) {
 	    return {
 	        initNumber: state.penguinNumber,
-	        finalNumber: state.finalPenguinNumber
+	        finalNumber: state.finalPenguinNumber,
+	        firstMultiPath: state.firstMultiPathPenguin,
+	        secondMultiPath: state.secondMultiPathPenguin,
+	        finalMultiPath: state.finalMultiPathPenguin
 	    };
 	}
 	
@@ -31813,7 +31844,9 @@
 	
 	        var _this = _possibleConstructorReturn(this, (RhinoComponent.__proto__ || Object.getPrototypeOf(RhinoComponent)).call(this, props));
 	
-	        _this.state = { number: props.number };
+	        var renderNumber = props.firstMulti ? props.firstMultiNumber : props.secondMulti ? props.secondMultiNumber : props.number;
+	
+	        _this.state = { number: renderNumber };
 	        _this.changeNumber = _this.changeNumber.bind(_this);
 	        return _this;
 	    }
@@ -31859,7 +31892,11 @@
 	}(_react2.default.Component);
 	
 	function mapStateToProps(state) {
-	    return { number: state.rhinoNumber };
+	    return {
+	        number: state.rhinoNumber,
+	        firstMultiNumber: state.firstMultiPathRhino,
+	        secondMultiNumber: state.secondMultiPathRhino
+	    };
 	}
 	
 	var Rhino = exports.Rhino = (0, _reactRedux.connect)(mapStateToProps)(RhinoComponent);
@@ -32033,7 +32070,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.Frog = exports.FrogComponent = undefined;
+	exports.Frog = undefined;
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -32055,7 +32092,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var FrogComponent = exports.FrogComponent = function (_React$Component) {
+	var FrogComponent = function (_React$Component) {
 	    _inherits(FrogComponent, _React$Component);
 	
 	    function FrogComponent() {
@@ -32067,8 +32104,10 @@
 	    _createClass(FrogComponent, [{
 	        key: 'render',
 	        value: function render() {
-	            var number = this.props.number;
-	
+	            var _props = this.props;
+	            var number = _props.number;
+	            var multiNumber = _props.multiNumber;
+	            var usedNumber = this.props.isMulti ? multiNumber : number;
 	
 	            return _react2.default.createElement(
 	                'div',
@@ -32076,7 +32115,7 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: _Frog2.default.number },
-	                    number
+	                    usedNumber
 	                ),
 	                _react2.default.createElement('img', { className: _Frog2.default.frog, src: 'src/images/frog.svg' })
 	            );
@@ -32088,7 +32127,8 @@
 	
 	function mapStateToProps(state) {
 	    return {
-	        number: state.frogNumber
+	        number: state.frogNumber,
+	        multiNumber: state.multiPathFrog
 	    };
 	}
 	
@@ -32534,6 +32574,15 @@
 	            return state;
 	    }
 	}
+
+/***/ },
+/* 527 */,
+/* 528 */,
+/* 529 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"multiRhino__container___XrXPp","inputContainer":"multiRhino__inputContainer___19yql","number":"multiRhino__number___3qhXt"};
 
 /***/ }
 /******/ ]);

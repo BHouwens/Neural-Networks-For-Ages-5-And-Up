@@ -23,12 +23,25 @@ import nextPathRhino from './overrides/nextPathRhino.pcss';
 import nextPathFly from './overrides/nextPathFly.pcss';
 import firstExerciseRhino from './overrides/firstExerciseRhino.pcss';
 import firstExercisePenguin from './overrides/firstExercisePenguin.pcss';
+import multiRhino from './overrides/multiRhino.pcss';
 
 class AppComponent extends React.Component {
 
     render() {
-        let { penguinNumber, genieNumber, rhinoNumber, onPenguinChange, onFirstRhinoChange, flyNumber, finalPenguinNumber, frogNumber } = this.props,
-            firstTickClass = finalPenguinNumber == frogNumber ? styles.active : '';
+        let {
+            penguinNumber,
+            genieNumber,
+            rhinoNumber,
+            onPenguinChange,
+            onFirstRhinoChange,
+            flyNumber,
+            finalPenguinNumber,
+            frogNumber,
+            firstMultiPathRhino,
+            secondMultiPathRhino
+        } = this.props;
+
+        let firstTickClass = finalPenguinNumber == frogNumber ? styles.active : '';
 
         return (
             <div className={styles.app}>
@@ -87,7 +100,7 @@ class AppComponent extends React.Component {
                     <div className={styles.stars}></div>
                     <Penguin
                         disabled={true}
-                        final={true}
+                        type={'final'}
                         onPenguinChange={onPenguinChange}
                         styles={bigFinalPenguin} />
                     <div className={styles.starsReversed}></div>
@@ -101,7 +114,7 @@ class AppComponent extends React.Component {
                 <div className={styles.nextPath}>
                     <Penguin
                         disabled={true}
-                        final={true}
+                        type={'final'}
                         onPenguinChange={onPenguinChange}
                         styles={nextPathPenguin} />
 
@@ -150,7 +163,7 @@ class AppComponent extends React.Component {
                 <section className={styles.finalTest}>
                     <Penguin
                         disabled={true}
-                        final={true}
+                        type={'final'}
                         onPenguinChange={onPenguinChange}
                         styles={firstExercisePenguin} />
 
@@ -169,47 +182,46 @@ class AppComponent extends React.Component {
                 </p>
 
                 <section className={styles.secondExercise}>
-                    <div className={styles.penguins}>
+                    <div className={styles.multiContainer}>
                         <Penguin
                             disabled={true}
+                            type={'firstMulti'}
                             onPenguinChange={onPenguinChange}
                             styles={transformationPenguin} />
 
+
+                        <Rhino disabled={false} firstMulti={true} styles={multiRhino} />
+                        <div className={styles.firstPathImage}></div>
+                    </div>
+
+                    <div className={styles.multiContainer}>
                         <Penguin
                             disabled={true}
+                            type={'secondMulti'}
                             onPenguinChange={onPenguinChange}
                             styles={transformationPenguin} />
+
+                        <Rhino disabled={false} secondMulti={true} styles={multiRhino} />
+                        <div className={styles.secondPathImage}></div>
                     </div>
 
-                    <div className={styles.middleBit}>
-                        <div className={styles.firstPath}>
-                            <Rhino disabled={false} />
-                            <div className={styles.firstPathImage}></div>
-                        </div>
+                    <div className={`${styles.nextShaman} ${styles.finalShaman}`}></div>
 
-                        <Fly disabled={false} />
-
-                        <div className={styles.secondPath}>
-                            <Rhino disabled={false} />
-                            <div className={styles.secondPathImage}></div>
-                        </div>
-                    </div>
-
-                    <div className={styles.finalTest}>
-                        <div className={styles.nextShaman}></div>
-
+                    <section className={styles.finalTest}>
                         <Penguin
                             disabled={true}
-                            final={true}
+                            type={'finalMulti'}
                             onPenguinChange={onPenguinChange}
-                            styles={nextPathPenguin} />
+                            styles={firstExercisePenguin} />
 
-                        <Frog />
+                        <div className={styles.plus}>=</div>
+
+                        <Frog isMulti={true} />
                         <div className={styles.answer}>
                             <div className={styles.tick}></div>
                             <div className={styles.cross}></div>
                         </div>
-                    </div>
+                    </section>
                 </section>
 
                 <p>

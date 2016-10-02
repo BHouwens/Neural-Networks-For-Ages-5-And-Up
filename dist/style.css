@@ -219,6 +219,17 @@ p{
     margin-top: 70px;
 }
 
+.App__multiContainer___2co2q{
+    width: 400px;
+    float: left;
+    clear: both;
+    margin-bottom: 30px;
+}
+
+.App__finalShaman___3wz0h{
+    margin-top: -120px;
+}
+
 @media screen and (min-width: 1280px){
 
     h1{
@@ -336,6 +347,19 @@ p{
     bottom: 75px !important;
     left: 22px !important;
     font-size: 55px !important;
+}.multiRhino__container___XrXPp{
+    width: 150px !important;
+    float: right;
+    margin-top: 40px
+}
+
+.multiRhino__inputContainer___19yql{
+    margin-top: 30px !important;
+}
+
+.multiRhino__number___3qhXt{
+    font-size: 35px !important;
+    margin-left: 83px !important;
 }.Penguin__container___1Csui{
     position: relative;
     display: block;

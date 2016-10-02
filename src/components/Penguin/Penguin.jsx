@@ -6,21 +6,43 @@ import internalStyles from './Penguin.pcss';
 class PenguinComponent extends React.Component {
 
     render() {
-        let { number, disabled, onPenguinChange } = this.props,
-            styles = this.props.styles ? overrideCSS(internalStyles, this.props.styles) : internalStyles;
+        let { initNumber, disabled, onPenguinChange } = this.props,
+            styles = this.props.styles ? overrideCSS(internalStyles, this.props.styles) : internalStyles,
+            usedNumber = initNumber;
 
-        let usedNumber = this.props.final ? this.props.finalNumber : this.props.initNumber;
+        if (this.props.type) {
+            switch (this.props.type) {
+                case 'final':
+                    usedNumber = this.props.finalNumber;
+                    break
+
+                case 'firstMulti':
+                    usedNumber = this.props.firstMultiPath;
+                    break
+
+                case 'secondMulti':
+                    usedNumber = this.props.secondMultiPath;
+                    break
+
+                case 'finalMulti':
+                    usedNumber = this.props.finalMultiPath;
+                    break
+
+                default:
+                    usedNumber = initNumber;
+            }
+        }
 
         return (
             <div className={styles.container}>
-                <input 
-                    type="number" 
-                    className={styles.number} 
-                    value={usedNumber} 
+                <input
+                    type="number"
+                    className={styles.number}
+                    value={usedNumber}
                     max="99"
                     min="0"
                     disabled={disabled}
-                    onChange={e => onPenguinChange(e.target.value) }/>
+                    onChange={e => onPenguinChange(e.target.value)} />
 
                 <img className={styles.penguin} src="src/images/penguin.svg" alt="This is a picture of the baby penguin" />
             </div>
@@ -30,9 +52,12 @@ class PenguinComponent extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return { 
+    return {
         initNumber: state.penguinNumber,
-        finalNumber: state.finalPenguinNumber 
+        finalNumber: state.finalPenguinNumber,
+        firstMultiPath: state.firstMultiPathPenguin,
+        secondMultiPath: state.secondMultiPathPenguin,
+        finalMultiPath: state.finalMultiPathPenguin
     };
 }
 
