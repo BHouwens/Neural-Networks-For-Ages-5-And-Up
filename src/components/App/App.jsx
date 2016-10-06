@@ -1,6 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changePenguin, changeFirstRhino, changeSecondRhino } from '../../actions';
+import { 
+    changePenguin, 
+    changeFirstRhino, 
+    changeSecondRhino,
+    changeFirstMultiRhino,
+    changeSecondMultiRhino
+} from '../../actions';
+
 import {
     Penguin,
     Rhino,
@@ -34,14 +41,19 @@ class AppComponent extends React.Component {
             rhinoNumber,
             onPenguinChange,
             onFirstRhinoChange,
+            onFirstMultiRhinoChange,
+            onSecondMultiRhinoChange,
             flyNumber,
             finalPenguinNumber,
             frogNumber,
             firstMultiPathRhino,
-            secondMultiPathRhino
+            secondMultiPathRhino,
+            multiPathFrog,
+            finalMultiPathPenguin
         } = this.props;
 
         let firstTickClass = finalPenguinNumber == frogNumber ? styles.active : '';
+        let secondTickClass = finalMultiPathPenguin == multiPathFrog ? styles.active : '';
 
         return (
             <div className={styles.app}>
@@ -190,7 +202,12 @@ class AppComponent extends React.Component {
                             styles={transformationPenguin} />
 
 
-                        <Rhino disabled={false} firstMulti={true} styles={multiRhino} />
+                        <Rhino 
+                            disabled={false} 
+                            firstMulti={true} 
+                            styles={multiRhino} 
+                            changeNumber={onFirstMultiRhinoChange} />
+
                         <div className={styles.firstPathImage}></div>
                     </div>
 
@@ -201,7 +218,12 @@ class AppComponent extends React.Component {
                             onPenguinChange={onPenguinChange}
                             styles={transformationPenguin} />
 
-                        <Rhino disabled={false} secondMulti={true} styles={multiRhino} />
+                        <Rhino 
+                            disabled={false} 
+                            secondMulti={true} 
+                            styles={multiRhino} 
+                            changeNumber={onSecondMultiRhinoChange} />
+
                         <div className={styles.secondPathImage}></div>
                     </div>
 
@@ -218,7 +240,7 @@ class AppComponent extends React.Component {
 
                         <Frog isMulti={true} />
                         <div className={styles.answer}>
-                            <div className={styles.tick}></div>
+                            <div className={`${styles.tick} ${secondTickClass}`}></div>
                             <div className={styles.cross}></div>
                         </div>
                     </section>
@@ -269,6 +291,12 @@ function mapDispatchToState(dispatch) {
         },
         onFirstRhinoChange: value => {
             dispatch(changeFirstRhino(value));
+        },
+        onFirstMultiRhinoChange: value => {
+            dispatch(changeFirstMultiRhino(value));
+        },
+        onSecondMultiRhinoChange: value => {
+            dispatch(changeSecondMultiRhino(value));
         }
     }
 }

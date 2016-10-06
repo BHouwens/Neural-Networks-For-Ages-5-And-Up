@@ -18,3 +18,17 @@ export function changeSecondRhino(value) {
         value
     }
 }
+
+export function changeFirstMultiRhino(value) {
+    return {
+        type: 'CHANGE_FIRST_MULTI_RHINO',
+        value
+    }
+}
+
+export function changeSecondMultiRhino(value) {
+    return {
+        type: 'CHANGE_SECOND_MULTI_RHINO',
+        value
+    }
+}

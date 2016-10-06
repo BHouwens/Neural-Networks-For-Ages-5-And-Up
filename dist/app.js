@@ -8204,7 +8204,7 @@
 	
 	var _components = __webpack_require__(494);
 	
-	var _reducer = __webpack_require__(526);
+	var _reducer = __webpack_require__(527);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -31028,7 +31028,7 @@
 	  });
 	});
 	
-	var _Penguin = __webpack_require__(509);
+	var _Penguin = __webpack_require__(510);
 	
 	Object.keys(_Penguin).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31040,7 +31040,7 @@
 	  });
 	});
 	
-	var _Rhino = __webpack_require__(512);
+	var _Rhino = __webpack_require__(513);
 	
 	Object.keys(_Rhino).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31052,7 +31052,7 @@
 	  });
 	});
 	
-	var _Shaman = __webpack_require__(514);
+	var _Shaman = __webpack_require__(515);
 	
 	Object.keys(_Shaman).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31064,7 +31064,7 @@
 	  });
 	});
 	
-	var _Fly = __webpack_require__(516);
+	var _Fly = __webpack_require__(517);
 	
 	Object.keys(_Fly).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31076,7 +31076,7 @@
 	  });
 	});
 	
-	var _Frog = __webpack_require__(518);
+	var _Frog = __webpack_require__(519);
 	
 	Object.keys(_Frog).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31088,7 +31088,7 @@
 	  });
 	});
 	
-	var _Road = __webpack_require__(520);
+	var _Road = __webpack_require__(521);
 	
 	Object.keys(_Road).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31100,7 +31100,7 @@
 	  });
 	});
 	
-	var _Formals = __webpack_require__(522);
+	var _Formals = __webpack_require__(523);
 	
 	Object.keys(_Formals).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31112,7 +31112,7 @@
 	  });
 	});
 	
-	var _Genie = __webpack_require__(524);
+	var _Genie = __webpack_require__(525);
 	
 	Object.keys(_Genie).forEach(function (key) {
 	  if (key === "default" || key === "__esModule") return;
@@ -31195,7 +31195,7 @@
 	
 	var _firstExercisePenguin2 = _interopRequireDefault(_firstExercisePenguin);
 	
-	var _multiRhino = __webpack_require__(529);
+	var _multiRhino = __webpack_require__(509);
 	
 	var _multiRhino2 = _interopRequireDefault(_multiRhino);
 	
@@ -31225,14 +31225,19 @@
 	            var rhinoNumber = _props.rhinoNumber;
 	            var onPenguinChange = _props.onPenguinChange;
 	            var onFirstRhinoChange = _props.onFirstRhinoChange;
+	            var onFirstMultiRhinoChange = _props.onFirstMultiRhinoChange;
+	            var onSecondMultiRhinoChange = _props.onSecondMultiRhinoChange;
 	            var flyNumber = _props.flyNumber;
 	            var finalPenguinNumber = _props.finalPenguinNumber;
 	            var frogNumber = _props.frogNumber;
 	            var firstMultiPathRhino = _props.firstMultiPathRhino;
 	            var secondMultiPathRhino = _props.secondMultiPathRhino;
+	            var multiPathFrog = _props.multiPathFrog;
+	            var finalMultiPathPenguin = _props.finalMultiPathPenguin;
 	
 	
 	            var firstTickClass = finalPenguinNumber == frogNumber ? _App2.default.active : '';
+	            var secondTickClass = finalMultiPathPenguin == multiPathFrog ? _App2.default.active : '';
 	
 	            return _react2.default.createElement(
 	                'div',
@@ -31448,7 +31453,11 @@
 	                            type: 'firstMulti',
 	                            onPenguinChange: onPenguinChange,
 	                            styles: _transformationPenguin2.default }),
-	                        _react2.default.createElement(_components.Rhino, { disabled: false, firstMulti: true, styles: _multiRhino2.default }),
+	                        _react2.default.createElement(_components.Rhino, {
+	                            disabled: false,
+	                            firstMulti: true,
+	                            styles: _multiRhino2.default,
+	                            changeNumber: onFirstMultiRhinoChange }),
 	                        _react2.default.createElement('div', { className: _App2.default.firstPathImage })
 	                    ),
 	                    _react2.default.createElement(
@@ -31459,7 +31468,11 @@
 	                            type: 'secondMulti',
 	                            onPenguinChange: onPenguinChange,
 	                            styles: _transformationPenguin2.default }),
-	                        _react2.default.createElement(_components.Rhino, { disabled: false, secondMulti: true, styles: _multiRhino2.default }),
+	                        _react2.default.createElement(_components.Rhino, {
+	                            disabled: false,
+	                            secondMulti: true,
+	                            styles: _multiRhino2.default,
+	                            changeNumber: onSecondMultiRhinoChange }),
 	                        _react2.default.createElement('div', { className: _App2.default.secondPathImage })
 	                    ),
 	                    _react2.default.createElement('div', { className: _App2.default.nextShaman + ' ' + _App2.default.finalShaman }),
@@ -31480,7 +31493,7 @@
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: _App2.default.answer },
-	                            _react2.default.createElement('div', { className: _App2.default.tick }),
+	                            _react2.default.createElement('div', { className: _App2.default.tick + ' ' + secondTickClass }),
 	                            _react2.default.createElement('div', { className: _App2.default.cross })
 	                        )
 	                    )
@@ -31541,6 +31554,12 @@
 	        },
 	        onFirstRhinoChange: function onFirstRhinoChange(value) {
 	            dispatch((0, _actions.changeFirstRhino)(value));
+	        },
+	        onFirstMultiRhinoChange: function onFirstMultiRhinoChange(value) {
+	            dispatch((0, _actions.changeFirstMultiRhino)(value));
+	        },
+	        onSecondMultiRhinoChange: function onSecondMultiRhinoChange(value) {
+	            dispatch((0, _actions.changeSecondMultiRhino)(value));
 	        }
 	    };
 	}
@@ -31559,6 +31578,8 @@
 	exports.changePenguin = changePenguin;
 	exports.changeFirstRhino = changeFirstRhino;
 	exports.changeSecondRhino = changeSecondRhino;
+	exports.changeFirstMultiRhino = changeFirstMultiRhino;
+	exports.changeSecondMultiRhino = changeSecondMultiRhino;
 	function changePenguin(value) {
 	    return {
 	        type: 'CHANGE_PENGUIN',
@@ -31579,13 +31600,27 @@
 	        value: value
 	    };
 	}
+	
+	function changeFirstMultiRhino(value) {
+	    return {
+	        type: 'CHANGE_FIRST_MULTI_RHINO',
+	        value: value
+	    };
+	}
+	
+	function changeSecondMultiRhino(value) {
+	    return {
+	        type: 'CHANGE_SECOND_MULTI_RHINO',
+	        value: value
+	    };
+	}
 
 /***/ },
 /* 497 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","rhinoHighlight":"App__rhinoHighlight___18QeD","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb","transformation":"App__transformation___3FdUH","plus":"App__plus___1uJcV","endBracket":"App__endBracket___qMsDf","finalPenguinContainer":"App__finalPenguinContainer___118eT","stars":"App__stars___1lyPf","starsReversed":"App__starsReversed___luCee","lastNode":"App__lastNode___1xr9J","nextPath":"App__nextPath___3h5Dz","nextFriends":"App__nextFriends___v10hf","nextShaman":"App__nextShaman___1u5cm","firstExercise":"App__firstExercise___2BX7Z","finalTest":"App__finalTest___2bYQ9","clear":"App__clear___1uDVh","tick":"App__tick___2WExb","cross":"App__cross___2UQyP","active":"App__active___3ywUE","answer":"App__answer___wlp6b","multiContainer":"App__multiContainer___2co2q","finalShaman":"App__finalShaman___3wz0h"};
+	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","rhinoHighlight":"App__rhinoHighlight___18QeD","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb","transformation":"App__transformation___3FdUH","plus":"App__plus___1uJcV","endBracket":"App__endBracket___qMsDf","finalPenguinContainer":"App__finalPenguinContainer___118eT","stars":"App__stars___1lyPf","starsReversed":"App__starsReversed___luCee","lastNode":"App__lastNode___1xr9J","nextPath":"App__nextPath___3h5Dz","nextFriends":"App__nextFriends___v10hf","nextShaman":"App__nextShaman___1u5cm","firstExercise":"App__firstExercise___2BX7Z","finalTest":"App__finalTest___2bYQ9","clear":"App__clear___1uDVh","tick":"App__tick___2WExb","cross":"App__cross___2UQyP","active":"App__active___3ywUE","pulse":"App__pulse___oqtfj","answer":"App__answer___wlp6b","multiContainer":"App__multiContainer___2co2q","finalShaman":"App__finalShaman___3wz0h"};
 
 /***/ },
 /* 498 */
@@ -31666,6 +31701,13 @@
 
 /***/ },
 /* 509 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"multiRhino__container___XrXPp","inputContainer":"multiRhino__inputContainer___19yql","number":"multiRhino__number___3qhXt"};
+
+/***/ },
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31683,9 +31725,9 @@
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _utils = __webpack_require__(510);
+	var _utils = __webpack_require__(511);
 	
-	var _Penguin = __webpack_require__(511);
+	var _Penguin = __webpack_require__(512);
 	
 	var _Penguin2 = _interopRequireDefault(_Penguin);
 	
@@ -31773,7 +31815,7 @@
 	var Penguin = exports.Penguin = (0, _reactRedux.connect)(mapStateToProps)(PenguinComponent);
 
 /***/ },
-/* 510 */
+/* 511 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -31797,14 +31839,14 @@
 	}
 
 /***/ },
-/* 511 */
+/* 512 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Penguin__container___1Csui","penguin":"Penguin__penguin___8FZiW","number":"Penguin__number___DzjID"};
 
 /***/ },
-/* 512 */
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31820,11 +31862,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _utils = __webpack_require__(510);
+	var _utils = __webpack_require__(511);
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _Rhino = __webpack_require__(513);
+	var _Rhino = __webpack_require__(514);
 	
 	var _Rhino2 = _interopRequireDefault(_Rhino);
 	
@@ -31846,16 +31888,33 @@
 	
 	        var renderNumber = props.firstMulti ? props.firstMultiNumber : props.secondMulti ? props.secondMultiNumber : props.number;
 	
-	        _this.state = { number: renderNumber };
+	        _this.state = {
+	            number: renderNumber,
+	            shouldPulse: false
+	        };
+	
 	        _this.changeNumber = _this.changeNumber.bind(_this);
+	        _this.focus = _this.focus.bind(_this);
 	        return _this;
 	    }
 	
 	    _createClass(RhinoComponent, [{
+	        key: 'componentWillMount',
+	        value: function componentWillMount() {
+	            var disabled = this.props.disabled;
+	
+	            this.setState({ shouldPulse: !disabled });
+	        }
+	    }, {
 	        key: 'changeNumber',
 	        value: function changeNumber(value) {
 	            this.setState({ number: value });
 	            if (this.props.changeNumber) this.props.changeNumber(value);
+	        }
+	    }, {
+	        key: 'focus',
+	        value: function focus() {
+	            this.setState({ shouldPulse: false });
 	        }
 	    }, {
 	        key: 'render',
@@ -31863,12 +31922,18 @@
 	            var _this2 = this;
 	
 	            var disabled = this.props.disabled;
-	            var number = this.state.number;
+	            var _state = this.state;
+	            var number = _state.number;
+	            var shouldPulse = _state.shouldPulse;
 	            var styles = this.props.styles ? (0, _utils.overrideCSS)(_Rhino2.default, this.props.styles) : _Rhino2.default;
+	
+	            var pulseClass = shouldPulse ? styles.active : '';
 	
 	            return _react2.default.createElement(
 	                'div',
-	                { className: styles.container },
+	                { className: styles.container + ' ' + pulseClass, onClick: function onClick() {
+	                        return _this2.focus();
+	                    } },
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: styles.inputContainer },
@@ -31879,6 +31944,9 @@
 	                        max: '99',
 	                        min: '0',
 	                        disabled: disabled,
+	                        onClick: function onClick() {
+	                            return _this2.focus();
+	                        },
 	                        onChange: function onChange(e) {
 	                            return _this2.changeNumber(e.target.value);
 	                        } })
@@ -31902,14 +31970,14 @@
 	var Rhino = exports.Rhino = (0, _reactRedux.connect)(mapStateToProps)(RhinoComponent);
 
 /***/ },
-/* 513 */
+/* 514 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"container":"Rhino__container___2SChu","rhino":"Rhino__rhino___1Id4I","inputContainer":"Rhino__inputContainer___tFHWK","number":"Rhino__number___1Rg0B"};
+	module.exports = {"container":"Rhino__container___2SChu","active":"Rhino__active___3CBfB","pulse":"Rhino__pulse___3pw1b","rhino":"Rhino__rhino___1Id4I","inputContainer":"Rhino__inputContainer___tFHWK","number":"Rhino__number___1Rg0B"};
 
 /***/ },
-/* 514 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31925,9 +31993,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _utils = __webpack_require__(510);
+	var _utils = __webpack_require__(511);
 	
-	var _Shaman = __webpack_require__(515);
+	var _Shaman = __webpack_require__(516);
 	
 	var _Shaman2 = _interopRequireDefault(_Shaman);
 	
@@ -31965,14 +32033,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 515 */
+/* 516 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"shaman":"Shaman__shaman___105r8","shamanSwitched":"Shaman__shamanSwitched___lCM5L"};
 
 /***/ },
-/* 516 */
+/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31988,11 +32056,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _utils = __webpack_require__(510);
+	var _utils = __webpack_require__(511);
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _Fly = __webpack_require__(517);
+	var _Fly = __webpack_require__(518);
 	
 	var _Fly2 = _interopRequireDefault(_Fly);
 	
@@ -32055,14 +32123,14 @@
 	var Fly = exports.Fly = (0, _reactRedux.connect)(mapStateToProps)(FlyComponent);
 
 /***/ },
-/* 517 */
+/* 518 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Fly__container___4GIL3","fly":"Fly__fly___gwGvi","number":"Fly__number___3KXi4"};
 
 /***/ },
-/* 518 */
+/* 519 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32080,7 +32148,7 @@
 	
 	var _reactRedux = __webpack_require__(347);
 	
-	var _Frog = __webpack_require__(519);
+	var _Frog = __webpack_require__(520);
 	
 	var _Frog2 = _interopRequireDefault(_Frog);
 	
@@ -32135,14 +32203,14 @@
 	var Frog = exports.Frog = (0, _reactRedux.connect)(mapStateToProps)(FrogComponent);
 
 /***/ },
-/* 519 */
+/* 520 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"container":"Frog__container___uVpui","frog":"Frog__frog___1YZg5","number":"Frog__number___wZgeb"};
 
 /***/ },
-/* 520 */
+/* 521 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32158,7 +32226,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Road = __webpack_require__(521);
+	var _Road = __webpack_require__(522);
 	
 	var _Road2 = _interopRequireDefault(_Road);
 	
@@ -32190,14 +32258,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 521 */
+/* 522 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"road":"Road__road___8966H"};
 
 /***/ },
-/* 522 */
+/* 523 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32210,7 +32278,7 @@
 	
 	var _components = __webpack_require__(494);
 	
-	var _Formals = __webpack_require__(523);
+	var _Formals = __webpack_require__(524);
 	
 	var _Formals2 = _interopRequireDefault(_Formals);
 	
@@ -32425,13 +32493,13 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 523 */
+/* 524 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 524 */
+/* 525 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32447,7 +32515,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Genie = __webpack_require__(525);
+	var _Genie = __webpack_require__(526);
 	
 	var _Genie2 = _interopRequireDefault(_Genie);
 	
@@ -32479,14 +32547,14 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 525 */
+/* 526 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"genie":"Genie__genie___1562y"};
 
 /***/ },
-/* 526 */
+/* 527 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -32534,7 +32602,7 @@
 	}
 	
 	function getMultiPathPenguin(first, second) {
-	    return Math.round(first / second) + 10;
+	    return Math.round(parseFloat(first) / 2) + parseFloat(second) + 10;
 	}
 	
 	/*-- Reducer --*/
@@ -32574,15 +32642,6 @@
 	            return state;
 	    }
 	}
-
-/***/ },
-/* 527 */,
-/* 528 */,
-/* 529 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-	module.exports = {"container":"multiRhino__container___XrXPp","inputContainer":"multiRhino__inputContainer___19yql","number":"multiRhino__number___3qhXt"};
 
 /***/ }
 /******/ ]);

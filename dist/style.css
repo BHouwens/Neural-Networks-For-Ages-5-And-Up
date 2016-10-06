@@ -207,6 +207,8 @@ p{
 
 .App__tick___2WExb.App__active___3ywUE{
     opacity: 1;
+    -webkit-animation: App__pulse___oqtfj 1s;
+            animation: App__pulse___oqtfj 1s;
 }
 
 .App__cross___2UQyP{
@@ -228,6 +230,40 @@ p{
 
 .App__finalShaman___3wz0h{
     margin-top: -120px;
+}
+
+@-webkit-keyframes App__pulse___oqtfj{
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.8);
+                transform: scale(1.8);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+@keyframes App__pulse___oqtfj{
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.8);
+                transform: scale(1.8);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
 }
 
 @media screen and (min-width: 1280px){
@@ -399,6 +435,11 @@ p{
     margin-left: -80px;
 }
 
+.Rhino__container___2SChu.Rhino__active___3CBfB{
+    -webkit-animation: Rhino__pulse___3pw1b 1s infinite;
+            animation: Rhino__pulse___3pw1b 1s infinite;
+}
+
 .Rhino__rhino___1Id4I{
     width: 100%;
     height: auto;
@@ -425,6 +466,40 @@ p{
 
 .Rhino__number___1Rg0B:focus{
     color: rgb(26,26,26);
+}
+
+@-webkit-keyframes Rhino__pulse___3pw1b{
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+@keyframes Rhino__pulse___3pw1b{
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
 }.Shaman__shaman___105r8, .Shaman__shamanSwitched___lCM5L{
     width: 300px;
     margin: 40px auto;

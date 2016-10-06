@@ -133,6 +133,7 @@ p{
 
     &.active{
         opacity: 1;
+        animation: pulse 1s;
     }
 }
 
@@ -155,4 +156,18 @@ p{
 
 .finalShaman{
     margin-top: -120px;
+}
+
+@keyframes pulse{
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }

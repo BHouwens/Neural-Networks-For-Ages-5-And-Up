@@ -12,8 +12,18 @@ class RhinoComponent extends React.Component {
                            props.secondMulti ? props.secondMultiNumber :
                            props.number;
 
-        this.state = { number: renderNumber };
+        this.state = { 
+            number: renderNumber,
+            shouldPulse: false
+        };
+        
         this.changeNumber = this.changeNumber.bind(this);
+        this.focus = this.focus.bind(this);
+    }
+
+    componentWillMount() {
+        let { disabled } = this.props;
+        this.setState({ shouldPulse: !disabled });
     }
 
     changeNumber(value) {
@@ -21,13 +31,19 @@ class RhinoComponent extends React.Component {
         if (this.props.changeNumber) this.props.changeNumber(value);
     }
 
+    focus() {
+        this.setState({ shouldPulse: false });
+    }
+
     render() {
         let { disabled } = this.props,
-            { number } = this.state,
+            { number, shouldPulse } = this.state,
             styles = this.props.styles ? overrideCSS(internalStyles, this.props.styles) : internalStyles;
 
+        let pulseClass = shouldPulse ? styles.active : '';
+
         return (
-            <div className={styles.container}>
+            <div className={`${styles.container} ${pulseClass}`} onClick={() => this.focus()}>
                 <div className={styles.inputContainer}>
                     <input 
                         type="number" 
@@ -36,6 +52,7 @@ class RhinoComponent extends React.Component {
                         max="99"
                         min="0"
                         disabled={disabled}
+                        onClick={() => this.focus()}
                         onChange={e => this.changeNumber(e.target.value) }/>
                 </div>
 

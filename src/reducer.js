@@ -37,7 +37,7 @@ function getFinalRhinoNumber(penguinNumber, rhinoNumber) {
 }
 
 function getMultiPathPenguin(first, second) {
-    return Math.round(first / second) + 10;
+    return Math.round(parseFloat(first) / 2) + parseFloat(second) + 10;
 }
 
 
