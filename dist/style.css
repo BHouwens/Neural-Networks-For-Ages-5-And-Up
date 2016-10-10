@@ -232,6 +232,34 @@ p{
     margin-top: -120px;
 }
 
+.App__path___A1K_H{
+    width: 400px;
+    height: 28px;
+    margin-left: -80px;
+    margin-top: 30px;
+    background-repeat: no-repeat;
+    background-image: url(5880c0cb235a9e7b363df0288b097fdd.svg);
+}
+
+.App__firstPathImage___3qPHQ{
+    width: 400px;
+    height: 150px;
+    margin-left: 160px;
+    margin-top: 120px;
+    background: url(8b5f147b45a18571e8584c4e7d003f51.svg) no-repeat;
+}
+
+.App__secondPathImage___17xkP{
+    width: 400px;
+    height: 150px;
+    margin-top: -30px;
+    margin-left: 160px;
+    -webkit-transform: scaleY(-1);
+        -ms-transform: scaleY(-1);
+            transform: scaleY(-1);
+    background: url(8b5f147b45a18571e8584c4e7d003f51.svg) no-repeat;
+}
+
 @-webkit-keyframes App__pulse___oqtfj{
     0% {
         -webkit-transform: scale(1);
@@ -365,6 +393,7 @@ p{
 }.nextPathFly__container___3e3wb{
     margin-top: -100px !important;
     margin-left: 170px !important;
+    margin-bottom: 0 !important;
 }.firstExerciseRhino__container___1Uj4I{
     width: 170px !important;
 }
@@ -430,6 +459,7 @@ p{
     color: rgb(26,26,26);
 }.Rhino__container___2SChu{
     width: 260px;
+    z-index: 3;
     position: relative;
     display: inline-block;
     margin-left: -80px;
