@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:700|Slabo+27px);body{
+@import url(https://fonts.googleapis.com/css?family=Lato:700|Slabo+27px);@import url(https://fonts.googleapis.com/css?family=Lato:700|Slabo+27px);body{
     background: #f2f2f2;
     color: #262525;
 }
@@ -258,6 +258,13 @@ p{
         -ms-transform: scaleY(-1);
             transform: scaleY(-1);
     background: url(8b5f147b45a18571e8584c4e7d003f51.svg) no-repeat;
+}
+
+.App__manyPenguins___pcM1i{
+    max-width: 700px;
+    height: auto;
+    margin: 50px auto;
+    display: block;
 }
 
 @-webkit-keyframes App__pulse___oqtfj{
@@ -597,6 +604,15 @@ p{
     width: 700px;
     margin-right: 40px;
     margin-top: 55px;
+}.Formals__heading___jlQFw{
+    font-family: 'Slabo 27px', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 100px;
+    width: 100%;
+    color: #727272;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #727272;
 }.Genie__genie___1562y{
     width: 250px;
     margin: 40px auto;

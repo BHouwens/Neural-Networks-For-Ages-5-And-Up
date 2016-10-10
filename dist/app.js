@@ -31503,11 +31503,13 @@
 	                    null,
 	                    'A little more difficult, but shouldn’t have been too difficult right? But what if we had, say, 6 penguins?'
 	                ),
+	                _react2.default.createElement('img', { src: 'dist/e71682d7e230db5c990fe9d9ef9a33e3.svg', className: _App2.default.manyPenguins }),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
 	                    'And what if there are multiple paths that they have to travel, each with their own Weight rhino?'
 	                ),
+	                _react2.default.createElement('img', { src: 'dist/46b4fa557338fbfadbc1ee77fcba8f98.svg', className: _App2.default.manyPenguins }),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
@@ -31535,7 +31537,8 @@
 	                        'trained'
 	                    ),
 	                    '.'
-	                )
+	                ),
+	                _react2.default.createElement(_components.Formals, null)
 	            );
 	        }
 	    }]);
@@ -31620,7 +31623,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","rhinoHighlight":"App__rhinoHighlight___18QeD","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb","transformation":"App__transformation___3FdUH","plus":"App__plus___1uJcV","endBracket":"App__endBracket___qMsDf","finalPenguinContainer":"App__finalPenguinContainer___118eT","stars":"App__stars___1lyPf","starsReversed":"App__starsReversed___luCee","lastNode":"App__lastNode___1xr9J","nextPath":"App__nextPath___3h5Dz","nextFriends":"App__nextFriends___v10hf","nextShaman":"App__nextShaman___1u5cm","firstExercise":"App__firstExercise___2BX7Z","finalTest":"App__finalTest___2bYQ9","clear":"App__clear___1uDVh","tick":"App__tick___2WExb","cross":"App__cross___2UQyP","active":"App__active___3ywUE","pulse":"App__pulse___oqtfj","answer":"App__answer___wlp6b","multiContainer":"App__multiContainer___2co2q","finalShaman":"App__finalShaman___3wz0h","path":"App__path___A1K_H","firstPathImage":"App__firstPathImage___3qPHQ","secondPathImage":"App__secondPathImage___17xkP"};
+	module.exports = {"app":"App__app___1qnxQ","penguinHighlight":"App__penguinHighlight___2uU47","rhinoHighlight":"App__rhinoHighlight___18QeD","friends":"App__friends___2pHx2","penguinOnPath":"App__penguinOnPath___2xCrb","transformation":"App__transformation___3FdUH","plus":"App__plus___1uJcV","endBracket":"App__endBracket___qMsDf","finalPenguinContainer":"App__finalPenguinContainer___118eT","stars":"App__stars___1lyPf","starsReversed":"App__starsReversed___luCee","lastNode":"App__lastNode___1xr9J","nextPath":"App__nextPath___3h5Dz","nextFriends":"App__nextFriends___v10hf","nextShaman":"App__nextShaman___1u5cm","firstExercise":"App__firstExercise___2BX7Z","finalTest":"App__finalTest___2bYQ9","clear":"App__clear___1uDVh","tick":"App__tick___2WExb","cross":"App__cross___2UQyP","active":"App__active___3ywUE","pulse":"App__pulse___oqtfj","answer":"App__answer___wlp6b","multiContainer":"App__multiContainer___2co2q","finalShaman":"App__finalShaman___3wz0h","path":"App__path___A1K_H","firstPathImage":"App__firstPathImage___3qPHQ","secondPathImage":"App__secondPathImage___17xkP","manyPenguins":"App__manyPenguins___pcM1i"};
 
 /***/ },
 /* 498 */
@@ -32270,6 +32273,11 @@
 
 	'use strict';
 	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Formals = undefined;
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(300);
@@ -32290,7 +32298,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var Formals = function (_React$Component) {
+	var Formals = exports.Formals = function (_React$Component) {
 	    _inherits(Formals, _React$Component);
 	
 	    function Formals() {
@@ -32302,18 +32310,18 @@
 	    _createClass(Formals, [{
 	        key: 'render',
 	        value: function render() {
-	            _react2.default.createElement(
-	                'section',
+	            return _react2.default.createElement(
+	                'div',
 	                { className: _Formals2.default.formal },
 	                _react2.default.createElement(
 	                    'h2',
-	                    null,
+	                    { className: _Formals2.default.heading },
 	                    'the formal stuff'
 	                ),
 	                _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'The above is a description of a simple neural network in simple language, devoid of the more difficult mathematics.The following is a breakdown of this analogy into its more formal elements.'
+	                    'The above is a description of a simple neural network in simple language, devoid of any of the real mathematics. The intention was not to present a like-for-like explanation of a neural network, but rather help develop an intuition for how they work. So, the following is a breakdown of this analogy into its more formal elements:'
 	                ),
 	                _react2.default.createElement(
 	                    'ul',
@@ -32321,7 +32329,7 @@
 	                    _react2.default.createElement(
 	                        'li',
 	                        null,
-	                        _react2.default.createElement(_components.Penguin, { disabled: true, styles: roadPenguinStyles, onPenguinChange: onPenguinChange }),
+	                        _react2.default.createElement(_components.Penguin, { disabled: true, onPenguinChange: null }),
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: _Formals2.default.description },
@@ -32374,7 +32382,7 @@
 	                    _react2.default.createElement(
 	                        'li',
 	                        null,
-	                        _react2.default.createElement(Fly, null),
+	                        _react2.default.createElement(_components.Fly, null),
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: _Formals2.default.description },
@@ -32403,7 +32411,6 @@
 	                    _react2.default.createElement(
 	                        'li',
 	                        null,
-	                        _react2.default.createElement(SignPost, null),
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: _Formals2.default.description },
@@ -32497,6 +32504,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+	module.exports = {"heading":"Formals__heading___jlQFw"};
 
 /***/ },
 /* 525 */

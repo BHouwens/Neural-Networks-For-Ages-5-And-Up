@@ -15,7 +15,8 @@ import {
     Fly,
     Genie,
     Road,
-    Frog
+    Frog,
+    Formals
 } from '../../components';
 
 import styles from './App.pcss';
@@ -250,11 +251,11 @@ class AppComponent extends React.Component {
                     A little more difficult, but shouldn&rsquo;t have been too difficult right? But what if we had, say, 6 penguins?
                 </p>
 
-                {/*-- show "realistic" network --*/}
+                <img src="dist/e71682d7e230db5c990fe9d9ef9a33e3.svg" className={styles.manyPenguins} />
 
                 <p>And what if there are multiple paths that they have to travel, each with their own Weight rhino?</p>
 
-                {/*-- show multiple path --*/}
+                <img src="dist/46b4fa557338fbfadbc1ee77fcba8f98.svg" className={styles.manyPenguins} />
 
                 <p>
                     Now things might start to get a good bit more difficult! Don&rsquo;t lose hope though, patient reader, because we have one more character who
@@ -274,6 +275,8 @@ class AppComponent extends React.Component {
                     These weights are then &ldquo;stored&rdquo; for future use on new, unseen Features for which we do not have &ldquo;frogs&rdquo;
                     to test against and we say that the network is <span className={styles.important}>trained</span>.
                 </p>
+
+                <Formals />
             </div>
         );
     }
