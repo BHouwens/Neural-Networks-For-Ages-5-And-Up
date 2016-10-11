@@ -32149,6 +32149,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _utils = __webpack_require__(511);
+	
 	var _reactRedux = __webpack_require__(347);
 	
 	var _Frog = __webpack_require__(520);
@@ -32180,15 +32182,17 @@
 	            var multiNumber = _props.multiNumber;
 	            var usedNumber = this.props.isMulti ? multiNumber : number;
 	
+	            var styles = this.props.styles ? (0, _utils.overrideCSS)(_Frog2.default, this.props.styles) : _Frog2.default;
+	
 	            return _react2.default.createElement(
 	                'div',
-	                { className: _Frog2.default.container },
+	                { className: styles.container },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: _Frog2.default.number },
+	                    { className: styles.number },
 	                    usedNumber
 	                ),
-	                _react2.default.createElement('img', { className: _Frog2.default.frog, src: 'src/images/frog.svg' })
+	                _react2.default.createElement('img', { className: styles.frog, src: 'src/images/frog.svg' })
 	            );
 	        }
 	    }]);
@@ -32290,6 +32294,30 @@
 	
 	var _Formals2 = _interopRequireDefault(_Formals);
 	
+	var _penguin = __webpack_require__(528);
+	
+	var _penguin2 = _interopRequireDefault(_penguin);
+	
+	var _rhino = __webpack_require__(529);
+	
+	var _rhino2 = _interopRequireDefault(_rhino);
+	
+	var _fly = __webpack_require__(530);
+	
+	var _fly2 = _interopRequireDefault(_fly);
+	
+	var _shaman = __webpack_require__(531);
+	
+	var _shaman2 = _interopRequireDefault(_shaman);
+	
+	var _frog = __webpack_require__(532);
+	
+	var _frog2 = _interopRequireDefault(_frog);
+	
+	var _genie = __webpack_require__(533);
+	
+	var _genie2 = _interopRequireDefault(_genie);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32329,7 +32357,11 @@
 	                    _react2.default.createElement(
 	                        'li',
 	                        null,
-	                        _react2.default.createElement(_components.Penguin, { disabled: true, onPenguinChange: null }),
+	                        _react2.default.createElement(
+	                            'div',
+	                            null,
+	                            _react2.default.createElement(_components.Penguin, { disabled: true, onPenguinChange: null, styles: _penguin2.default })
+	                        ),
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: _Formals2.default.description },
@@ -32346,14 +32378,18 @@
 	                            _react2.default.createElement(
 	                                'p',
 	                                null,
-	                                'As mentioned in the story, the penguin represents a feature of the dataset to be learned.These are what the network uses in order to model itself to a generalisation of the data.If you were wanting to find out whether someone had a cold, for instance, a feature might be whether they have a runny nose or not.'
+	                                'As mentioned in the story, the penguin represents a feature of the dataset to be learned.These are what the network uses in order to model itself to a generalisation of the data. If you were wanting to diagnose whether someone had a cold, for instance, a feature might be whether they have a runny nose or not.'
 	                            )
 	                        )
 	                    ),
 	                    _react2.default.createElement(
 	                        'li',
 	                        null,
-	                        _react2.default.createElement(_components.Rhino, { disabled: true }),
+	                        _react2.default.createElement(
+	                            'div',
+	                            null,
+	                            _react2.default.createElement(_components.Rhino, { disabled: true, styles: _rhino2.default })
+	                        ),
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: _Formals2.default.description },
@@ -32370,7 +32406,7 @@
 	                            _react2.default.createElement(
 	                                'p',
 	                                null,
-	                                'As mentioned in the story, the rhino is the equivalent of a weight, usually represented by the symbol W, of a node in the system. The number of weights per node is equivalent to the number of inputs to that node (thus if there are 5 "penguin" inputs to a node, there will be 5 "rhino" weights).'
+	                                'As mentioned in the story, the rhino is the equivalent of a weight, usually represented by the symbol W, of a node in the system. The number of weights per node is equivalent to the number of inputs to that node (thus if there are 5 “penguin” inputs to a node, there will be 5 “rhino” weights).'
 	                            ),
 	                            _react2.default.createElement(
 	                                'p',
@@ -32382,7 +32418,11 @@
 	                    _react2.default.createElement(
 	                        'li',
 	                        null,
-	                        _react2.default.createElement(_components.Fly, null),
+	                        _react2.default.createElement(
+	                            'div',
+	                            null,
+	                            _react2.default.createElement(_components.Fly, { styles: _fly2.default, disabled: true })
+	                        ),
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: _Formals2.default.description },
@@ -32427,14 +32467,18 @@
 	                            _react2.default.createElement(
 	                                'p',
 	                                null,
-	                                'The sign post is the same as a node in a real network. This acts as a "step" in the network where inputs are combined with weights and a bias through a function in order to pass them off on to the next node. The more nodes in a network, the better the model is able to generalise, but the more computing power is needed.'
+	                                'The sign post is the same as a node in a real network. This acts as a “step” in the network where inputs are combined with weights and a bias through a function in order to pass them off on to the next node. The more nodes in a network, the better the model is able to generalise, but the more computing power is needed.'
 	                            )
 	                        )
 	                    ),
 	                    _react2.default.createElement(
 	                        'li',
 	                        null,
-	                        _react2.default.createElement(_components.Shaman, null),
+	                        _react2.default.createElement(
+	                            'div',
+	                            null,
+	                            _react2.default.createElement(_components.Shaman, { styles: _shaman2.default })
+	                        ),
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: _Formals2.default.description },
@@ -32451,33 +32495,37 @@
 	                            _react2.default.createElement(
 	                                'p',
 	                                null,
-	                                'The shaman and his spell are a representation of the activation function used to convert inputs, weights and the bias into a probability for the next node. The "spell", or specific function, can differ depending on the implementation; common choices are functions like ',
+	                                'The shaman and his spell are a representation of the activation function used to convert inputs, weights and the bias into a probability for the next node. The “spell”, or specific function, can differ depending on the implementation; common choices are functions like ',
 	                                _react2.default.createElement(
 	                                    'i',
 	                                    null,
 	                                    'tanh'
 	                                ),
-	                                'or the ',
+	                                ' or the ',
 	                                _react2.default.createElement(
 	                                    'i',
 	                                    null,
 	                                    'sigmoid function'
 	                                ),
-	                                ' because finding their derivatives for backpropogation is trivial (if that went over your head it’s not because you’re dumb; these are things that were glanced over or not mentioned in the story).'
+	                                ' because finding their derivatives for backpropogation is trivial (backpropogation is not covered much in this story beyond this “spell”).'
 	                            )
 	                        )
 	                    ),
 	                    _react2.default.createElement(
 	                        'li',
 	                        null,
-	                        _react2.default.createElement(_components.Frog, null),
+	                        _react2.default.createElement(
+	                            'div',
+	                            null,
+	                            _react2.default.createElement(_components.Frog, { styles: _frog2.default })
+	                        ),
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: _Formals2.default.description },
 	                            _react2.default.createElement(
 	                                'h3',
 	                                { className: _Formals2.default.descTitle },
-	                                'testing output'
+	                                'test data'
 	                            ),
 	                            _react2.default.createElement(
 	                                'h4',
@@ -32488,6 +32536,39 @@
 	                                'p',
 	                                null,
 	                                'The frog represents the true testing output with which to compare the network’s predicted output. It’s basically the “right” answer that the network is trying to get to.'
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement(
+	                            'div',
+	                            null,
+	                            _react2.default.createElement(_components.Genie, { styles: _genie2.default })
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: _Formals2.default.description },
+	                            _react2.default.createElement(
+	                                'h3',
+	                                { className: _Formals2.default.descTitle },
+	                                'loss function'
+	                            ),
+	                            _react2.default.createElement(
+	                                'h4',
+	                                { className: _Formals2.default.subtitle },
+	                                'genie'
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'Actually there’s quite a lot rolled up into our genie character, but the core of her “spell” is the loss function which calculates the difference between the output predicted by a model at a point in training and the true output from the test data (our frog).'
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'I’ve also rolled the backpropogation process into this character, as she is responsible for adjusting weight values in response to the result of the loss function. For the sake of intuition this is fine, but it’s important to understand that there’s much more happening under the hood at this step.'
 	                            )
 	                        )
 	                    )
@@ -32504,7 +32585,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"heading":"Formals__heading___jlQFw"};
+	module.exports = {"heading":"Formals__heading___jlQFw","formalList":"Formals__formalList___3-_4n","descTitle":"Formals__descTitle___3htO1","subtitle":"Formals__subtitle___ndrZR"};
 
 /***/ },
 /* 525 */
@@ -32522,6 +32603,8 @@
 	var _react = __webpack_require__(300);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _utils = __webpack_require__(511);
 	
 	var _Genie = __webpack_require__(526);
 	
@@ -32547,7 +32630,9 @@
 	    _createClass(Genie, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement('img', { className: _Genie2.default.genie, src: 'src/images/genie.svg' });
+	            var styles = this.props.styles ? (0, _utils.overrideCSS)(_Genie2.default, this.props.styles) : _Genie2.default;
+	
+	            return _react2.default.createElement('img', { className: styles.genie, src: 'src/images/genie.svg' });
 	        }
 	    }]);
 	
@@ -32650,6 +32735,48 @@
 	            return state;
 	    }
 	}
+
+/***/ },
+/* 528 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"penguin__container___1-kuH","number":"penguin__number___1XIFs"};
+
+/***/ },
+/* 529 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"rhino__container___5woOe","number":"rhino__number___2b6zg"};
+
+/***/ },
+/* 530 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"fly__container___2nKL0"};
+
+/***/ },
+/* 531 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"shaman":"shaman__shaman___2ocfI"};
+
+/***/ },
+/* 532 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"frog__container___3R2rW","number":"frog__number___2iFT0"};
+
+/***/ },
+/* 533 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"genie":"genie__genie___4jlOI"};
 
 /***/ }
 /******/ ]);

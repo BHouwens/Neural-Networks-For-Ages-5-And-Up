@@ -1,12 +1,15 @@
 import React from 'react';
+import { overrideCSS } from '../../utils';
 import { connect } from 'react-redux';
-import styles from './Frog.pcss';
+import internalStyles from './Frog.pcss';
 
 class FrogComponent extends React.Component {
     render() {
         let { number, multiNumber } = this.props,
             usedNumber = this.props.isMulti ? multiNumber : number;
         
+        let styles = this.props.styles ? overrideCSS(internalStyles, this.props.styles) : internalStyles;
+
         return (
             <div className={styles.container}>
                 <div className={styles.number}>{usedNumber}</div>
